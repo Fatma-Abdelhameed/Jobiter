@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignUpComponent } from './components/features/sign-up/sign-up.component';
 import { NavbarComponent } from './components/core/navbar/navbar.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +13,8 @@ import { NavbarComponent } from './components/core/navbar/navbar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
