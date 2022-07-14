@@ -1,0 +1,40 @@
+.navbar{
+    background-color: #F4FAFD;
+    padding: 18px 0;
+}
+.navbar-logo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25%;
+    z-index: 9999;
+}
+.navbar-brand img{
+    width: 100px;
+}
+.image-placeholder{
+    background-color: #fff;
+    padding: 10px 13px;
+    color: #DEDEDE;
+}
+.company-name{
+    color: #075D9D;
+    font-weight: bold;
+    font-size: 12px;
+}
+.notifications, .logout{
+    border: none;
+    background-color: transparent;
+    color: #075D9D;
+}
+.nav-item .nav-link{
+    color: #075D9D;
+    opacity: 0.5;
+    cursor: pointer;
+}
+.nav-item .nav-link:hover, .nav-item .current{
+    font-weight: bold;
+    color: #075D9D;
+    opacity: 1;
+    border-bottom: 3px solid #075D9D;
+}
