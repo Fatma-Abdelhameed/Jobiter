@@ -55,6 +55,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-weight: bold;
     margin-top: 8px;
 }
+.error{
+    border: 1px solid red;
+}
 @media (max-width:992px)  {
     .sign-up{
         width: 90%;
