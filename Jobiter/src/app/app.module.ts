@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { SignUpComponent } from './components/features/sign-up/sign-up.component';
 import { NavbarComponent } from './components/core/navbar/navbar.component';
 import { LoginComponent } from './components/features/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +18,8 @@ import { LoginComponent } from './components/features/login/login.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

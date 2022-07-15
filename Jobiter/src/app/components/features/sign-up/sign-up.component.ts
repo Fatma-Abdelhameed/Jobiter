@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Company } from 'src/app/_models/company';
 import { AuthenticationService } from 'src/app/_services/authentication.service';
+import { TokenStorageService } from 'src/app/_services/token-storage.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -19,19 +20,28 @@ export class SignUpComponent implements OnInit {
     city:'',
     industry:'',
     startedAt:'',
-    size:'',
+    size:new Number,
     imageUrl:'',
     websiteLink:'',
     about:''
   }
-  constructor(public router : Router, public auth:AuthenticationService) { 
+  constructor(public router : Router, public auth:AuthenticationService, public token:TokenStorageService) { 
   }
   signUp(data:any){
     if(data.valid){
-      this.auth.isLogged = 'true'
-      this.auth.currentUserType = 'company'
-      sessionStorage.setItem('isLogged', String(this.auth.isLogged))
-      sessionStorage.setItem('currentUserType', this.auth.currentUserType)
+      this.auth.companySignUp(this.formData.name, this.formData.email, this.formData.password, 
+        this.formData.confirmPassword, this.formData.phone, this.formData.address, this.formData.city, 
+        this.formData.industry, this.formData.startedAt, this.formData.size, this.formData.imageUrl,
+        this.formData.websiteLink,this.formData.about).subscribe({
+          next: data=>{
+            this.auth.isLogged = 'true'
+            this.auth.currentUserType = 'company'
+            sessionStorage.setItem('isLogged', String(this.auth.isLogged))
+            sessionStorage.setItem('currentUserType', this.auth.currentUserType)
+            //this.token.saveToken(data.token)
+            this.token.saveUser(data)
+          }
+        })
       this.router.navigateByUrl('company')
     }
   }

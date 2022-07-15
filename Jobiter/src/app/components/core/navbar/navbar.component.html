@@ -42,18 +42,18 @@
             </div>
             <div class="collapse navbar-collapse d-lg-flex justify-content-end" id="navbarSupportedContent" *ngIf="authenticated.isLogged == 'false' ">
                 <ul class="navbar-nav mb-2 mb-lg-0 text-center">
-                    <li class="nav-item">
-                        <a class="nav-link" [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]={exact:true}>Login</a>
-                      </li>
-                      <li class="nav-item dropdown">
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Sign Up
+                            Sign Up
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <li><a class="dropdown-item" [routerLink]="['company-sign-up']">Sign Up as Company</a></li>
-                          <li><a class="dropdown-item" href="#">Sign Up as Developer</a></li>
+                            <li><a class="dropdown-item" [routerLink]="['company-sign-up']">As Company</a></li>
+                            <li><a class="dropdown-item" href="#">As Developer</a></li>
                         </ul>
-                      </li>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]={exact:true}>Login</a>
+                    </li>
                 </ul>
             </div>
         </div>
