@@ -22,25 +22,6 @@ export class SignUpComponent implements OnInit {
     websiteLink:'',
     about:''
   }
-  formErrors = {
-    name:'',
-    email:'',
-    password:'',
-    confirmPassword:'',
-    phone:'',
-    address:'',
-    city:'',
-    industry:'',
-    startedAt:'',
-    size:'',
-    imageUrl:'',
-    websiteLink:'',
-    about:''
-  }
-  company:Company = new Company(0, '', '', '', 0, '', '', '', '', 0, '', '', '')
-  show(t:any){
-    console.log(t.invalid)
-  }
   constructor() { 
   }
   
