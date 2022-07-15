@@ -32,7 +32,7 @@
     opacity: 0.5;
     cursor: pointer;
 }
-.nav-item .nav-link:hover, .nav-item .current{
+.active{
     font-weight: bold;
     color: #075D9D;
     opacity: 1;

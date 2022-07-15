@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Company } from 'src/app/_models/company';
+import { AuthenticationService } from 'src/app/_services/authentication.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -22,9 +24,17 @@ export class SignUpComponent implements OnInit {
     websiteLink:'',
     about:''
   }
-  constructor() { 
+  constructor(public router : Router, public auth:AuthenticationService) { 
   }
-  
+  signUp(data:any){
+    if(data.valid){
+      this.auth.isLogged = 'true'
+      this.auth.currentUserType = 'company'
+      sessionStorage.setItem('isLogged', String(this.auth.isLogged))
+      sessionStorage.setItem('currentUserType', this.auth.currentUserType)
+      this.router.navigateByUrl('company')
+    }
+  }
   ngOnInit(): void {
   }
 

@@ -1,1 +1,31 @@
-<p>login works!</p>
+<div class="login mt-4">
+    <h5 class="login-header text-center mb-4">Login</h5>
+    <div class="login-form mt-2 mb-3 m-auto">
+        <div  class="text-center mt-3"><img src="assets/images/login.svg"></div>
+        <form class="row" #login="ngForm">
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputEmail1" class="form-label required">Email</label>
+                <input name="email" #cemail="ngModel" [(ngModel)] = "formData.password" type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Your Email" pattern ='^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$' required>
+                <span class="error" *ngIf="cemail.errors?.['required'] && cemail.touched">This Field Is Required</span>
+                <span class="error" *ngIf="cemail.errors?.['pattern'] && cemail.touched">Must be email</span>
+            </div>
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputPassword" class="form-label required">Password</label>
+                <input name="password" #cpassword="ngModel" [(ngModel)] = "formData.password" type="password" class="form-control" id="exampleInputPassword" placeholder="Enter Your Password" pattern = '^\S*(?=\S{8,})(?=\S*\d)(?=\S*[A-Z])(?=\S*[a-z])(?=\S*[!@#$%^&*? ])\S*$' required>
+                <span class="error" *ngIf="cpassword.errors?.['required'] && cpassword.touched">This Field Is Required</span>
+                <span class="error" *ngIf="cpassword.errors?.['pattern'] && cpassword.touched">
+                    <ul>
+                        <li>Password must be at least 8 characters</li>
+                        <li>At least 1 lowercase letter</li>
+                        <li>At least 1 uppercase letter</li>
+                        <li>At least 1 letter</li>
+                        <li>At least 1 special character</li>
+                    </ul>
+                </span>
+            </div>
+            <div class="mb-3 col-12 text-center">
+                <input name="submit" type="submit" value="Submit" class="submit btn">
+            </div>
+        </form>
+    </div>
+</div>
