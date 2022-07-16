@@ -1,1 +1,46 @@
-<p>post-new-job works!</p>
+<div class="post-new-job mt-4">
+    <h5 class="post-job-header text-center mb-4">Post New Job</h5>
+    <div class="post-job mt-2 mb-3 m-auto">
+        <form class="row mt-3" #postJob="ngForm">
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputName" class="form-label required">Job Title</label>
+                <input name="title" #title="ngModel" [(ngModel)] = "formData.title" type="text" class="form-control"  id="exampleInputName" placeholder="eg, Software Engineer">
+            </div>
+            <div class="form-controls mb-3 col-md-6 col-xs-12">
+                <label for="exampleInputMinExp" class="form-label required">Min Experience</label>
+                <input name="minExp" #minExp="ngModel" [(ngModel)] = "formData.minExp" type="number" class="form-control" id="exampleInputMinExp">
+            </div>
+            <div class="form-controls mb-3 col-md-6 col-xs-12">
+                <label for="exampleInputMaxExp" class="form-label required">Max Experience</label>
+                <input name="maxExp" #maxExp="ngModel" [(ngModel)] = "formData.maxExp" type="number" class="form-control" id="exampleInputMaxExp">
+            </div>
+            <div class="form-controls mb-3 col-md-6 col-xs-12">
+                <label for="exampleInputLevel" class="form-label required">Position Level</label>
+                <select #level="ngModel" name="level" [(ngModel)] = "formData.level" class="form-select" aria-label="Default select example" id="exampleInputLevel" required>
+                    <option selected>Choose Level</option>
+                    <option value="fresh">Fresh</option>
+                    <option value="junior">Junior</option>
+                    <option value="mid-level">Mid Level</option>
+                    <option value="senior">Senior</option>
+                </select>
+            </div>
+            <div class="form-controls mb-3 col-md-6 col-xs-12">
+                <label for="exampleInputType" class="form-label required">Position Level</label>
+                <select #type="ngModel" name="level" [(ngModel)] = "formData.type" class="form-select" aria-label="Default select example" id="exampleInputType" required>
+                    <option selected>Choose Type</option>
+                    <option value="remotly">Remotly</option>
+                    <option value="onsite">On Site</option>
+                    <option value="part-time">Part Time</option>
+                    <option value="full-time">Full Time</option>
+                </select>
+            </div>
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputReq" class="form-label required">Requirements</label>
+                <textarea #requirement="ngModel" name="about" [(ngModel)] = "formData.requirements" class="form-control" rows="5" id="exampleInputReq" placeholder="Job Requirements"></textarea>
+            </div>
+            <div class="mb-3 col-12 text-center">
+                <input name="submit" type="submit" value="Submit" class="submit btn">
+            </div>
+        </form>
+    </div>
+</div>

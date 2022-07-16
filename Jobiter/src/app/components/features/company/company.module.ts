@@ -38,6 +38,6 @@ const routes:Routes = [
     TableModule,
     
   ],
-  exports:[AllJobsComponent]
+  exports:[AllJobsComponent, PostNewJobComponent]
 })
 export class CompanyModule { }
