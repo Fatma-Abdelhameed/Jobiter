@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CompanyService } from 'src/app/_services/company.service';
 
 @Component({
   selector: 'app-post-new-job',
@@ -14,9 +15,20 @@ export class PostNewJobComponent implements OnInit {
     type:'',
     requirements:'',
   }
-  constructor() { }
+  insertedJob:boolean = false
+  constructor(public company:CompanyService) { }
   postJob(data:any){
-    console.log(data)
+    if(data.valid){
+      this.company.postNewJob(this.formData.title, this.formData.level, this.formData.type,
+        Number(this.formData.minExp), Number(this.formData.maxExp), this.formData.requirements).subscribe({
+          next:()=>{
+            this.insertedJob = true
+          },
+          error:(err)=>{
+            
+          }
+        })
+    }
   }
   ngOnInit(): void {
   }
