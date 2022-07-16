@@ -1,0 +1,31 @@
+.all-jobs-header h4{
+    color: #27B4FB;
+}
+.search{
+    padding: 9px;
+}
+.search-icon{
+    background-color: #DCF1FB;
+    color: #075D9D;
+}
+.details, .delete{
+    padding: 8px 16px;
+}
+.details{
+    background-color: #76BA99;
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+}
+.delete, .delete:hover{
+    background-color: #FF0000;
+    border: none;
+}
+.open{
+    color: #76BA99;
+    font-weight: bold;
+}
+.closed{
+    color: #FF0000;
+    font-weight: bold;
+}

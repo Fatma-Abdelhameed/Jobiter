@@ -7,19 +7,21 @@ import { SignUpComponent } from './components/features/sign-up/sign-up.component
 import { NavbarComponent } from './components/core/navbar/navbar.component';
 import { LoginComponent } from './components/features/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CompanyModule } from './components/features/company/company.module';
+
 @NgModule({
   declarations: [
     AppComponent,
     SignUpComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
-
+    HttpClientModule,
+    CompanyModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

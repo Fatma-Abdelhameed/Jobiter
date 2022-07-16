@@ -1,1 +1,51 @@
-<p>all-jobs works!</p>
+<div class="deleted-alert alert alert-success w-50 m-auto mt-3" role="alert" *ngIf = "deletedRecordAlert">
+    Job is deleted successfuly
+</div>
+<div class="all-jobs">
+    <div class="all-jobs-header row text-center mt-5 ms-0 me-0 d-flex align-items-center">
+        <h4 class="col-xs-2 col-md-6 ">All Jobs</h4>
+        <div class="filters col-xs-9 col-md-6  row jus">
+            <div class="input-group mb-3 w-50 d-flex">
+                <input [(ngModel)] = "keyWord" type="text" class="form-control search" placeholder="Seach By Title" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <span class="input-group-text search-icon" id="basic-addon2">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </span>
+            </div>
+            <div  class="col-2">
+                <p-calendar [(ngModel)]="dateValue" [showIcon] = true icon="fa-solid fa-calendar" (onSelect)="selectedDate = dateValue"></p-calendar>
+            </div>
+        </div>
+    </div>
+    <div class="jobs">
+        <p-table [value]="allJobs |search:keyWord| dateFilter:selectedDate" styleClass="p-datatable-striped" responsiveLayout="scroll" 
+        [paginator]="true" [rows]="5" [showCurrentPageReport]="true" responsiveLayout="scroll"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Date</th>
+                    <th>Applicants' Count</th>
+                    <th>Status</th>
+                    <th>Type</th>
+                    <th>Actions</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-job>
+                <tr>
+                   <td>{{job.id}}</td>
+                   <td>{{job.title}}</td> 
+                   <td>{{job.postedDate}}</td>
+                   <td>{{job.applicants.length}}</td>
+                   <td [ngClass]="{'open': job.status === 'Open', 'closed' : job.status === 'Closed' }">{{job.status}}</td> 
+                   <td>{{job.type}}</td>
+                   <td>
+                        <a class="btn details me-2"><i class="fa-solid fa-circle-info me-2"></i>Details</a>
+                        <p-confirmPopup></p-confirmPopup>
+                        <button (click)="confirm($event, job.id)" pButton icon="fa-solid fa-trash-can" class="delete" label="Delete"></button>
+                   </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>

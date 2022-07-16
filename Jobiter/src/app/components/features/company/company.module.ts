@@ -4,7 +4,15 @@ import { HomeComponent } from './home/home.component';
 import { AllJobsComponent } from './all-jobs/all-jobs.component';
 import { PostNewJobComponent } from './post-new-job/post-new-job.component';
 import { RouterModule, Routes } from '@angular/router';
-
+import {CalendarModule} from 'primeng/calendar';
+import { DateFilterPipe } from 'src/app/_pipes/date-filter.pipe';
+import { SearchPipe } from 'src/app/_pipes/search.pipe';
+import { FormsModule } from '@angular/forms';
+import {ConfirmPopupModule} from 'primeng/confirmpopup';
+import {TableModule} from 'primeng/table';
+import {PaginatorModule} from 'primeng/paginator';
+import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 const routes:Routes = [
   {path:'',component:HomeComponent},
   {path:'all-jobs',component:AllJobsComponent},
@@ -15,10 +23,21 @@ const routes:Routes = [
   declarations: [
     HomeComponent,
     AllJobsComponent,
-    PostNewJobComponent
+    PostNewJobComponent,
+    DateFilterPipe,
+    SearchPipe
   ],
   imports: [
-    CommonModule,RouterModule.forChild(routes)
-  ]
+    CommonModule,RouterModule.forChild(routes),
+    CalendarModule,
+    FormsModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    ConfirmPopupModule,
+    PaginatorModule,
+    TableModule,
+    
+  ],
+  exports:[AllJobsComponent]
 })
 export class CompanyModule { }
