@@ -14,6 +14,19 @@ export class CompanyService {
    getCompanyDetails(id:number){
       return this.http.get<Company>("")
    }
+   /*saveProfileChanges(id:number, name:string, imageUrl:string, email:string, password:string,
+      startedAt:string, size:number, phone:string, address:string, industry:string, link:string,
+       about:string){
+         return this.http.put("", {})
+
+   }*/
+   changePassword(id:number, password:string, confirmPassword:string){
+      return this.http.patch("", {
+         id,
+         password,
+         confirmPassword
+      })
+   }
    getNotificationState(){
       return this.http.get("")
    }
