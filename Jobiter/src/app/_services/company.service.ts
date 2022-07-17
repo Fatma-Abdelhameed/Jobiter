@@ -22,9 +22,14 @@ export class CompanyService {
    }*/
    changePassword(id:number, password:string, confirmPassword:string){
       return this.http.patch("", {
-         id,
          password,
          confirmPassword
+      })
+   }
+   editNameImage(id: number, name:string, imageUrl:string){
+      return this.http.patch("", {
+         name,
+         imageUrl
       })
    }
    getNotificationState(){

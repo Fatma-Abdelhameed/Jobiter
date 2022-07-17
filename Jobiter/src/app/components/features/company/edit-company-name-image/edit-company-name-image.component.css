@@ -51,9 +51,9 @@
     color: red;
     font-size: 12px;
 }
-input.ng-invalid.ng-touched{
+input.ng-invalid{
     border: 1px solid rgb(255, 0, 0);
 }
-input.ng-valid.ng-touched{
+input.ng-valid{
     border: 1px solid #198754;
 }
