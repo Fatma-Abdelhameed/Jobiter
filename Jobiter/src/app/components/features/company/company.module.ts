@@ -15,6 +15,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { CompanyProfileComponent } from './company-profile/company-profile.component';
 import {InputSwitchModule} from 'primeng/inputswitch';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 const routes:Routes = [
   {path:'',component:HomeComponent},
   {path:'all-jobs',component:AllJobsComponent},
@@ -28,7 +29,8 @@ const routes:Routes = [
     PostNewJobComponent,
     DateFilterPipe,
     SearchPipe,
-    CompanyProfileComponent
+    CompanyProfileComponent,
+    ChangePasswordComponent
   ],
   imports: [
     CommonModule,RouterModule.forChild(routes),
@@ -42,6 +44,6 @@ const routes:Routes = [
     InputSwitchModule
     
   ],
-  exports:[AllJobsComponent, PostNewJobComponent, CompanyProfileComponent]
+  exports:[ChangePasswordComponent]
 })
 export class CompanyModule { }
