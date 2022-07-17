@@ -1,0 +1,68 @@
+
+.company-details, .login-info, .basic-info{
+    border: 1px solid #CCCCCC;
+    position: relative;
+    margin-top: 65px;
+    border-radius: 10px;
+    padding: 15px;
+}
+.company-details{
+    text-align: center;
+}
+.company-name{
+    margin-top: 80px;
+    color: #075D9D;
+}
+.profile-image{
+    position: absolute;
+    z-index: 999;
+    margin: -80px 37%;
+    width: 150px;
+    height: 150px;
+    border: 1px solid #27B4FB;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 10%), 0 3px 10px 0 rgb(0 0 0 / 10%)
+}
+.image{
+    width: 90%;
+    height: 90%;
+    border-radius: 100%;
+    margin: 5% 0;;
+}
+.notification label{
+    color: #979797;
+    font-size: 15px;
+}
+.edit{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: #DFF4FE;
+    color: #27B4FB;
+}
+.section-header h5{
+    color: #075D9D;
+}
+.section-header h5::after{
+    content: '';
+    width: 5%;
+    border-bottom: 3px solid #27B4FB;
+    display: block;
+    margin-top: 10px;
+}
+.section-body .title{
+    color: #4A4A4A;
+    font-size: 13px;
+    font-weight: bold;
+}
+.section-body .content{
+    color: #979797;
+    font-size: 12px;
+    font-weight: bold;
+}
+.change-pass{
+    background-color: #DFF4FE;
+    color: #27B4FB;
+    font-size: 12px;
+}

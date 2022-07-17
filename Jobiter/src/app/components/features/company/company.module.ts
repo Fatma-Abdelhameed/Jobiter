@@ -13,6 +13,8 @@ import {TableModule} from 'primeng/table';
 import {PaginatorModule} from 'primeng/paginator';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { CompanyProfileComponent } from './company-profile/company-profile.component';
+import {InputSwitchModule} from 'primeng/inputswitch';
 const routes:Routes = [
   {path:'',component:HomeComponent},
   {path:'all-jobs',component:AllJobsComponent},
@@ -25,7 +27,8 @@ const routes:Routes = [
     AllJobsComponent,
     PostNewJobComponent,
     DateFilterPipe,
-    SearchPipe
+    SearchPipe,
+    CompanyProfileComponent
   ],
   imports: [
     CommonModule,RouterModule.forChild(routes),
@@ -36,8 +39,9 @@ const routes:Routes = [
     ConfirmPopupModule,
     PaginatorModule,
     TableModule,
+    InputSwitchModule
     
   ],
-  exports:[AllJobsComponent, PostNewJobComponent]
+  exports:[AllJobsComponent, PostNewJobComponent, CompanyProfileComponent]
 })
 export class CompanyModule { }
