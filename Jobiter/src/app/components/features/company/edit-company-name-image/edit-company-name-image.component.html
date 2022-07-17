@@ -1,0 +1,20 @@
+<div class="edit-company-name-image mt-4">
+    <h5 class="edit-company-name-image-header text-center mb-4">Edit Name & Image</h5>
+    <div class="company-name-image mt-2 mb-3 m-auto col-lg-3 col-md-6 col-xs-10 p-4">
+        <form class="row" #editNameImage="ngForm">
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputName" class="form-label required">Company Name</label>
+                <input name="name" #cname="ngModel" [(ngModel)] = "formData.name" type="text" class="form-control"  id="exampleInputName" minlength="3" >
+                <span class="error" *ngIf="cname.errors?.['minlength']">Name must be more than 3 characters</span>
+            </div>
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputImage" class="form-label">Profile Image</label>
+                <input #cimage="ngModel" name="image" [(ngModel)] = "formData.imageUrl" type="file" accept="image/*" class="form-control" id="exampleInputImage">
+                <span class="error" *ngIf="cimage.errors?.['accept'] && cimage.touched">File must be image like .png, .jpg</span>
+            </div>
+            <div class="mb-3 col-12 text-center">
+                <input name="submit" type="submit" value="Save" class="submit btn">
+            </div>
+        </form>
+    </div>
+</div>

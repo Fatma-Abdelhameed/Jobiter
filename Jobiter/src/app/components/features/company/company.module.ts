@@ -7,7 +7,6 @@ import { RouterModule, Routes } from '@angular/router';
 import {CalendarModule} from 'primeng/calendar';
 import { DateFilterPipe } from 'src/app/_pipes/date-filter.pipe';
 import { SearchPipe } from 'src/app/_pipes/search.pipe';
-import { FormsModule } from '@angular/forms';
 import {ConfirmPopupModule} from 'primeng/confirmpopup';
 import {TableModule} from 'primeng/table';
 import {PaginatorModule} from 'primeng/paginator';
@@ -16,6 +15,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { CompanyProfileComponent } from './company-profile/company-profile.component';
 import {InputSwitchModule} from 'primeng/inputswitch';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { EditCompanyNameImageComponent } from './edit-company-name-image/edit-company-name-image.component';
 const routes:Routes = [
   {path:'',component:HomeComponent},
   {path:'all-jobs',component:AllJobsComponent},
@@ -30,12 +30,12 @@ const routes:Routes = [
     DateFilterPipe,
     SearchPipe,
     CompanyProfileComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    EditCompanyNameImageComponent
   ],
   imports: [
     CommonModule,RouterModule.forChild(routes),
     CalendarModule,
-    FormsModule,
     BrowserModule,
     BrowserAnimationsModule,
     ConfirmPopupModule,
@@ -44,6 +44,6 @@ const routes:Routes = [
     InputSwitchModule
     
   ],
-  exports:[ChangePasswordComponent]
+  exports:[EditCompanyNameImageComponent]
 })
 export class CompanyModule { }
