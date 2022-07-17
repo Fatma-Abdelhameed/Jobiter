@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Company } from '../_models/company';
 import { Job } from '../_models/job';
 
 @Injectable({
@@ -9,6 +10,15 @@ export class CompanyService {
 
   constructor(public http: HttpClient) {
     
+   }
+   getCompanyDetails(id:number){
+      return this.http.get<Company>("")
+   }
+   getNotificationState(){
+      return this.http.get("")
+   }
+   changeNotificationState(state:boolean){
+      return this.http.post("", state)
    }
    getAllJobs(companyId:number){
 
