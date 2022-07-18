@@ -47,6 +47,9 @@ export class CompanyService {
          about
       })
    }
+   editJob(id:number, data:{}){
+      return this.http.patch("", data)
+   }
    getNotificationState(){
       return this.http.get("")
    }
@@ -59,8 +62,8 @@ export class CompanyService {
    deleteJob(jobId:number){
 
    }
-   showJob(jobId:number){
-
+   getJobDetails(jobId:number){
+      return this.http.get("")
    }
    postNewJob(title:string, level:string, type:string,
      minExperience:number, maxExperience:number, requirements:string){

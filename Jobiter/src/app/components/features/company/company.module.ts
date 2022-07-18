@@ -18,6 +18,7 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { EditCompanyNameImageComponent } from './edit-company-name-image/edit-company-name-image.component';
 import { EditCompanyBasicInfoComponent } from './edit-company-basic-info/edit-company-basic-info.component';
 import { EditCompanyAboutComponent } from './edit-company-about/edit-company-about.component';
+import { EditJobComponent } from './edit-job/edit-job.component';
 const routes:Routes = [
   {path:'',component:HomeComponent},
   {path:'all-jobs',component:AllJobsComponent},
@@ -35,7 +36,8 @@ const routes:Routes = [
     ChangePasswordComponent,
     EditCompanyNameImageComponent,
     EditCompanyBasicInfoComponent,
-    EditCompanyAboutComponent
+    EditCompanyAboutComponent,
+    EditJobComponent
   ],
   imports: [
     CommonModule,RouterModule.forChild(routes),
@@ -48,6 +50,6 @@ const routes:Routes = [
     InputSwitchModule
     
   ],
-  exports:[EditCompanyAboutComponent]
+  exports:[EditJobComponent]
 })
 export class CompanyModule { }

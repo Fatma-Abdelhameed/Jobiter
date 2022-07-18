@@ -1,0 +1,56 @@
+<div class="alert alert-danger w-50 m-auto mt-3" role="alert" *ngIf = "noChangesError">
+    No Data is entered to be changed
+</div>
+<div class="alert alert-success w-50 m-auto mt-3" role="alert" *ngIf = "dataUpdated">
+    Data is updated successfuly
+</div>
+<div class="edit-new-job mt-4">
+    <h5 class="edit-job-header text-center mb-4">Update Job</h5>
+    <div class="edit-job mt-2 mb-3 m-auto">
+        <form class="row mt-3" #update="ngForm">
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputName" class="form-label">Job Title</label>
+                <input name="title" #title="ngModel" [(ngModel)] = "formData.title" type="text" class="form-control"  id="exampleInputName" minlength="5">
+                <span class="error" *ngIf="title.errors?.['minlength']">Title must be more than 5 characters</span>
+            </div>
+            <div class="form-controls mb-3 col-md-6 col-xs-12">
+                <label for="exampleInputMinExp" class="form-label">Min Experience</label>
+                <input name="minExp" #minExp="ngModel" [(ngModel)] = "formData.minExp" type="number" class="form-control" id="exampleInputMinExp" pattern="^\d+$">
+                <span class="error" *ngIf="minExp.errors?.['pattern']">Must Be Positive (equal or more than 0)</span>
+            </div>
+            <div class="form-controls mb-3 col-md-6 col-xs-12">
+                <label for="exampleInputMaxExp" class="form-label">Max Experience</label>
+                <input name="maxExp" #maxExp="ngModel" [(ngModel)] = "formData.maxExp" type="number" class="form-control" id="exampleInputMaxExp" pattern="^\d+$">
+                <span class="error" *ngIf="maxExp.errors?.['pattern']">Must Be Positive (equal or more than 0)</span>
+            </div>
+            <div class="form-controls mb-3 col-md-6 col-xs-12">
+                <label for="exampleInputLevel" class="form-label">Position Level</label>
+                <select #level="ngModel" name="level" [(ngModel)] = "formData.level" class="form-select" aria-label="Default select example" id="exampleInputLevel" >
+                    <option selected>Choose Level</option>
+                    <option value="fresh">Fresh</option>
+                    <option value="junior">Junior</option>
+                    <option value="mid-level">Mid Level</option>
+                    <option value="senior">Senior</option>
+                </select>
+            </div>
+            <div class="form-controls mb-3 col-md-6 col-xs-12">
+                <label for="exampleInputType" class="form-label">Position Level</label>
+                <select #type="ngModel" name="level" [(ngModel)] = "formData.type" class="form-select" aria-label="Default select example" id="exampleInputType">
+                    <option selected>Choose Type</option>
+                    <option value="remotly">Remotly</option>
+                    <option value="onsite">On Site</option>
+                    <option value="part-time">Part Time</option>
+                    <option value="full-time">Full Time</option>
+                </select>
+            </div>
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputReq" class="form-label">Requirements</label>
+                <textarea #requirement="ngModel" name="about" [(ngModel)] = "formData.requirements" class="form-control" rows="5" id="exampleInputReq" placeholder="Job Requirements" minlength="100" required></textarea>
+                <span class="error" *ngIf="requirement.errors?.['minlength']">About must be at least 100 characters</span>
+            </div>
+            <div class="mb-3 col-12 text-center">
+                <input name="submit" type="submit" value="Submit" class="submit btn">
+            </div>
+        </form>
+    </div>
+</div>
