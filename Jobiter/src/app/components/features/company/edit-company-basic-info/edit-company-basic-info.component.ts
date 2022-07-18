@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CompanyService } from 'src/app/_services/company.service';
+import { TokenStorageService } from 'src/app/_services/token-storage.service';
 
 @Component({
   selector: 'app-edit-company-basic-info',
@@ -15,9 +17,33 @@ export class EditCompanyBasicInfoComponent implements OnInit {
     startedAt:'',
     websiteLink:''
   }
-  constructor() { }
+  noChangesError:boolean = false
+  dataUpdated:boolean = false
 
+  constructor(public companySer:CompanyService, public token:TokenStorageService) { }
+  saveChanges(data:any){
+    if(data.touched){
+      this.companySer.editBasicInfo(this.token.getUser().id, this.formData.address, this.formData.city,
+      this.formData.industry, this.formData.startedAt, this.formData.size, this.formData.websiteLink).subscribe({
+        next:(info)=>{
+          this.dataUpdated = true
+          this.token.saveUser(info)
+        },
+        error:()=>{
+
+        }
+      })
+    }
+    else{
+      this.noChangesError = true
+    }
+  }
   ngOnInit(): void {
+    this.companySer.getCompanyDetails(this.token.getUser().id).subscribe({
+      next:(data)=>{
+        this.formData = data
+      }
+    })
   }
 
 }

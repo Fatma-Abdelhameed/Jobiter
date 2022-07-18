@@ -32,6 +32,16 @@ export class CompanyService {
          imageUrl
       })
    }
+   editBasicInfo(id: number, address:string, city:string, industry:string, startedAt:string, size:number, websiteLink:string){
+      return this.http.patch("", {
+         address,
+         city,
+         industry,
+         startedAt,
+         size,
+         websiteLink
+      })
+   }
    getNotificationState(){
       return this.http.get("")
    }
