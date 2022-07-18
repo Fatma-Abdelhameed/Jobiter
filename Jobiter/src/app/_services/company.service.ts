@@ -42,6 +42,11 @@ export class CompanyService {
          websiteLink
       })
    }
+   editAbout(id:number, about:string){
+      return this.http.patch("", {
+         about
+      })
+   }
    getNotificationState(){
       return this.http.get("")
    }

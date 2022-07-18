@@ -1,3 +1,9 @@
+<div class="alert alert-danger w-50 m-auto mt-3" role="alert" *ngIf = "noChangesError">
+    No Data is entered to be changed
+</div>
+<div class="alert alert-success w-50 m-auto mt-3" role="alert" *ngIf = "dataUpdated">
+    Data is updated successfuly
+</div>
 <div class="company-edit-about mt-4">
     <h5 class="company-edit-about-header text-center mb-4">Company Sign Up</h5>
     <div class="edit-about mt-2 mb-3 m-auto col-lg-4 col-xs-12">
@@ -8,7 +14,7 @@
                 <span class="error" *ngIf="about.errors?.['minlength']">About must be at least 15 characters</span>
             </div>
             <div class="mb-3 col-12 text-center">
-                <input name="submit" type="submit" value="Submit" class="submit btn">
+                <input name="submit" type="submit" value="Submit" class="submit btn" (click) = "saveChanges(editAbout)">
             </div>
         </form>
     </div>
