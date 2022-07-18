@@ -17,6 +17,7 @@ import {InputSwitchModule} from 'primeng/inputswitch';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { EditCompanyNameImageComponent } from './edit-company-name-image/edit-company-name-image.component';
 import { EditCompanyBasicInfoComponent } from './edit-company-basic-info/edit-company-basic-info.component';
+import { EditCompanyAboutComponent } from './edit-company-about/edit-company-about.component';
 const routes:Routes = [
   {path:'',component:HomeComponent},
   {path:'all-jobs',component:AllJobsComponent},
@@ -33,7 +34,8 @@ const routes:Routes = [
     CompanyProfileComponent,
     ChangePasswordComponent,
     EditCompanyNameImageComponent,
-    EditCompanyBasicInfoComponent
+    EditCompanyBasicInfoComponent,
+    EditCompanyAboutComponent
   ],
   imports: [
     CommonModule,RouterModule.forChild(routes),
@@ -46,6 +48,6 @@ const routes:Routes = [
     InputSwitchModule
     
   ],
-  exports:[EditCompanyBasicInfoComponent]
+  exports:[EditCompanyAboutComponent]
 })
 export class CompanyModule { }

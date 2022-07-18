@@ -1,0 +1,15 @@
+<div class="company-edit-about mt-4">
+    <h5 class="company-edit-about-header text-center mb-4">Company Sign Up</h5>
+    <div class="edit-about mt-2 mb-3 m-auto col-lg-4 col-xs-12">
+        <form class="row" #editAbout="ngForm">
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputAbout" class="form-label">About Us</label>
+                <textarea #about="ngModel" name="about" [(ngModel)] = "formData.about" class="form-control" rows="5" id="exampleInputAbout" minlength="15"></textarea>
+                <span class="error" *ngIf="about.errors?.['minlength']">About must be at least 15 characters</span>
+            </div>
+            <div class="mb-3 col-12 text-center">
+                <input name="submit" type="submit" value="Submit" class="submit btn">
+            </div>
+        </form>
+    </div>
+</div>
