@@ -1,0 +1,44 @@
+<div class="company-edit-basic-info mt-4">
+    <h5 class="company-edit-basic-info-header text-center mb-4">Edit Basic Info</h5>
+    <div class="edit-basic-info mt-2 mb-3 m-auto col-md-4 col-xs-12">
+        <form class="row mt-2" #editBasicInfo="ngForm">
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputAddress" class="form-label">Address</label>
+                <input #caddress="ngModel" name="address" [(ngModel)] = "formData.address" type="text" class="form-control" id="exampleInputAddress">
+            </div>
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputCity" class="form-label required">City</label>
+                <select #city="ngModel" name="city" [(ngModel)] = "formData.city" class="form-select" aria-label="Default select example" id="exampleInputCity">
+                    <option selected>Choose City</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+            </div>
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputIndustry" class="form-label">Industry</label>
+                <input #industry="ngModel" name="industry" [(ngModel)] = "formData.industry" type="text" class="form-control" id="exampleInputIndustry">
+            </div>
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputDate" class="form-label">Started At</label>
+                <input name="startAt" [(ngModel)] = "formData.startedAt" type="date" class="form-control" id="exampleInputDate" >
+            </div>
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputSize" class="form-label">Company Size</label>
+                <select name="size" [(ngModel)] = "formData.size" class="form-select" aria-label="Default select example" id="exampleInputSize">
+                    <option selected>Choose Size</option>
+                    <option value="1">Less Than 50</option>
+                    <option value="2">More Than 50</option>
+                    <option value="3">More Than 100</option>
+                  </select>
+            </div>
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputLink" class="form-label">Website Link</label>
+                <input name="link" [(ngModel)] = "formData.websiteLink" type="text" class="form-control" id="exampleInputLink">
+            </div>
+            <div class="mb-3 col-12 text-center">
+                <input name="submit" type="submit" value="Submit" class="submit btn">
+            </div>
+        </form>
+    </div>
+</div>

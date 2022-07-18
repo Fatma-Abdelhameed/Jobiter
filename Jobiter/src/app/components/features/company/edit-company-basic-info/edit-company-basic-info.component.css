@@ -1,0 +1,52 @@
+.company-edit-basic-info-header{
+    color: #979797;
+}
+.company-edit-basic-info-header::after{
+    content: '';
+    border-bottom: 3px solid #D3E6FB;
+    display: block;
+    width: 5%;
+    margin: 10px auto;
+}
+.edit-basic-info{
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 10%), 0 3px 10px 0 rgb(0 0 0 / 10%);
+    padding: 15px 25px;
+    border-radius: 10px;
+}
+.form-controls label{
+    color: #075D9D;
+    font-size: 15px;
+}
+.form-controls input, .form-controls select{
+    border: none;
+    background-color: #F3F3F3;
+    padding: 10px;
+}
+.form-controls select{
+    padding: 7px;
+}
+.form-controls input:placeholder-shown{
+    color: #BEBEBE;
+    font-size: 12px;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background-image: url('../../../../../assets/images/calender.svg');
+    cursor: pointer;
+}
+.submit{
+    background-color: #DCF1FB;
+    color: #27B4FB;
+    padding: 10px 20px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+.error{
+    color: red;
+    font-size: 12px;
+}
+input.ng-invalid{
+    border: 1px solid rgb(255, 0, 0);
+}
+input.ng-valid{
+    border: 1px solid #198754;
+}
