@@ -19,6 +19,7 @@ import { EditCompanyNameImageComponent } from './edit-company-name-image/edit-co
 import { EditCompanyBasicInfoComponent } from './edit-company-basic-info/edit-company-basic-info.component';
 import { EditCompanyAboutComponent } from './edit-company-about/edit-company-about.component';
 import { EditJobComponent } from './edit-job/edit-job.component';
+import { EmployeeProfileComponent } from './employee-profile/employee-profile.component';
 const routes:Routes = [
   {path:'',component:HomeComponent},
   {path:'all-jobs',component:AllJobsComponent},
@@ -37,7 +38,8 @@ const routes:Routes = [
     EditCompanyNameImageComponent,
     EditCompanyBasicInfoComponent,
     EditCompanyAboutComponent,
-    EditJobComponent
+    EditJobComponent,
+    EmployeeProfileComponent
   ],
   imports: [
     CommonModule,RouterModule.forChild(routes),
@@ -50,6 +52,6 @@ const routes:Routes = [
     InputSwitchModule
     
   ],
-  exports:[EditJobComponent]
+  exports:[EmployeeProfileComponent]
 })
 export class CompanyModule { }
