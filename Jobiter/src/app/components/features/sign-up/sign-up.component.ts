@@ -12,6 +12,7 @@ import { TokenStorageService } from 'src/app/_services/token-storage.service';
 export class SignUpComponent implements OnInit {
   formData = {
     name:'',
+    username:'',
     email:'',
     password:'',
     confirmPassword:'',
@@ -20,16 +21,17 @@ export class SignUpComponent implements OnInit {
     city:'',
     industry:'',
     startedAt:'',
-    size:new Number,
+    size:'',
     imageUrl:'',
     websiteLink:'',
     about:''
+
   }
   constructor(public router : Router, public auth:AuthenticationService, public token:TokenStorageService) { 
   }
   signUp(data:any){
     if(data.valid){
-      this.auth.companySignUp(this.formData.name, this.formData.email, this.formData.password, 
+      this.auth.companySignUp(this.formData.name, this.formData.email, this.formData.username, this.formData.password,
         this.formData.confirmPassword, this.formData.phone, this.formData.address, this.formData.city, 
         this.formData.industry, this.formData.startedAt, this.formData.size, this.formData.imageUrl,
         this.formData.websiteLink,this.formData.about).subscribe({

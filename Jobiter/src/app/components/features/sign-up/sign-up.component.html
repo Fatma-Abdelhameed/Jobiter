@@ -8,11 +8,18 @@
                 <span class="error" *ngIf="cname.errors?.['required'] && cname.touched">This Field Is Required</span>
                 <span class="error" *ngIf="cname.errors?.['minlength']">Name must be more than 3 characters</span>
             </div>
+          
             <div class="form-controls mb-3 col-md-6 col-xs-12">
                 <label for="exampleInputEmail1" class="form-label required">Company Email</label>
                 <input name="email" #cemail="ngModel" [(ngModel)] = "formData.email" type="email" class="form-control" id="exampleInputEmail1" placeholder="eg, microsoft55@gmail.com" pattern ='^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$' required>
                 <span class="error" *ngIf="cemail.errors?.['required'] && cemail.touched">This Field Is Required</span>
                 <span class="error" *ngIf="cemail.errors?.['pattern'] && cemail.touched">Must be email</span>
+            </div>
+            <div class="form-controls mb-3 col-md-6 col-xs-12">
+                <label for="exampleInputUsername" class="form-label required">Username</label>
+                <input name="username" #cusername="ngModel" [(ngModel)] = "formData.username" type="text" class="form-control"  id="exampleInputUsername" placeholder="Username.." minlength="3" required>
+                <span class="error" *ngIf="cname.errors?.['required'] && cusername.touched">This Field Is Required</span>
+                <span class="error" *ngIf="cname.errors?.['minlength']">Name must be more than 3 characters</span>
             </div>
             <div class="form-controls mb-3 col-md-6 col-xs-12">
                 <label for="exampleInputPassword" class="form-label required">Password</label>
@@ -40,7 +47,7 @@
                 <span class="error" *ngIf="cphone.errors?.['required'] && cphone.touched">This Field Is Required</span>
                 <span class="error" *ngIf="cphone.errors?.['pattern'] && cphone.touched">Phone must be 11 digits and start with 01</span>
             </div>
-            <div class="form-controls mb-3 col-md-6 col-xs-12">
+            <div class="form-controls mb-3 col-xs-12">
                 <label for="exampleInputAddress" class="form-label required">Address</label>
                 <input #caddress="ngModel" name="address" [(ngModel)] = "formData.address" type="text" class="form-control" id="exampleInputAddress" placeholder="eg, smart village, Cairo" required>
                 <span class="error" *ngIf="caddress.errors?.['required'] && caddress.touched">This Field Is Required</span>
@@ -49,7 +56,7 @@
                 <label for="exampleInputCity" class="form-label required">City</label>
                 <select #city="ngModel" name="city" [(ngModel)] = "formData.city" class="form-select" aria-label="Default select example" id="exampleInputCity" required>
                     <option selected>Choose City</option>
-                    <option value="1">One</option>
+                    <option value="Cairo">Cairo</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
                 </select>
@@ -68,7 +75,7 @@
                 <label for="exampleInputSize" class="form-label">Company Size</label>
                 <select name="size" [(ngModel)] = "formData.size" class="form-select" aria-label="Default select example" id="exampleInputSize">
                     <option selected>Choose Size</option>
-                    <option value="1">Less Than 50</option>
+                    <option value="Less than 50">Less Than 50</option>
                     <option value="2">More Than 50</option>
                     <option value="3">More Than 100</option>
                   </select>

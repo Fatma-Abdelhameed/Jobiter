@@ -40,10 +40,11 @@ const routes:Routes = [
     EditJobComponent
   ],
   imports: [
-    CommonModule,RouterModule.forChild(routes),
+    CommonModule,
+    RouterModule.forChild(routes),
     CalendarModule,
-    BrowserModule,
-    BrowserAnimationsModule,
+    // BrowserModule,
+    // BrowserAnimationsModule,
     ConfirmPopupModule,
     PaginatorModule,
     TableModule,
