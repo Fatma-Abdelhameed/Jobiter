@@ -40,3 +40,41 @@
 .company-profile .p-inputswitch-checked .p-inputswitch-slider		{
     right: 0;
 }
+.job-detail .p-tabview-ink-bar{
+  display:none !important;
+}
+.job-detail .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link:focus{
+  box-shadow: none !important;
+}
+.job-detail .p-element p-ripple p-tabview-nav-link *{
+  background: #8DD2F2;
+}
+.job-detail .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link,
+.job-detail .p-tabview .p-tabview-nav li .p-tabview-nav-link{
+  font-size:30px;
+  background: none;
+  border: none;
+  border-radius:50px;
+  transition: all 0.7s ease;
+}
+.job-detail .p-tabview .p-tabview-left-icon{
+  font-size:30px;
+  margin-left:1.5rem;
+}
+.job-detail .p-tabview .p-tabview-nav li .p-tabview-nav-link{
+  color: #8DD2F2;
+}
+.job-detail .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link{
+  color: white;
+  background: #8DD2F2;
+}
+.job-detail .p-tabview-nav{
+  display:flex;
+  justify-content: center;
+  -webkit-justify-content: center;
+  border: 1px solid #8DD2F2;
+  border-radius:50px;
+  width:fit-content;
+  padding-bottom: 2px;
+  margin: 0 auto;
+}
