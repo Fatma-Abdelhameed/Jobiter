@@ -41,4 +41,7 @@ export class ApplicantService {
   changePassword(id:number, password:string){
     return this.http.put("", password)
   }
+  addWorkExperience(id:number, data:{}){
+    return this.http.post("", data)
+  }
 }

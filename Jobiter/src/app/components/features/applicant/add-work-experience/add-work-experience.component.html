@@ -1,0 +1,30 @@
+<div class="applicant-add-work-exp mt-4">
+    <h5 class="add-work-exp-header text-center mb-4">Change Password</h5>
+    <div class="add-work-exp mt-2 mb-3 m-auto col-md-3 col-xs-10 p-4">
+        <form class="row" #addWorkExp="ngForm">
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputJobTitle" class="form-label required">Job Title</label>
+                <input #jobTitle="ngModel" name="jobTitle" [(ngModel)] = "formData.jobTitle" type="text" class="form-control" id="exampleInputJobTitle" required>
+                <span class="error" *ngIf="jobTitle.errors?.['required'] && jobTitle.touched">This Field Is Required</span>
+            </div>
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputCompanyName" class="form-label required">Company Name</label>
+                <input #companyName="ngModel" name="companyName" [(ngModel)] = "formData.companyName" type="text" class="form-control" id="exampleInputCompanyName">
+                <span class="error" *ngIf="companyName.errors?.['required'] && companyName.touched">This Field Is Required</span>
+            </div>
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputstartDate" class="form-label required">Start Date</label>
+                <input #startDate="ngModel" name="startDate" [(ngModel)] = "formData.startDate" type="date" class="form-control" id="exampleInputstartDate" required>
+                <span class="error" *ngIf="startDate.errors?.['required'] && startDate.touched">This Field Is Required</span>
+            </div>
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputendDate" class="form-label required">End Date</label>
+                <input #endDate="ngModel" name="endDate" [(ngModel)] = "formData.endDate" type="date" class="form-control" id="exampleInputendDate" required>
+                <span class="error" *ngIf="endDate.errors?.['required'] && endDate.touched">This Field Is Required</span>
+            </div>
+            <div class="mb-3 col-12 text-center">
+                <input name="submit" type="submit" value="Submit" class="submit btn" (click)="addExp(addWorkExp)">
+            </div>
+        </form>
+    </div>
+</div>

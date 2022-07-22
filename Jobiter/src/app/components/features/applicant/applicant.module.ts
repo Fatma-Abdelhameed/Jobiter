@@ -9,6 +9,7 @@ import { ApplyForJobComponent } from './apply-for-job/apply-for-job.component';
 import { ApplicantProfileComponent } from './applicant-profile/applicant-profile.component';
 import { EditBasicInfoComponent } from './edit-basic-info/edit-basic-info.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { AddWorkExperienceComponent } from './add-work-experience/add-work-experience.component';
 
 
 
@@ -19,7 +20,8 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
     ApplyForJobComponent,
     ApplicantProfileComponent,
     EditBasicInfoComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    AddWorkExperienceComponent
   ],
   imports: [
     CommonModule,
@@ -27,6 +29,6 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
     RatingModule,
     InputSwitchModule
   ],
-  exports:[ChangePasswordComponent]
+  exports:[AddWorkExperienceComponent]
 })
 export class ApplicantModule { }
