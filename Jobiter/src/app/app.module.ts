@@ -12,6 +12,7 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ApplicantSignUpComponent } from './components/features/applicant-sign-up/applicant-sign-up.component';
+import { ApplicantModule } from './components/features/applicant/applicant.module';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ApplicantSignUpComponent } from './components/features/applicant-sign-u
     HttpClientModule,
     CompanyModule,
     RouterModule,
+    ApplicantModule
   ],
   providers: [],
   bootstrap: [AppComponent]

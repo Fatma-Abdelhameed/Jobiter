@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Company } from 'src/app/_models/company';
+import { ApplicantService } from 'src/app/_services/applicant.service';
 
 @Component({
   selector: 'app-all-companies',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./all-companies.component.css']
 })
 export class AllCompaniesComponent implements OnInit {
-
-  constructor() { }
+  keyWord:string = ''
+  rating:number = 4
+  companies:Company[] = []
+  constructor(public comps:ApplicantService) { }
 
   ngOnInit(): void {
+    this.comps.getAllCompanies().subscribe({
+      next:(company)=>{
+        //this.companies.push(new Company(company.id, company.companyName,)) 
+      }
+    })
   }
 
 }

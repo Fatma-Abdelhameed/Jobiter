@@ -1,0 +1,35 @@
+.all-companies-header h4{
+    color: #27B4FB;
+}
+.search{
+    padding: 9px;
+}
+.search-icon{
+    background-color: #DCF1FB;
+    color: #075D9D;
+}
+.company-image{
+    width: 150px;
+    height: 150px;
+    border: 1px solid #27B4FB;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 10%), 0 3px 10px 0 rgb(0 0 0 / 10%)
+}
+.company-image img{
+    width: 70%;
+    height: 70%;
+}
+.companies{
+    width: 70%;
+    margin: 40px auto;
+}
+.company{
+    box-sizing: border-box;
+    border: 1px solid #BEBEBE;
+    border-radius: 10px;
+    padding: 15px 20px;
+}
+.company-name{
+    color: #075D9D;
+}

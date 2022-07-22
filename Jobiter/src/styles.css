@@ -78,3 +78,6 @@
   padding-bottom: 2px;
   margin: 0 auto;
 }
+.companies .company .p-rating .p-rating-icon.pi-star-fill	{
+  color: rgb(255, 255, 0);
+}

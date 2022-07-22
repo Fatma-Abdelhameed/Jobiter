@@ -10,4 +10,7 @@ export class ApplicantService {
   getCities(){
     return this.http.get("")
   }
+  getAllCompanies(){
+    return this.http.get("")
+  }
 }

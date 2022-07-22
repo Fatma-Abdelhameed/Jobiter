@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AllCompaniesComponent } from './all-companies/all-companies.component';
+import { FormsModule } from '@angular/forms';
+import {RatingModule} from 'primeng/rating';
 
 
 
@@ -9,7 +11,10 @@ import { AllCompaniesComponent } from './all-companies/all-companies.component';
     AllCompaniesComponent
   ],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    FormsModule,
+    RatingModule
+  ],
+  exports:[AllCompaniesComponent]
 })
 export class ApplicantModule { }

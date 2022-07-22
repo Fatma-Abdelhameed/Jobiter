@@ -16,6 +16,11 @@ const routes: Routes = [
     loadChildren: ()=>import('./components/features/company/company.module').then(m=>m.CompanyModule),
     canActivate:[AuthorizedGuard]
   },
+  {
+    path:'applicant',
+    loadChildren: ()=>import('./components/features/applicant/applicant.module').then(m=>m.ApplicantModule),
+    canActivate:[AuthorizedGuard]
+  },
 ];
 
 @NgModule({
