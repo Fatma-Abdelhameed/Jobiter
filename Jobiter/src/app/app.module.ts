@@ -11,6 +11,7 @@ import { CompanyModule } from './components/features/company/company.module';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ApplicantSignUpComponent } from './components/features/applicant-sign-up/applicant-sign-up.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SignUpComponent,
     NavbarComponent,
     LoginComponent,
+    ApplicantSignUpComponent,
   ],
   imports: [
     BrowserModule,

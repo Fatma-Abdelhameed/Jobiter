@@ -1,0 +1,99 @@
+<div class="applicant-sign-up mt-4">
+    <h5 class="sign-up-header text-center mb-4">Aplicant Sign Up</h5>
+    <div class="sign-up mt-2 mb-3 m-auto">
+        <form class="row" #signup="ngForm">
+            <div class="form-controls mb-3 col-md-6 col-xs-12">
+                <label for="exampleInputFirstName" class="form-label required">First Name</label>
+                <input name="name" #firstname="ngModel" [(ngModel)] = "formData.firstname" type="text" class="form-control"  id="exampleInputFirstName" placeholder="eg, Fatma" minlength="3" required>
+                <span class="error" *ngIf="firstname.errors?.['required'] && firstname.touched">This Field Is Required</span>
+                <span class="error" *ngIf="firstname.errors?.['minlength']">First Name must be more than 3 characters</span>
+            </div>
+            <div class="form-controls mb-3 col-md-6 col-xs-12">
+                <label for="exampleInputLastName" class="form-label required">Last Name</label>
+                <input name="name" #lastname="ngModel" [(ngModel)] = "formData.lastname" type="text" class="form-control"  id="exampleInputLastName" placeholder="eg, Abdelhameed" minlength="3" required>
+                <span class="error" *ngIf="lastname.errors?.['required'] && lastname.touched">This Field Is Required</span>
+                <span class="error" *ngIf="lastname.errors?.['minlength']">Last Name must be more than 3 characters</span>
+            </div>
+            <div class="form-controls mb-3 col-md-6 col-xs-12">
+                <label for="exampleInputEmail1" class="form-label required">Email</label>
+                <input name="email" #email="ngModel" [(ngModel)] = "formData.email" type="email" class="form-control" id="exampleInputEmail1" placeholder="eg, fatma@gmail.com" pattern ='^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$' required>
+                <span class="error" *ngIf="email.errors?.['required'] && email.touched">This Field Is Required</span>
+                <span class="error" *ngIf="email.errors?.['pattern'] && email.touched">Must be email</span>
+            </div>
+            <div class="form-controls mb-3 col-md-6 col-xs-12">
+                <label for="exampleInputPassword" class="form-label required">Password</label>
+                <input name="password" #password="ngModel" [(ngModel)] = "formData.password" type="password" class="form-control" id="exampleInputPassword" placeholder="eg, fatma12_ABC" pattern = '^\S*(?=\S{8,})(?=\S*\d)(?=\S*[A-Z])(?=\S*[a-z])(?=\S*[!@#$%^&*? ])\S*$' required>
+                <span class="error" *ngIf="password.errors?.['required'] && password.touched">This Field Is Required</span>
+                <span class="error" *ngIf="password.errors?.['pattern'] && password.touched">
+                    <ul>
+                        <li>Password must be at least 8 characters</li>
+                        <li>At least 1 lowercase letter</li>
+                        <li>At least 1 uppercase letter</li>
+                        <li>At least 1 letter</li>
+                        <li>At least 1 special character</li>
+                    </ul>
+                </span>
+            </div>
+            <div class="form-controls mb-3 col-md-6 col-xs-12">
+                <label for="exampleInputConfirmPass" class="form-label required">Confirm Password</label>
+                <input #copass="ngModel" [(ngModel)] = "formData.confirm_password" name="confirmPass" type="password" class="form-control" id="exampleInputConfirmPass" placeholder="Repeat Password" required>
+                <span class="error" *ngIf="copass.errors?.['required'] && copass.touched">This Field Is Required</span>
+                <span class="error" *ngIf="copass.value != password.value  && copass.touched">Must match previous password</span>
+            </div>
+            <div class="form-controls mb-3 col-md-6 col-xs-12">
+                <label for="exampleInputJobTitle" class="form-label required">Job Title</label>
+                <input #jobTitle="ngModel" name="address" [(ngModel)] = "formData.job_title" type="text" class="form-control" id="exampleInputJobTitle" placeholder="eg,Frontend Developer" required>
+                <span class="error" *ngIf="jobTitle.errors?.['required'] && jobTitle.touched">This Field Is Required</span>
+            </div>
+            <div class="form-controls mb-3 col-md-6 col-xs-12">
+                <label for="exampleInputPhone" class="form-label required">Phone</label>
+                <input #phone="ngModel" name="phone" [(ngModel)] = "formData.phone" type="tel" class="form-control" id="exampleInputPhone" placeholder="eg, 01256984215" pattern="^01[0-2,5]{1}[0-9]{8}$" required>
+                <span class="error" *ngIf="phone.errors?.['required'] && phone.touched">This Field Is Required</span>
+                <span class="error" *ngIf="phone.errors?.['pattern'] && phone.touched">Phone must be 11 digits and start with 01</span>
+            </div>
+            <div class="form-controls mb-3 col-md-6 col-xs-12">
+                <label for="exampleInputCity" class="form-label required">City</label>
+                <select #city="ngModel" name="city" [(ngModel)] = "formData.city" class="form-select" aria-label="Default select example" id="exampleInputCity" required>
+                    <option value="Cairo">Cairo</option>
+                </select>
+                <span class="error" *ngIf="city.errors?.['required'] && city.touched">This Field Is Required</span>
+            </div>
+            <div class="form-controls mb-3 col-md-6 col-xs-12">
+                <label for="exampleInputLevel" class="form-label required">Level</label>
+                <select #level="ngModel" name="city" [(ngModel)] = "formData.level" class="form-select" aria-label="Default select example" id="exampleInputLevel" required>
+                    <option value="junior">Junior</option>
+                </select>
+                <span class="error" *ngIf="level.errors?.['required'] && level.touched">This Field Is Required</span>
+            </div>
+            <div class="form-controls mb-3 col-md-6 col-xs-12">
+                <label for="exampleInputFaculty" class="form-label required">Faculty</label>
+                <input #faculty="ngModel" name="faculty" [(ngModel)] = "formData.faculty" type="text" class="form-control" id="exampleInputFaculty" placeholder="eg, Science" required>
+                <span class="error" *ngIf="faculty.errors?.['required'] && faculty.touched">This Field Is Required</span>
+            </div>
+            <div class="form-controls mb-3 col-md-6 col-xs-12">
+                <label for="exampleInputGender" class="form-label required">Gender</label>
+                <select #gender="ngModel" name="gender" [(ngModel)] = "formData.gender" class="form-select" aria-label="Default select example" id="exampleInputGender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <span class="error" *ngIf="gender.errors?.['required'] && gender.touched">This Field Is Required</span>
+            </div>
+            <div class="form-controls mb-3 col-md-6 col-xs-12">
+                <label for="exampleInputDate" class="form-label">Date of Birth</label>
+                <input name="dateOfBirth" [(ngModel)] = "formData.date_of_birth" type="date" class="form-control" id="exampleInputDate" >
+            </div>
+            <div class="form-controls mb-3 col-md-6 col-xs-12">
+                <label for="exampleInputImage" class="form-label">Profile Image</label>
+                <input #image="ngModel" name="image" [(ngModel)] = "formData.profile_image" type="file" accept="image/*" class="form-control" id="exampleInputImage">
+                <span class="error" *ngIf="image.errors?.['accept'] && image.touched">File must be image like .png, .jpg</span>
+            </div>
+            <div class="form-controls mb-3 col-md-6 col-xs-12">
+                <label for="exampleInputImage" class="form-label">CV</label>
+                <input #cv="ngModel" name="image" [(ngModel)] = "formData.profile_image" type="file" class="form-control" id="exampleInputImage">
+            </div>
+            <div class="mb-3 col-12 text-center">
+                <input name="submit" type="submit" value="Submit" class="submit btn" (click)="signUp(signup)">
+            </div>
+        </form>
+    </div>
+</div>
