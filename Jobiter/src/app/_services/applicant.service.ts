@@ -38,4 +38,7 @@ export class ApplicantService {
   editBasicInfo(id:number, data:{}){
     return this.http.put("", data)
   }
+  changePassword(id:number, password:string){
+    return this.http.put("", password)
+  }
 }
