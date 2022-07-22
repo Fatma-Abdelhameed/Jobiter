@@ -20,4 +20,19 @@ export class ApplicantService {
   applyForJob(applicantId:number, yearsOfExp:number, cv:string, cover_letter:string, starting_date:string){
     return this.http.post("",{})
   }
+  getNotificationState(id:number){
+    return this.http.get("")
+  }
+  changeNotificationsState(id:number, state:boolean){
+    return this.http.post("", state)
+  }
+  getProfileDetails(id:number){
+    return this.http.get("")
+  }
+  getWorkExperience(id:number){
+    return this.http.get("")
+  }
+  deleteWorkExperience(id:number){
+    return this.http.delete("")
+  }
 }

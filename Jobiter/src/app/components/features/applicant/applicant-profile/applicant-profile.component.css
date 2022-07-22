@@ -1,0 +1,100 @@
+
+.applicant-details, .work-exp, .basic-info, .login-info{
+    border: 1px solid #CCCCCC;
+    position: relative;
+    margin-top: 65px;
+    border-radius: 10px;
+    padding: 15px;
+}
+.applicant-details{
+    height: 80px;
+    margin-bottom: 25px;
+    height: 110px;
+}
+.applicant-details .details{
+    margin-left: 15%;
+    box-sizing: border-box;
+}
+.applicant-name, .name-job-title h6{
+    color: #075D9D;
+}
+.accept{
+    background-color: #8DD2F2;
+    color: #fff;
+}
+.profile-image{
+    position: absolute;
+    z-index: 999;
+    margin: -40px -50px;
+    width: 150px;
+    height: 150px;
+    border: 1px solid #27B4FB;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 10%), 0 3px 10px 0 rgb(0 0 0 / 10%)
+}
+.image{
+    width: 90%;
+    height: 90%;
+    border-radius: 100%;
+    margin: 5% 0;;
+}
+.notification label{
+    color: #979797;
+    font-size: 15px;
+}
+.edit, .add{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+.edit, .edit-exp{
+    background-color: #DFF4FE;
+    color: #27B4FB;
+}
+.add{
+    background-color: #8EE5BB;
+    color: #06C568;
+}
+.section-header h5{
+    color: #075D9D;
+}
+.section-header h5::after{
+    content: '';
+    width: 5%;
+    border-bottom: 3px solid #27B4FB;
+    display: block;
+    margin-top: 10px;
+}
+.section-body .title{
+    color: #4A4A4A;
+    font-size: 13px;
+    font-weight: bold;
+}
+.section-body .content{
+    color: #979797;
+    font-size: 12px;
+    font-weight: bold;
+}
+.change-pass, .show-cv{
+    background-color: #DFF4FE;
+    color: #27B4FB;
+    font-size: 12px;
+}
+.exp{
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    width: 90%;
+    margin: auto;
+}
+.exp-details .position-name{
+    color: #27B4FB;
+}
+.exp-details .company-address, .exp-details .working-period{
+    color: #979797;
+    font-size: 12px;
+}
+.delete-exp{
+    background-color: #F4CECE;
+    color: #FF0000;
+}
