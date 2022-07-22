@@ -10,31 +10,35 @@ import { TokenStorageService } from 'src/app/_services/token-storage.service';
 })
 export class LoginComponent implements OnInit {
   formData = {
-    email:'',
+    username:'',
     password:''
   }
+  response:any
   constructor(public router : Router, public auth:AuthenticationService, public token:TokenStorageService) { 
   }
-  signUp(data:any){
+  Login(data:any){
     if(data.valid){
-      this.auth.login(this.formData.email, this.formData.password).subscribe({
-          next: user=>{
-            this.auth.isLogged = 'true'
-            //this.auth.currentUserType = user.type
-            sessionStorage.setItem('isLogged', String(this.auth.isLogged))
-            sessionStorage.setItem('currentUserType', this.auth.currentUserType)
-            //this.token.saveToken(data.token)
-            this.token.saveUser(user)
+      this.auth.login(this.formData.username, this.formData.password).subscribe({
+          next: res=>{
+            this.response=res
+            if(this.response.id){
+                this.auth.isLogged = 'true'
+                this.auth.currentUserType = this.response.userType
+                sessionStorage.setItem('isLogged', String(this.auth.isLogged))
+                sessionStorage.setItem('currentUserType', this.response.userType)
+                this.token.saveUser(this.response)
+                if(sessionStorage.getItem('currentUserType') == 'COMPANY'){
+                  this.router.navigateByUrl('/company')
+                }else if(sessionStorage.getItem('currentUserType') == ''){
+                  this.router.navigateByUrl('applicant')
+                }
+            }
+            
           },
           error:()=>{
 
           },
           complete:()=>{
-            if(sessionStorage.getItem('currentUserType') == 'company'){
-              this.router.navigateByUrl('company')
-            }else if(sessionStorage.getItem('currentUserType') == ''){
-              this.router.navigateByUrl('applicant')
-            }
           }
         })
     }
