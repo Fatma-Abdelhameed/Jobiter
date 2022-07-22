@@ -17,4 +17,7 @@ export class ApplicantService {
   getJobDetails(id:number){
     return this.http.get("");
   }
+  applyForJob(applicantId:number, yearsOfExp:number, cv:string, cover_letter:string, starting_date:string){
+    return this.http.post("",{})
+  }
 }
