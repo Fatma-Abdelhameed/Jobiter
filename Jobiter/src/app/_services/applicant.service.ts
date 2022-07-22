@@ -35,4 +35,7 @@ export class ApplicantService {
   deleteWorkExperience(id:number){
     return this.http.delete("")
   }
+  editBasicInfo(id:number, data:{}){
+    return this.http.put("", data)
+  }
 }

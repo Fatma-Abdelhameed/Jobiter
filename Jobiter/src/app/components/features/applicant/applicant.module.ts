@@ -7,6 +7,7 @@ import {RatingModule} from 'primeng/rating';
 import { JobDetailsComponent } from './job-details/job-details.component';
 import { ApplyForJobComponent } from './apply-for-job/apply-for-job.component';
 import { ApplicantProfileComponent } from './applicant-profile/applicant-profile.component';
+import { EditBasicInfoComponent } from './edit-basic-info/edit-basic-info.component';
 
 
 
@@ -15,7 +16,8 @@ import { ApplicantProfileComponent } from './applicant-profile/applicant-profile
     AllCompaniesComponent,
     JobDetailsComponent,
     ApplyForJobComponent,
-    ApplicantProfileComponent
+    ApplicantProfileComponent,
+    EditBasicInfoComponent
   ],
   imports: [
     CommonModule,
@@ -23,6 +25,6 @@ import { ApplicantProfileComponent } from './applicant-profile/applicant-profile
     RatingModule,
     InputSwitchModule
   ],
-  exports:[ApplicantProfileComponent]
+  exports:[EditBasicInfoComponent]
 })
 export class ApplicantModule { }
