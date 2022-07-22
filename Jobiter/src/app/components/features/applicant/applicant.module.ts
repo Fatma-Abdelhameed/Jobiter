@@ -10,6 +10,7 @@ import { ApplicantProfileComponent } from './applicant-profile/applicant-profile
 import { EditBasicInfoComponent } from './edit-basic-info/edit-basic-info.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { AddWorkExperienceComponent } from './add-work-experience/add-work-experience.component';
+import { EditWorkExperienceComponent } from './edit-work-experience/edit-work-experience.component';
 
 
 
@@ -21,7 +22,8 @@ import { AddWorkExperienceComponent } from './add-work-experience/add-work-exper
     ApplicantProfileComponent,
     EditBasicInfoComponent,
     ChangePasswordComponent,
-    AddWorkExperienceComponent
+    AddWorkExperienceComponent,
+    EditWorkExperienceComponent
   ],
   imports: [
     CommonModule,
@@ -29,6 +31,6 @@ import { AddWorkExperienceComponent } from './add-work-experience/add-work-exper
     RatingModule,
     InputSwitchModule
   ],
-  exports:[AddWorkExperienceComponent]
+  exports:[EditWorkExperienceComponent]
 })
 export class ApplicantModule { }

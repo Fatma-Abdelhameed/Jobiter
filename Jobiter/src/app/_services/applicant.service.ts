@@ -44,4 +44,7 @@ export class ApplicantService {
   addWorkExperience(id:number, data:{}){
     return this.http.post("", data)
   }
+  editWorkExperience(id:number, data:{}){
+    return this.http.put("", data)
+  }
 }
