@@ -12,20 +12,21 @@ export class AuthenticationService {
   isLogged = 'false'
   currentUserType = ''
   constructor(public http: HttpClient) {}
-   companySignUp(name:string, email:string, password:string, confirmPass:string, 
-    phone:string, address:string, city:string, industry:string, startedAt:string, 
-    size:Number, imageUrl:string, websiteLink:string, about:string){
-      return this.http.post('http://127.0.0.1:8000/accounts/company_signup/', {
-        name,
+   companySignUp(company_name:string, email:string,username:string, password:string, password_confirm:string, 
+    phone:string, address:string, city:string, industry:string, started_at:string, 
+    company_size:String, imageUrl:string, websiteLink:string, about:string){
+      return this.http.post('http://127.0.0.1:8000/api/accounts/company_signup/', {
+        company_name,
+        username,
         email,
         password,
-        confirmPass,
+        password_confirm,
         phone,
         address,
         city,
         industry,
-        startedAt,
-        size,
+        started_at,
+        company_size:null,
         imageUrl,
         websiteLink,
         about

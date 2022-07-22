@@ -8,6 +8,9 @@ import { NavbarComponent } from './components/core/navbar/navbar.component';
 import { LoginComponent } from './components/features/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CompanyModule } from './components/features/company/company.module';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,10 +21,13 @@ import { CompanyModule } from './components/features/company/company.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    CommonModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
     CompanyModule,
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
