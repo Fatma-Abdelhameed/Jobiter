@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApplicantService } from 'src/app/_services/applicant.service';
 import { AuthenticationService } from 'src/app/_services/authentication.service';
 import { TokenStorageService } from 'src/app/_services/token-storage.service';
 
@@ -25,7 +26,8 @@ export class ApplicantSignUpComponent implements OnInit {
     profile_image:'',
     cv:''
   }
-  constructor(public router : Router, public auth:AuthenticationService, public token:TokenStorageService) { }
+  cities:[] = []
+  constructor(public router : Router, public auth:AuthenticationService, public token:TokenStorageService, public applicant:ApplicantService) { }
   signUp(form:any){
     if(form.valid){
       this.auth.applicantSignUp(this.formData.firstname, this.formData.lastname, this.formData.email,
@@ -45,6 +47,11 @@ export class ApplicantSignUpComponent implements OnInit {
     }
   }
   ngOnInit(): void {
+    this.applicant.getCities().subscribe({
+      next:(city)=>{
+        //this.cities.push(city)
+      }
+    })
   }
 
 }

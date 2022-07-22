@@ -54,7 +54,7 @@
             <div class="form-controls mb-3 col-md-6 col-xs-12">
                 <label for="exampleInputCity" class="form-label required">City</label>
                 <select #city="ngModel" name="city" [(ngModel)] = "formData.city" class="form-select" aria-label="Default select example" id="exampleInputCity" required>
-                    <option value="Cairo">Cairo</option>
+                    <option *ngFor = "let city of cities" value="city">{{city}}</option>
                 </select>
                 <span class="error" *ngIf="city.errors?.['required'] && city.touched">This Field Is Required</span>
             </div>
