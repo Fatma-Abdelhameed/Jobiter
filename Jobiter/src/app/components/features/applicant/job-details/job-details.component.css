@@ -1,0 +1,57 @@
+.job-details{
+    margin: 30px auto;
+}
+.job-details .job-header{
+    margin:15px;
+    box-sizing: border-box;
+    border: 1px solid #BEBEBE;
+    border-radius: 10px;
+    padding: 15px 20px;
+}
+.job-header h5{
+    color: #27B4FB;
+}
+.job-details .company-image{
+    width: 150px;
+    height: 150px;
+    border: 1px solid #27B4FB;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 10%), 0 3px 10px 0 rgb(0 0 0 / 10%)
+}
+.job-details .company-image img{
+    width: 70%;
+    height: 70%;
+}
+.apply{
+    background-color: #76BA99;
+    color: #fff;
+    padding: 8px 16px;
+}
+.details, .job-requirements{
+    border: 1px solid #CCCCCC;
+    position: relative;
+    margin-top: 65px;
+    border-radius: 10px;
+    padding: 15px;
+}
+.section-header h5{
+    color: #075D9D;
+}
+.section-header h5::after{
+    content: '';
+    width: 5%;
+    border-bottom: 3px solid #27B4FB;
+    display: block;
+    margin-top: 10px;
+}
+.section-body .title{
+    color: #4A4A4A;
+    font-size: 13px;
+    font-weight: bold;
+}
+.section-body .content{
+    color: #979797;
+    font-size: 12px;
+    font-weight: bold;
+}
