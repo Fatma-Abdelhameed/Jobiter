@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/_services/authentication.service';
+import { TokenStorageService } from 'src/app/_services/token-storage.service';
 
 @Component({
   selector: 'app-applicant-sign-up',
@@ -22,9 +25,24 @@ export class ApplicantSignUpComponent implements OnInit {
     profile_image:'',
     cv:''
   }
-  constructor() { }
+  constructor(public router : Router, public auth:AuthenticationService, public token:TokenStorageService) { }
   signUp(form:any){
-    
+    if(form.valid){
+      this.auth.applicantSignUp(this.formData.firstname, this.formData.lastname, this.formData.email,
+        this.formData.password, this.formData.confirm_password, this.formData.job_title, this.formData.phone,
+        this.formData.city, this.formData.level, this.formData.faculty, this.formData.date_of_birth,
+        this.formData.gender, this.formData.profile_image, this.formData.cv).subscribe({
+          next: applicant=>{
+            /*this.auth.isLogged = 'true'
+            this.auth.currentUserType = 'applicant'
+            sessionStorage.setItem('isLogged', String(this.auth.isLogged))
+            sessionStorage.setItem('currentUserType', this.auth.currentUserType)
+            //this.token.saveToken(data.token)
+            this.token.saveUser(applicant)*/
+          }
+        })
+      this.router.navigateByUrl('login')
+    }
   }
   ngOnInit(): void {
   }

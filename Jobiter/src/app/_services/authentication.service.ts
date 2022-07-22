@@ -32,6 +32,26 @@ export class AuthenticationService {
         about
       })
    }
+   applicantSignUp(firstname:string, lastname:string, email:string, password:string,confirm_password:string,
+    job_title:string, phone:string, city:string, level:string, faculty:string, date_of_birth:string,
+    gender:string, profile_image:string, cv:string){
+      return this.http.post('', {
+        firstname,
+        lastname,
+        email,
+        password,
+        confirm_password,
+        job_title,
+        phone,
+        city,
+        level,
+        faculty,
+        date_of_birth,
+        gender,
+        profile_image,
+        cv
+        })
+   }
    login(email:string, password:string){
 
    }
