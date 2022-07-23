@@ -28,7 +28,6 @@ const routes:Routes = [
   {path:'post-new-job',component:PostNewJobComponent},
   {path:'company-profile', component:CompanyProfileComponent},
   {path:'edit-name-image', component:EditCompanyNameImageComponent},
-
   {path:'edit-company-about', component:EditCompanyAboutComponent},
   {path:'edit-basic-info', component:EditCompanyBasicInfoComponent},
   {path:'edit-job/:id', component:EditJobComponent},
@@ -62,6 +61,6 @@ const routes:Routes = [
     InputSwitchModule
 
   ],
-  exports: [EmployeeProfileComponent, AllJobsComponent]
+  exports: []
 })
 export class CompanyModule { }

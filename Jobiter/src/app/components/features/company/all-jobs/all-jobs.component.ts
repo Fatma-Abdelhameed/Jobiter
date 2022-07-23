@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ConfirmationService} from 'primeng/api';
 import { Job } from 'src/app/_models/job';
 import { CompanyService } from 'src/app/_services/company.service';
+import { TokenStorageService } from 'src/app/_services/token-storage.service';
 
 @Component({
   selector: 'app-all-jobs',
@@ -10,12 +11,13 @@ import { CompanyService } from 'src/app/_services/company.service';
   providers: [ConfirmationService]
 })
 export class AllJobsComponent implements OnInit {
-  allJobs:Job[] = []
+  allJobs:any[] = []
+  resData:any
   deletedRecordAlert:boolean = false
   dateValue:Date = new Date()
   selectedDate:any
   keyWord:string = ''
-  constructor(public confirmationService: ConfirmationService, public company: CompanyService) { }
+  constructor(public confirmationService: ConfirmationService, public companySer: CompanyService, public token:TokenStorageService) { }
   
   confirm(event: any, id:number) {
     this.confirmationService.confirm({
@@ -32,6 +34,13 @@ export class AllJobsComponent implements OnInit {
     });
   }
   ngOnInit(): void {
+    this.companySer.getAllJobs(this.token.getUser().id).subscribe(
+      (res)=>{
+        console.log(res)
+        this.allJobs.push(res)
+        console.log('>>>',this.allJobs[0])
+      }
+    )
   }
 
 }

@@ -21,9 +21,9 @@ export class ApplicantSignUpComponent implements OnInit {
     city:'',
     level:'',
     faculty:'',
-    date_of_birth:'',
+    dob:'',
     gender:'',
-    profile_image:'',
+    image:'',
     cv:''
   }
   cities:[] = []
@@ -32,8 +32,8 @@ export class ApplicantSignUpComponent implements OnInit {
     if(form.valid){
       this.auth.applicantSignUp(this.formData.firstname, this.formData.lastname, this.formData.email,
         this.formData.password, this.formData.confirm_password, this.formData.job_title, this.formData.phone,
-        this.formData.city, this.formData.level, this.formData.faculty, this.formData.date_of_birth,
-        this.formData.gender, this.formData.profile_image, this.formData.cv).subscribe({
+        this.formData.city, this.formData.level, this.formData.faculty, this.formData.dob,
+        this.formData.gender, this.formData.image, this.formData.cv).subscribe({
           next: applicant=>{
             /*this.auth.isLogged = 'true'
             this.auth.currentUserType = 'applicant'
