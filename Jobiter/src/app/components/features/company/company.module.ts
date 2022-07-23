@@ -21,14 +21,20 @@ import { EditCompanyBasicInfoComponent } from './edit-company-basic-info/edit-co
 import { EditCompanyAboutComponent } from './edit-company-about/edit-company-about.component';
 import { EditJobComponent } from './edit-job/edit-job.component';
 import { EmployeeProfileComponent } from './employee-profile/employee-profile.component';
+import { JobDetailsComponent } from './job-details/job-details.component';
 const routes:Routes = [
   {path:'',component:HomeComponent},
   {path:'all-jobs',component:AllJobsComponent},
   {path:'post-new-job',component:PostNewJobComponent},
   {path:'company-profile', component:CompanyProfileComponent},
-  {path:'edit-name-image', component:EditCompanyNameImageComponent}
+  {path:'edit-name-image', component:EditCompanyNameImageComponent},
+  {path:'change-password', component:ChangePasswordComponent},
+  {path:'edit-company-about', component:EditCompanyAboutComponent},
+  {path:'edit-basic-info', component:EditCompanyBasicInfoComponent},
+  {path:'edit-job/:id', component:EditJobComponent},
+  {path:'employee-profile/:id', component:EmployeeProfileComponent},
+  {path:'job-details/:id', component:JobDetailsComponent},
 ]
-
 @NgModule({
   declarations: [
     HomeComponent,
