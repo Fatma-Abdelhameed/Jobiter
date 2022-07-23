@@ -11,8 +11,10 @@ export class EditJobComponent implements OnInit {
   formData = {
     title:'',
     level:'',
+    status:'',
     type:'',
     requirements:'',
+    salary:''
   }
   noChangesError:boolean = false
   dataUpdated:boolean = false
