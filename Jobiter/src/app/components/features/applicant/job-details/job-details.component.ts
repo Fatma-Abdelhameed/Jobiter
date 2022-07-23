@@ -16,7 +16,7 @@ export class JobDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     /*this.applicant.getJobDetails(this.route.params.id).subscribe({
-      next:()=>{
+      next:(com)=>{
 
       }
     })*/

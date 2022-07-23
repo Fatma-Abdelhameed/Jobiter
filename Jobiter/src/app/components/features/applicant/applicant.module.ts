@@ -22,8 +22,24 @@ import { CompanyProfileInterviewQuestionsComponent } from './company-profile-int
 import { AddReviewComponent } from './add-review/add-review.component';
 import { AddSalaryComponent } from './add-salary/add-salary.component';
 import { AddInterviewQuestionsComponent } from './add-interview-questions/add-interview-questions.component';
+import { Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
 
-
+const routes:Routes = [
+  {path:'', component:HomeComponent},
+  {path:'job-details/:id', component:JobDetailsComponent},
+  {path:'company-profile:id', component:CompanyProfileComponent},
+  {path:'edit-basic-info', component:EditBasicInfoComponent},
+  {path:'edit-work-experience', component:EditWorkExperienceComponent},
+  {path:'change-password', component:ChangePasswordComponent},
+  {path:'apply-for-job/:id', component:ApplyForJobComponent},
+  {path:'applicant-profile', component:ApplicantProfileComponent},
+  {path:'all-companies', component:AllCompaniesComponent},
+  {path:'add-review/:id', component:AddReviewComponent},
+  {path:'add-salary/:id',component:AddSalaryComponent},
+  {path:'add-work-experience', component:AddWorkExperienceComponent},
+  {path:'add-interview-questions/:id', component:AddInterviewQuestionsComponent}
+]
 
 @NgModule({
   declarations: [

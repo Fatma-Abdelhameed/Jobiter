@@ -47,4 +47,22 @@ export class ApplicantService {
   editWorkExperience(id:number, data:{}){
     return this.http.put("", data)
   }
+  addInterviewQuestions(id:number, data:{}){
+    return this.http.post("", data)
+  }
+  addReview(id:number, data:{}){
+    return this.http.post("", data)
+  }
+  addSalary(id:number, data:{}){
+    return this.http.post("", data)
+  }
+  getCompanyOverview(id:number){
+    return this.http.get("")
+  }
+  getCompanyReviews(id:number){
+    return this.http.get("")
+  }
+  getCompanySalaries(id:number){
+    return this.http.get("")
+  }
 }
