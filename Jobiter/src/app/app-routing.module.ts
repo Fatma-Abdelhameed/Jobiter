@@ -13,8 +13,8 @@ const routes: Routes = [
   {path:'company-sign-up',component:SignUpComponent},
   {
     path:'company',
-    loadChildren: ()=>import('./components/features/company/company.module').then(m=>m.CompanyModule),
-    canActivate:[AuthorizedGuard]
+    loadChildren: ()=>import('./components/features/company/company.module').then(m=>m.CompanyModule)
+    //canActivate:[AuthorizedGuard]
   },
   {
     path:'applicant',

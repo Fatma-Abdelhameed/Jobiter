@@ -7,9 +7,19 @@ import {RatingModule} from 'primeng/rating';
 import { JobDetailsComponent } from './job-details/job-details.component';
 import { ApplyForJobComponent } from './apply-for-job/apply-for-job.component';
 import { ApplicantProfileComponent } from './applicant-profile/applicant-profile.component';
-import { HomeComponent } from './home/home.component';
-import {CalendarModule} from "primeng/calendar";
-import {SidebarModule} from "primeng/sidebar";
+import { EditBasicInfoComponent } from './edit-basic-info/edit-basic-info.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { AddWorkExperienceComponent } from './add-work-experience/add-work-experience.component';
+import { EditWorkExperienceComponent } from './edit-work-experience/edit-work-experience.component';
+import { CompanyProfileComponent } from './company-profile/company-profile.component';
+import { CompanyProfileOverviewComponent } from './company-profile-overview/company-profile-overview.component';
+import { CompanyProfileReviewsComponent } from './company-profile-reviews/company-profile-reviews.component';
+import { CompanyProfileSalariesComponent } from './company-profile-salaries/company-profile-salaries.component';
+import { CompanyProfileJobsComponent } from './company-profile-jobs/company-profile-jobs.component';
+import { CompanyProfileInterviewQuestionsComponent } from './company-profile-interview-questions/company-profile-interview-questions.component';
+import { AddReviewComponent } from './add-review/add-review.component';
+import { AddSalaryComponent } from './add-salary/add-salary.component';
+import { AddInterviewQuestionsComponent } from './add-interview-questions/add-interview-questions.component';
 
 
 
@@ -19,16 +29,26 @@ import {SidebarModule} from "primeng/sidebar";
     JobDetailsComponent,
     ApplyForJobComponent,
     ApplicantProfileComponent,
-    HomeComponent
+    EditBasicInfoComponent,
+    ChangePasswordComponent,
+    AddWorkExperienceComponent,
+    EditWorkExperienceComponent,
+    CompanyProfileComponent,
+    CompanyProfileOverviewComponent,
+    CompanyProfileReviewsComponent,
+    CompanyProfileSalariesComponent,
+    CompanyProfileJobsComponent,
+    CompanyProfileInterviewQuestionsComponent,
+    AddReviewComponent,
+    AddSalaryComponent,
+    AddInterviewQuestionsComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     RatingModule,
-    InputSwitchModule,
-    CalendarModule,
-    SidebarModule
+    InputSwitchModule
   ],
-  exports: [ApplicantProfileComponent, AllCompaniesComponent, HomeComponent]
+  exports:[CompanyProfileOverviewComponent]
 })
 export class ApplicantModule { }

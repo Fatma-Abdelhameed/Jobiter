@@ -1,0 +1,49 @@
+<div class="company-overview m-auto mt-4 col-md-6 col-xs-10">
+    <div class="basic-info mt-3 p-3">
+        <div class="section-header">
+            <h5>Basic Info</h5>
+        </div>
+        <div class="section-body mt-4">
+            <div class="row data mb-3 d-flex align-items-center">
+                <label class="col-md-6 col-xs-12 title">Email</label>
+                <span class="col-md-6 col-xs-12 content"></span>
+            </div>
+            <div class="row data mb-3 d-flex align-items-center">
+                <label class="col-md-6 col-xs-12 title">Started At</label>
+                <span class="col-md-6 col-xs-12 content"></span>
+            </div>
+            <div class="row data mb-3 d-flex align-items-center">
+                <label class="col-md-6 col-xs-12 title">Company Size</label>
+                <span class="col-md-6 col-xs-12 content">{{company.size}}</span>
+            </div>
+            <div class="row data mb-3 d-flex align-items-center">
+                <label class="col-md-6 col-xs-12 title">Phone</label>
+                <span class="col-md-6 col-xs-12 content">{{company.phone}}</span>
+            </div>
+            <div class="row data mb-3 d-flex align-items-center">
+                <label class="col-md-6 col-xs-12 title">Address</label>
+                <span class="col-md-6 col-xs-12 content">{{company.address}}</span>
+            </div>
+            <div class="row data mb-3 d-flex align-items-center">
+                <label class="col-md-6 col-xs-12 title">Industry</label>
+                <span class="col-md-6 col-xs-12 content">{{company.industry}}</span>
+            </div>
+            <div class="row data mb-3 d-flex align-items-center">
+                <label class="col-md-6 col-xs-12 title">Website Link</label>
+                <span class="col-md-6 col-xs-12 content">{{company.websiteLink}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="about-company mt-3 p-3">
+        <div class="section-header">
+            <h5>About Company</h5>
+        </div>
+        <div class="section-body mt-4 mb-3">
+            <div class="row data mb-3 d-flex align-items-center">
+                <p class="col-12 title">
+                    {{company.about}}                
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

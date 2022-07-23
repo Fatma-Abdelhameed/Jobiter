@@ -11,7 +11,7 @@ export class AuthorizedGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      if(this.authenticated.isLogged && this.authenticated.currentUserType =='company'){
+      if(this.authenticated.isLogged && this.authenticated.currentUserType =='COMPANY'){
         return true
       }else{
         this.router.navigateByUrl("")

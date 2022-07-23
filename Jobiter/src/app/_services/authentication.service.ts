@@ -52,9 +52,9 @@ export class AuthenticationService {
         cv
         })
    }
-   login(email:string, password:string){
-      return this.http.post("", {
-        email,
+   login(username:string, password:string){
+      return this.http.post("http://127.0.0.1:8000/api/accounts/login/", {
+        username,
         password
       })
    }

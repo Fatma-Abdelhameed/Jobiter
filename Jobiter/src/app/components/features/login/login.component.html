@@ -5,8 +5,8 @@
         <form class="row" #login="ngForm">
             <div class="form-controls mb-3 col-12">
                 <label for="exampleInputEmail1" class="form-label required">Username</label>
-                <input name="email" #cemail="ngModel" [(ngModel)] = "formData.email" type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Your Username"  required>
-                <span class="error" *ngIf="cemail.errors?.['required'] && cemail.touched">This Field Is Required</span>
+                <input name="email" #cusername="ngModel" [(ngModel)] = "formData.username" type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Your Username"  required>
+                <span class="error" *ngIf="cusername.errors?.['required'] && cusername.touched">This Field Is Required</span>
                 
             </div>
             <div class="form-controls mb-3 col-12">
@@ -24,7 +24,7 @@
                 </span>
             </div>
             <div class="mb-3 col-12 text-center">
-                <input name="submit" type="submit" value="Submit" class="submit btn">
+                <input name="submit" type="submit" value="Submit" class="submit btn" (click)="Login(login)">
             </div>
         </form>
     </div>

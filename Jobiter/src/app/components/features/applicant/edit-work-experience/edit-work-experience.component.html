@@ -1,0 +1,26 @@
+<div class="applicant-add-work-exp mt-4">
+    <h5 class="edit-work-exp-header text-center mb-4">Edit Work Experience</h5>
+    <div class="edit-work-exp mt-2 mb-3 m-auto col-md-3 col-xs-10 p-4">
+        <form class="row" #editWorkExp="ngForm">
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputJobTitle" class="form-label">Job Title</label>
+                <input #jobTitle="ngModel" name="jobTitle" [(ngModel)] = "formData.jobTitle" type="text" class="form-control" id="exampleInputJobTitle">
+            </div>
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputCompanyName" class="form-label">Company Name</label>
+                <input #companyName="ngModel" name="companyName" [(ngModel)] = "formData.companyName" type="text" class="form-control" id="exampleInputCompanyName">
+            </div>
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputstartDate" class="form-label">Start Date</label>
+                <input #startDate="ngModel" name="startDate" [(ngModel)] = "formData.startDate" type="date" class="form-control" id="exampleInputstartDate">
+            </div>
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputendDate" class="form-label">End Date</label>
+                <input #endDate="ngModel" name="endDate" [(ngModel)] = "formData.endDate" type="date" class="form-control" id="exampleInputendDate">
+            </div>
+            <div class="mb-3 col-12 text-center">
+                <input name="submit" type="submit" value="Submit" class="submit btn" (click)="saveChanges(editWorkExp)">
+            </div>
+        </form>
+    </div>
+</div>
