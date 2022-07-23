@@ -123,9 +123,11 @@ token:any
    getApplicantDetails(id:number){
       return this.http.get("")
    }
-   acceptApplicant(id:number){
-      return this.http.get("")
-   }
+   acceptApplicant(user_id:number,job_id:number){
+      console.log('userid---======',user_id)
+      this.token=sessionStorage.getItem('auth-user')
+      return this.http.post(`http://127.0.0.1:8000/api/jobs/${job_id}/applied_employees/accept_employee/`, {'id':user_id},
+      {headers: new HttpHeaders().set('Authorization', 'token '+JSON.parse(this.token).token)})   }
 
 }
 

@@ -17,11 +17,11 @@
            <!-- <form>
             <input name="submit" type="submit" value="Save" class="submit btn" (click)="confirm()">
            </form>  -->
-            <button class="btn success col-2"><i class="fa fa-edit"></i> edit</button>
+            <button class="btn success col-2" (click)="Onedit(jobDetails.id)" ><i class="fa fa-edit"></i> edit</button>
           </div>
           <div class="row mt-4">
             <div class="recent-job-card-subtitle col-4">Job Status</div>
-            <div class="recent-job-card-text col-8"> {{jobDetails.status}} </div>
+            <div class="recent-job-card-text col-8"> {{jobDetails.status}}  </div>
           </div>
           <div class="row mt-4">
             <div class="recent-job-card-subtitle col-4">Position </div>
@@ -45,7 +45,10 @@
               <div class="details row">
                 <div class="name-job-title col-9">
                   <h4 class="applicant-name">{{applicant['employee']['first_name']}} {{applicant['employee']['last_name']}}</h4>
-                  <h6>{{applicant['employee']['job_title']}}</h6>
+                  <h6>{{applicant['employee']['level'] || 'Entry Level'}}</h6>
+                  <a class="btn accept" (click)="accept(applicant['employee']['id'])"><i class="fa-solid fa-circle-info me-2"></i>Details</a> 
+                  <a class="btn accept" (click)="viewProfile(applicant['employee']['id'])"><i class="fa-solid fa-circle-info me-2"></i>profile</a> 
+
                 </div>
                 <div class="col-3 d-flex align-items-center justify-content-end">
                   <!-- <a class="btn accept" [routerLink]="['/accept-applicant',applicant.id]">Accept</a> -->
