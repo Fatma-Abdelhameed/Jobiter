@@ -21,6 +21,7 @@ export class JobDetailsComponent implements OnInit {
   applicants=[]
 
   resData:any
+  app:any
   constructor(public confirmationService: ConfirmationService, public companySer:CompanyService, public route:ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -43,8 +44,9 @@ export class JobDetailsComponent implements OnInit {
 
     this.companySer.getJobApplicants(this.route.snapshot.params['id']).subscribe({
       next:(res)=>{
-        this.resData = res
-        this.applicants = this.resData.applicants
+        this.app = res
+        this.applicants = this.app
+        console.log(">>>",this.applicants)
       }
     })
 

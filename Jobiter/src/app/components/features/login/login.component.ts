@@ -30,9 +30,9 @@ export class LoginComponent implements OnInit {
                 
                 this.token.saveUser(this.response)
                 if(this.auth.currentUserType== 'COMPANY'){
-                  this.router.navigateByUrl('/company')
+                  window.location.href='/company'
                 }else if(this.auth.currentUserType == 'EMPLOYEE'){
-                  this.router.navigateByUrl('/applicant')
+                  window.location.href='/company'
                 }
             }
             

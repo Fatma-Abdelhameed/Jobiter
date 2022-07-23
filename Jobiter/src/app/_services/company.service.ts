@@ -116,13 +116,15 @@ token:any
 
 
    getJobApplicants(id:number){
-      return this.http.get("")
-   }
+      this.token=sessionStorage.getItem('auth-user')
+      return this.http.get(`http://127.0.0.1:8000/api/jobs/${id}/applied_employees`,
+      {headers: new HttpHeaders().set('Authorization', 'token '+JSON.parse(this.token).token)})
+      }
    getApplicantDetails(id:number){
       return this.http.get("")
    }
    acceptApplicant(id:number){
-      
+      return this.http.get("")
    }
 
 }

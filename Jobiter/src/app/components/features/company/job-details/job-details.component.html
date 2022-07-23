@@ -13,7 +13,9 @@
           </div>
           <div class="row mt-4 d-flex justify-content-center">
             <!-- <p-confirmPopup></p-confirmPopup> -->
-            <button (click)="confirm($event)" pButton icon="fa-solid fa-x" class="danger" label="Close">Close</button>
+            <button (click)="confirm($event)" pButton icon="fa-solid fa-x" class="danger" label="Close">
+              
+            </button>
            <!-- <form>
             <input name="submit" type="submit" value="Save" class="submit btn" (click)="confirm()">
            </form>  -->
@@ -37,14 +39,6 @@
       </p-tabPanel>
       <p-tabPanel header="Applicants" leftIcon="pi pi-fw pi-users">
         <div class="container recent-job-card" *ngFor="let applicant of applicants">
-          <div class="row d-flex justify-content-center">
-            <div class="recent-job-card-title col-6">Senior Frontend Using Angular</div>
-            <span class="recent-job-card-status col-1 closed">closed</span>
-          </div>
-          <div class="row d-flex justify-content-center">
-            <span class="recent-job-card-date col-3"><i class="fa fa-calendar"></i> July 4, 2022</span>
-            <span class="recent-job-card-date col-2"><i class="fa fa-globe"></i> Remotely</span>
-          </div>
           <div class="row mt-4 d-flex justify-content-center">
             <div class="applicant-details w-75">
               <div class="profile-image d-flex align-items-center justify-content-center">
@@ -52,15 +46,11 @@
               </div>
               <div class="details row">
                 <div class="name-job-title col-9">
-                  <h4 class="applicant-name">Osama Mohamed</h4>
-                  <h6>Junior Frontend Developer</h6>
+                  <h4 class="applicant-name">{{applicant['employee']['first_name']}} {{applicant['employee']['last_name']}}</h4>
+                  <h6>{{applicant['employee']['job_title']}}</h6>
                 </div>
                 <div class="col-3 d-flex align-items-center justify-content-end">
-<<<<<<< HEAD
                   <!-- <a class="btn accept" [routerLink]="['/accept-applicant',applicant.id]">Accept</a> -->
-=======
-                  <a class="btn accept" [routerLink]="['/accept-applicant',applicant]">Accept</a>
->>>>>>> 3fd5d4e534f30412061319b252037da6a99621f8
                 </div>
               </div>
             </div>
