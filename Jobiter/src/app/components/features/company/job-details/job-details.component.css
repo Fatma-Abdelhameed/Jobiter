@@ -30,15 +30,18 @@
   font-size:25px;
   font-weight:bold;
   color: #075D9D;
+  width:fit-content;
 }
 .recent-job-card-date{
   font-size:20px;
   font-weight:bold;
   color: #B5B5B5;
+  width:fit-content;
 }
 .recent-job-card-status{
   font-size:25px;
   font-weight:bold;
+  width:fit-content;
 }
 .open{
   color:#76BA99;
@@ -71,6 +74,7 @@
   font-weight:bold;
   color: #B5B5B5;
   text-align: justify;
+  word-wrap:break-word;
 }
 .applicant-details, .work-exp, .basic-info{
   border: 1px solid #CCCCCC;
