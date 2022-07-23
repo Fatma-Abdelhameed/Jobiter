@@ -4,14 +4,14 @@
     <div class="section-header">
       <h5>Salaries</h5>
     </div>
-    <div class="section-body my-5">
+    <div class="section-body my-5" *ngFor = "let salary of resData">
       <div class="row p-5">
-        <span class="col-9 job-title">Junior Frontend Developer</span>
+        <span class="col-9 job-title">{{salary.position}}</span>
         <span class="col-3">8000 LE/Monthly</span>
       </div>
       <div class="row p-5">
         <span class="col-9 job-title">Sales Manager</span>
-        <span class="col-3">12000 LE/Monthly</span>
+        <span class="col-3">{{salary.salary}} LE/Monthly</span>
       </div>
     </div>
   </div>

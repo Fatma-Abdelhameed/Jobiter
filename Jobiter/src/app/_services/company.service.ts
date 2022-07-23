@@ -100,6 +100,7 @@ token:any
 
 
 
+
    closeJob(jobId:number,data:any){
       
       this.token=sessionStorage.getItem('auth-user')
@@ -112,6 +113,17 @@ token:any
    }
 
  
+
+
+   getJobApplicants(id:number){
+      return this.http.get("")
+   }
+   getApplicantDetails(id:number){
+      return this.http.get("")
+   }
+   acceptApplicant(id:number){
+      return this.http.post
+   }
 
 }
 

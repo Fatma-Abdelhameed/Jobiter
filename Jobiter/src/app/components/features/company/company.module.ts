@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {TabViewModule} from 'primeng/tabview';
+import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { AllJobsComponent } from './all-jobs/all-jobs.component';
 import { PostNewJobComponent } from './post-new-job/post-new-job.component';
@@ -10,6 +10,8 @@ import { DateFilterPipe } from 'src/app/_pipes/date-filter.pipe';
 import { SearchPipe } from 'src/app/_pipes/search.pipe';
 import {ConfirmPopupModule} from 'primeng/confirmpopup';
 import {TableModule} from 'primeng/table';
+import {ButtonModule} from 'primeng/button';
+import {TabViewModule} from 'primeng/tabview';
 import {PaginatorModule} from 'primeng/paginator';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -22,6 +24,7 @@ import { EditCompanyAboutComponent } from './edit-company-about/edit-company-abo
 import { EditJobComponent } from './edit-job/edit-job.component';
 import { EmployeeProfileComponent } from './employee-profile/employee-profile.component';
 import { JobDetailsComponent } from './job-details/job-details.component';
+import { AcceptApplicantComponent } from './accept-applicant/accept-applicant.component';
 const routes:Routes = [
   {path:'',component:HomeComponent},
   {path:'all-jobs',component:AllJobsComponent},
@@ -33,6 +36,7 @@ const routes:Routes = [
   {path:'edit-job/:id', component:EditJobComponent},
   {path:'employee-profile/:id', component:EmployeeProfileComponent},
   {path:'job-details/:id', component:JobDetailsComponent},
+  {path:'accept-applicant/:id', component:AcceptApplicantComponent}
 ]
 @NgModule({
   declarations: [
@@ -46,21 +50,25 @@ const routes:Routes = [
     EditCompanyBasicInfoComponent,
     EditCompanyAboutComponent,
     EditJobComponent,
-    EmployeeProfileComponent
+    EmployeeProfileComponent,
+    AcceptApplicantComponent,
+    JobDetailsComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
+    FormsModule,
     CalendarModule,
+    ConfirmPopupModule,
+    ButtonModule,
     TabViewModule,
     // BrowserModule,
     // BrowserAnimationsModule,
-    ConfirmPopupModule,
     PaginatorModule,
     TableModule,
     InputSwitchModule
 
   ],
-  exports: []
+  exports: [JobDetailsComponent]
 })
 export class CompanyModule { }

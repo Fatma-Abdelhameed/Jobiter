@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {ConfirmationService} from "primeng/api";
+
 import { Company } from 'src/app/_models/company';
 import { Job } from 'src/app/_models/job';
+
 import { CompanyService } from 'src/app/_services/company.service';
 
 @Component({
@@ -12,12 +14,17 @@ import { CompanyService } from 'src/app/_services/company.service';
   providers: [ConfirmationService]
 })
 export class JobDetailsComponent implements OnInit {
+
   jobDetails:Job = new Job(-1,'','','','','','','',0,'')
   companyDetails:Company = new Company(-1, '', '', '', '', '', '', '', 0, '', '', '', true)
+
+  applicants=[]
+
   resData:any
   constructor(public confirmationService: ConfirmationService, public companySer:CompanyService, public route:ActivatedRoute) { }
 
   ngOnInit(): void {
+
     this.companySer.getJobDetails(this.route.snapshot.params['id']).subscribe({
       next:(res)=>{
         this.resData = res
@@ -30,6 +37,14 @@ export class JobDetailsComponent implements OnInit {
         this.jobDetails.workType=this.resData.work_type
         this.jobDetails.salary=this.resData.salary
 
+      }
+    })
+
+
+    this.companySer.getJobApplicants(this.route.snapshot.params['id']).subscribe({
+      next:(res)=>{
+        this.resData = res
+        this.applicants = this.resData.applicants
       }
     })
 

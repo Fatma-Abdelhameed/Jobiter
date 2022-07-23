@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { ApplicantService } from 'src/app/_services/applicant.service';
 
 @Component({
   selector: 'app-company-profile-reviews',
@@ -11,7 +13,8 @@ export class CompanyProfileReviewsComponent implements OnInit {
     chartOptions: any;
     subscription: Subscription | undefined;
     rating = 4
-  constructor() { }
+    resData:any
+  constructor(public applicantSer:ApplicantService, public route:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.data = {
@@ -28,10 +31,14 @@ export class CompanyProfileReviewsComponent implements OnInit {
                 "#FF0000",
               ]
           }
-      ]
-  };
-
-    }
+        ]
+      };
+      this.applicantSer.getCompanyReviews(this.route.snapshot.params['id']).subscribe({
+        next:(res)=>{
+          this.resData = res
+        }
+      })
+  }
 
 
     getLightTheme() {
@@ -58,3 +65,4 @@ export class CompanyProfileReviewsComponent implements OnInit {
       }
     }
   }
+

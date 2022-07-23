@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import {ApplicantService} from "../../../../_services/applicant.service";
 import {TokenStorageService} from "../../../../_services/token-storage.service";
 
@@ -14,10 +15,10 @@ export class AddInterviewQuestionsComponent implements OnInit {
     description:'',
     answers:'',
   }
-  constructor(public applicantSer:ApplicantService, public token:TokenStorageService) { }
-  addExp(form:any){
+  constructor(public applicantSer:ApplicantService, public token:TokenStorageService, public route:ActivatedRoute) { }
+  addQuestions(form:any){
     if(form.valid){
-      this.applicantSer.addWorkExperience(this.token.getUser().id, this.formData).subscribe()
+      this.applicantSer.addInterviewQuestions(this.route.snapshot.params['id'], this.formData).subscribe()
     }
   }
   ngOnInit(): void {

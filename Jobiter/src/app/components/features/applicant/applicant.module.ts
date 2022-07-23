@@ -4,6 +4,7 @@ import {InputSwitchModule} from 'primeng/inputswitch';
 import { AllCompaniesComponent } from './all-companies/all-companies.component';
 import { FormsModule } from '@angular/forms';
 import {RatingModule} from 'primeng/rating';
+import {ButtonModule} from 'primeng/button';
 import {SidebarModule} from 'primeng/sidebar';
 import { TabViewModule } from 'primeng/tabview';
 import {ChartModule} from 'primeng/chart';
@@ -23,7 +24,7 @@ import { CompanyProfileInterviewQuestionsComponent } from './company-profile-int
 import { AddReviewComponent } from './add-review/add-review.component';
 import { AddSalaryComponent } from './add-salary/add-salary.component';
 import { AddInterviewQuestionsComponent } from './add-interview-questions/add-interview-questions.component';
-import { Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ApplicantSignUpComponent } from '../applicant-sign-up/applicant-sign-up.component';
 
@@ -65,13 +66,15 @@ const routes:Routes = [
   ],
   imports: [
     CommonModule,
+    RouterModule,
     FormsModule,
     RatingModule,
     SidebarModule,
+    ButtonModule,
     ChartModule,
     TabViewModule,
     InputSwitchModule
   ],
-  exports: [AddReviewComponent]
+  exports: []
 })
 export class ApplicantModule { }

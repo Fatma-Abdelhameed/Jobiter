@@ -1,7 +1,7 @@
 <div class="job-detail">
   <div class="home-header">
-    <!-- <p-tabView>
-      <p-tabPanel header="Job Details" leftIcon="pi pi-fw pi-database"> -->
+    <p-tabView>
+      <p-tabPanel header="Job Details" leftIcon="pi pi-fw pi-database"> 
         <div class="container recent-job-card">
           <div class="row d-flex justify-content-center">
                 <div class="recent-job-card-title col-6">{{jobDetails.title}}</div>
@@ -34,9 +34,9 @@
             </div>
           </div>
         </div>
-      <!-- </p-tabPanel>
-      <p-tabPanel header="Applicants" leftIcon="pi pi-fw pi-users"> -->
-        <div class="container recent-job-card">
+      </p-tabPanel>
+      <p-tabPanel header="Applicants" leftIcon="pi pi-fw pi-users">
+        <div class="container recent-job-card" *ngFor="let applicant of applicants">
           <div class="row d-flex justify-content-center">
             <div class="recent-job-card-title col-6">Senior Frontend Using Angular</div>
             <span class="recent-job-card-status col-1 closed">closed</span>
@@ -56,14 +56,14 @@
                   <h6>Junior Frontend Developer</h6>
                 </div>
                 <div class="col-3 d-flex align-items-center justify-content-end">
-                  <button class="btn accept">Accept</button>
+                  <a class="btn accept" [routerLink]="['/accept-applicant',applicant.id]">Accept</a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      <!-- </p-tabPanel>
-    </p-tabView> -->
+       </p-tabPanel>
+    </p-tabView> 
   </div>
 </div>
 
