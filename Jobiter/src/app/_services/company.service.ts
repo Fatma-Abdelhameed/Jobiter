@@ -84,5 +84,13 @@ token:any
       salary
     },{headers: new HttpHeaders().set('Authorization', 'token '+JSON.parse(this.token).token)})
    }
-
+   getJobApplicants(id:number){
+      return this.http.get("")
+   }
+   getApplicantDetails(id:number){
+      return this.http.get("")
+   }
+   acceptApplicant(id:number){
+      return this.http.post("")
+   }
 }
