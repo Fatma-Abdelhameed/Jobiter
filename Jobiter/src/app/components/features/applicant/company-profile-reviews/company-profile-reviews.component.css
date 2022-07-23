@@ -1,0 +1,24 @@
+.reviews-graph, .review{
+    border: 1px solid #CCCCCC;
+    position: relative;
+    margin-top: 65px;
+    border-radius: 10px;
+    padding: 15px;
+}
+.add{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: #8EE5BB;
+    color: #06C568;
+}
+.section-header h5{
+    color: #075D9D;
+}
+.section-header h5::after{
+    content: '';
+    width: 5%;
+    border-bottom: 3px solid #27B4FB;
+    display: block;
+    margin-top: 10px;
+}

@@ -4,6 +4,7 @@ import {InputSwitchModule} from 'primeng/inputswitch';
 import { AllCompaniesComponent } from './all-companies/all-companies.component';
 import { FormsModule } from '@angular/forms';
 import {RatingModule} from 'primeng/rating';
+import {ChartModule} from 'primeng/chart';
 import { JobDetailsComponent } from './job-details/job-details.component';
 import { ApplyForJobComponent } from './apply-for-job/apply-for-job.component';
 import { ApplicantProfileComponent } from './applicant-profile/applicant-profile.component';
@@ -47,8 +48,9 @@ import { AddInterviewQuestionsComponent } from './add-interview-questions/add-in
     CommonModule,
     FormsModule,
     RatingModule,
+    ChartModule,
     InputSwitchModule
   ],
-  exports:[CompanyProfileOverviewComponent]
+  exports:[CompanyProfileReviewsComponent]
 })
 export class ApplicantModule { }
