@@ -20,11 +20,11 @@ export class CompanyProfileReviewsComponent implements OnInit {
           {
               data: [300, 50],
               backgroundColor: [
-                  "#28A745",
+                  "#27B4FB",
                   "#FF0000",
               ],
               hoverBackgroundColor: [
-                "#28A745",
+                "#27B4FB",
                 "#FF0000",
               ]
           }

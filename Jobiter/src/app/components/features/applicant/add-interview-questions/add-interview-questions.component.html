@@ -1,0 +1,30 @@
+<div class="applicant-add-work-exp mt-4">
+  <h5 class="add-work-exp-header text-center mb-4">Add Interview Questions</h5>
+  <div class="add-work-exp mt-2 mb-3 m-auto col-md-3 col-xs-10 p-4">
+    <form class="row" #addInterviewQuestions="ngForm">
+      <div class="form-controls mb-3 col-12">
+        <label for="exampleInputJobTitle" class="form-label required">Position Of Application</label>
+        <input #jobTitle="ngModel" name="jobTitle" [(ngModel)] = "formData.position" type="text" class="form-control" id="exampleInputJobTitle" required>
+        <span class="error" *ngIf="jobTitle.errors?.['required'] && jobTitle.touched">This Field Is Required</span>
+      </div>
+      <div class="form-controls mb-3 col-12">
+        <label for="exampleInputQuestions" class="form-label required">Questions</label>
+        <textarea #questions="ngModel" name="about" [(ngModel)] = "formData.questions" class="form-control" rows="5" id="exampleInputQuestions" placeholder="Questions you've been asked" minlength="15" required></textarea>
+        <span class="error" *ngIf="questions.errors?.['required'] && questions.touched">This Field Is Required</span>
+      </div>
+      <div class="form-controls mb-3 col-12">
+        <label for="exampleInputDescription" class="form-label required">Description</label>
+        <textarea #description="ngModel" name="about" [(ngModel)] = "formData.description" class="form-control" rows="5" id="exampleInputDescription" placeholder="Description" minlength="15" required></textarea>
+        <span class="error" *ngIf="description.errors?.['required'] && description.touched">This Field Is Required</span>
+      </div>
+      <div class="form-controls mb-3 col-12">
+        <label for="exampleInputAnswers" class="form-label required">Answers</label>
+        <textarea #answers="ngModel" name="about" [(ngModel)] = "formData.answers" class="form-control" rows="5" id="exampleInputAnswers"  placeholder="Answers For Questions" minlength="15" required></textarea>
+        <span class="error" *ngIf="answers.errors?.['required'] && answers.touched">This Field Is Required</span>
+      </div>
+      <div class="mb-3 col-12 text-center">
+        <input name="submit" type="submit" value="Submit" class="submit btn" (click)="addExp(addInterviewQuestions)">
+      </div>
+    </form>
+  </div>
+</div>

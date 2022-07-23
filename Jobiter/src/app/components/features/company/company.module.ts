@@ -28,7 +28,6 @@ const routes:Routes = [
   {path:'post-new-job',component:PostNewJobComponent},
   {path:'company-profile', component:CompanyProfileComponent},
   {path:'edit-name-image', component:EditCompanyNameImageComponent},
-  {path:'change-password', component:ChangePasswordComponent},
   {path:'edit-company-about', component:EditCompanyAboutComponent},
   {path:'edit-basic-info', component:EditCompanyBasicInfoComponent},
   {path:'edit-job/:id', component:EditJobComponent},
@@ -37,7 +36,6 @@ const routes:Routes = [
 ]
 @NgModule({
   declarations: [
-    HomeComponent,
     AllJobsComponent,
     PostNewJobComponent,
     DateFilterPipe,
