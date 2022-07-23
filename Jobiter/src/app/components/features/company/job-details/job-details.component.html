@@ -1,19 +1,19 @@
 <div class="job-detail">
   <div class="home-header">
     <p-tabView>
-      <p-tabPanel header="Job Details" leftIcon="pi pi-fw pi-database"> 
+      <p-tabPanel header="Job Details" leftIcon="pi pi-fw pi-database">
         <div class="container recent-job-card">
           <div class="row d-flex justify-content-center">
-                <div class="recent-job-card-title col-6">{{jobDetails.title}}</div>
-                <span class="recent-job-card-status col-1 closed">{{jobDetails.state}}</span>
+                <span class="recent-job-card-title">{{jobDetails.title}}</span>
+                <span class="recent-job-card-status closed">{{jobDetails.state}}</span>
           </div>
           <div class="row d-flex justify-content-center">
-            <span class="recent-job-card-date col-3"><i class="fa fa-calendar"></i>{{jobDetails.postedDate}}</span>
-            <span class="recent-job-card-date col-2"><i class="fa fa-globe"></i> {{jobDetails.workType}}</span>
+            <span class="recent-job-card-date"><i class="fa fa-calendar"></i> {{jobDetails.postedDate}}</span>
+            <span class="recent-job-card-date"><i class="fa fa-globe"></i> {{jobDetails.workType}}</span>
           </div>
           <div class="row mt-4 d-flex justify-content-center">
             <!-- <p-confirmPopup></p-confirmPopup> -->
-            <button (click)="confirm($event)" pButton icon="fa-solid fa-x" class="danger" label="Close">Close</button>
+            <button (click)="confirm($event)" pButton icon="fa-solid fa-x" class="danger" label="Close"></button>
            <!-- <form>
             <input name="submit" type="submit" value="Save" class="submit btn" (click)="confirm()">
            </form>  -->
@@ -21,15 +21,15 @@
           </div>
           <div class="row mt-4">
             <div class="recent-job-card-subtitle col-4">Job Status</div>
-            <div class="recent-job-card-text col-2"> {{jobDetails.status}} </div>
+            <div class="recent-job-card-text col-8"> {{jobDetails.status}} </div>
           </div>
           <div class="row mt-4">
             <div class="recent-job-card-subtitle col-4">Position </div>
-            <div class="recent-job-card-text col-2"> {{jobDetails.level}} </div>
+            <div class="recent-job-card-text col-8"> {{jobDetails.level}} </div>
           </div>
           <div class="row mt-4">
             <div class="recent-job-card-subtitle mb-4">Requirements</div>
-            <div class="recent-job-card-text">
+            <div class="recent-job-card-text col-12">
               {{jobDetails.requirements}}
             </div>
           </div>
@@ -63,7 +63,7 @@
           </div>
         </div>
        </p-tabPanel>
-    </p-tabView> 
+    </p-tabView>
   </div>
 </div>
 
