@@ -81,3 +81,17 @@
 .companies .company .p-rating .p-rating-icon.pi-star-fill	{
   color: rgb(255, 255, 0);
 }
+.all-jobs .p-ripple,
+.all-jobs .p-ripple:hover{
+  width:40px;
+  height:40px;
+  background-color: #DCF1FB;
+  border: none;
+  color: #075D9D;
+  font-size: 20px;
+  border-radius: 5px;
+  border-top-left-radius: 5px !important;
+  border-bottom-left-radius: 5px !important;
+  padding: 8px 12px;
+  outline: none;
+}

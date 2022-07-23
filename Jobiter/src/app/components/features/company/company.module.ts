@@ -51,8 +51,8 @@ const routes:Routes = [
     PaginatorModule,
     TableModule,
     InputSwitchModule
-    
+
   ],
-  exports:[EmployeeProfileComponent]
+  exports: [EmployeeProfileComponent, AllJobsComponent]
 })
 export class CompanyModule { }
