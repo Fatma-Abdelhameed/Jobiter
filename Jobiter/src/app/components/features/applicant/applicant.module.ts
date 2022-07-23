@@ -49,6 +49,6 @@ import { AddInterviewQuestionsComponent } from './add-interview-questions/add-in
     RatingModule,
     InputSwitchModule
   ],
-  exports:[EditWorkExperienceComponent]
+  exports:[CompanyProfileOverviewComponent]
 })
 export class ApplicantModule { }

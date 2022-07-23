@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Company } from 'src/app/_models/company';
+import { CompanyService } from 'src/app/_services/company.service';
 
 @Component({
   selector: 'app-company-profile-overview',
@@ -6,10 +9,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./company-profile-overview.component.css']
 })
 export class CompanyProfileOverviewComponent implements OnInit {
-
-  constructor() { }
+  company:Company = new Company(-1, '', '', '', '', '', '', '', 0, '', '', '')
+  constructor(public companySer:CompanyService, public route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    /*this.companySer.getCompanyDetails(this.route.params.id).subscribe({
+      next:(data)=>{
+        this.company = data
+      }
+    })*/
   }
 
 }
