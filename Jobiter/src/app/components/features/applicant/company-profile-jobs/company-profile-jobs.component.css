@@ -1,0 +1,45 @@
+.vacancies{
+  border: 1px solid #CCCCCC;
+  position: relative;
+  margin-top: 65px;
+  border-radius: 10px;
+  padding: 15px;
+}
+.vacancy{
+  background: #F3F3F3;
+  margin:0 20px;
+  border-radius:10px;
+}
+.section-header h5{
+  color: #075D9D;
+}
+.section-header h5::after{
+  content: '';
+  width: 5%;
+  border-bottom: 3px solid #27B4FB;
+  display: block;
+  margin-top: 10px;
+}
+.section-body{
+  font-size: 15px;
+  color: #075D9D;
+}
+.job-title{
+  font-size: 25px;
+  font-weight: bold;
+}
+.section-body i{
+  color: #B5B5B5;
+}
+.apply-btn{
+  border:none;
+  background-color: #76BA99;
+  color: white;
+  padding:10px 20px;
+}
+.details-btn{
+  border:none;
+  background-color: #27B4FB;
+  color: white;
+  padding:10px 20px;
+}
