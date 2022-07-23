@@ -12,16 +12,16 @@ export class EditCompanyNameImageComponent implements OnInit {
   constructor(public companySer:CompanyService, public token:TokenStorageService) { }
   formData = {
     name:'',
-    imageUrl:''
+    image:''
   }
   noChangesError:boolean = false
   dataUpdated:boolean = false
   saveChanges(data:any){
     if(data.touched){
-      this.companySer.editNameImage(this.token.getUser().id, this.formData.name, this.formData.imageUrl).subscribe({
+      this.companySer.editNameImage(this.token.getUser().id, this.formData.name, this.formData.image).subscribe({
         next:(info)=>{
           this.dataUpdated = true
-          this.token.saveUser(info)
+    
         },
         error:()=>{
 
@@ -35,8 +35,8 @@ export class EditCompanyNameImageComponent implements OnInit {
   ngOnInit(): void {
     this.companySer.getCompanyDetails(this.token.getUser().id).subscribe({
       next:(data)=>{
-        this.formData.name = data.companyName
-        this.formData.imageUrl = data.imageUrl
+        this.formData.name = data.company_name
+        this.formData.image = data.image
       }
     })
   }

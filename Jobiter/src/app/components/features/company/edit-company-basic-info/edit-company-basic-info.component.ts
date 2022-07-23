@@ -27,7 +27,7 @@ export class EditCompanyBasicInfoComponent implements OnInit {
       this.formData.industry, this.formData.startedAt, this.formData.size, this.formData.websiteLink).subscribe({
         next:(info)=>{
           this.dataUpdated = true
-          this.token.saveUser(info)
+        
         },
         error:()=>{
 

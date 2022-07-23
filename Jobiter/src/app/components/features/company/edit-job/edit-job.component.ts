@@ -24,7 +24,7 @@ export class EditJobComponent implements OnInit {
       this.companySer.editJob(this.token.getUser().id, this.formData).subscribe({
         next:(info)=>{
           this.dataUpdated = true
-          this.token.saveUser(info)
+        
         },
         error:()=>{
 

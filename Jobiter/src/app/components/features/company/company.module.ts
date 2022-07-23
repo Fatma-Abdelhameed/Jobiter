@@ -23,7 +23,9 @@ import { EmployeeProfileComponent } from './employee-profile/employee-profile.co
 const routes:Routes = [
   {path:'',component:HomeComponent},
   {path:'all-jobs',component:AllJobsComponent},
-  {path:'post-new-job',component:PostNewJobComponent}
+  {path:'post-new-job',component:PostNewJobComponent},
+  {path:'company-profile', component:CompanyProfileComponent},
+  {path:'edit-name-image', component:EditCompanyNameImageComponent}
 ]
 
 @NgModule({

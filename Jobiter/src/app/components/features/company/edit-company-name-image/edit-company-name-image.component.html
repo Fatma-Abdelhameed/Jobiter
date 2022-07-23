@@ -15,7 +15,7 @@
             </div>
             <div class="form-controls mb-3 col-12">
                 <label for="exampleInputImage" class="form-label">Profile Image</label>
-                <input #cimage="ngModel" name="image" [(ngModel)] = "formData.imageUrl" type="file" accept="image/*" class="form-control" id="exampleInputImage">
+                <input #cimage="ngModel" name="image" [(ngModel)] = "formData.image" type="file" accept="image/*" class="form-control" id="exampleInputImage">
                 <span class="error" *ngIf="cimage.errors?.['accept'] && cimage.touched">File must be image like .png, .jpg</span>
             </div>
             <div class="mb-3 col-12 text-center">
