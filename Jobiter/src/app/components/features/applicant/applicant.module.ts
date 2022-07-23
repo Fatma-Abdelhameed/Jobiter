@@ -53,6 +53,6 @@ import { AddInterviewQuestionsComponent } from './add-interview-questions/add-in
     TabViewModule,
     InputSwitchModule
   ],
-    exports: [CompanyProfileComponent, AddInterviewQuestionsComponent]
+  exports: [AddReviewComponent]
 })
 export class ApplicantModule { }
