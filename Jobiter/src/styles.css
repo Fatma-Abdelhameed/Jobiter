@@ -57,18 +57,18 @@
   border-radius:50px;
   transition: all 0.7s ease;
 }
-.job-detail .p-tabview .p-tabview-left-icon{
+ .p-tabview .p-tabview-left-icon{
   font-size:30px;
   margin-left:1.5rem;
 }
-.job-detail .p-tabview .p-tabview-nav li .p-tabview-nav-link{
+ .p-tabview .p-tabview-nav li .p-tabview-nav-link{
   color: #8DD2F2;
 }
-.job-detail .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link{
+ .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link{
   color: white;
   background: #8DD2F2;
 }
-.job-detail .p-tabview-nav{
+ .p-tabview-nav{
   display:flex;
   justify-content: center;
   -webkit-justify-content: center;
