@@ -9,23 +9,23 @@
         </div>
     </div>
     <div class="review mt-3 p-4">
-        <span class="posted-date">Jul 15, 2022</span>
+        <span class="posted-date">{{resData.posted_date}}</span>
         <div class="header">
             <h5 class="review-title">"Very Good"</h5>
-            <p-rating [ngModel]="rating" [readonly]="true" [stars]="5" [cancel]="false"></p-rating>
-            <p class="job-position">Backend Developer</p>
+            <p-rating [ngModel]="resData.rating" [readonly]="true" [stars]="5" [cancel]="false"></p-rating>
+            <p class="job-position">{{resData.job_position}}</p>
         </div>
         <div class="section-body mt-4 mb-3">
             <div class="row pros mb-3 d-flex align-items-center">
                 <p class="pros-title">Pros</p>
                 <p class="col-12 pros-content">
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                    {{resData.pros}}
                 </p>
             </div>
             <div class="row cons mb-3 d-flex align-items-center">
                 <p class="cons-title">Cons</p>
                 <p class="col-12 cons-content">
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                    {{resData.cons}}
                 </p>
             </div>
         </div>

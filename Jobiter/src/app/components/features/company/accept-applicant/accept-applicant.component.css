@@ -1,0 +1,16 @@
+.profile-image{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 10%), 0 3px 10px 0 rgb(0 0 0 / 10%)
+}
+.image{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    margin: 5% 0;;
+}
+.applicant-name{
+    color: #075D9D;
+}
