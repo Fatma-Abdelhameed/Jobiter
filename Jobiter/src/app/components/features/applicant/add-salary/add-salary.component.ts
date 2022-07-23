@@ -6,9 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-salary.component.css']
 })
 export class AddSalaryComponent implements OnInit {
-
+  formData = {
+    position:'',
+    salary:''
+  }
   constructor() { }
-
+  add(){}
   ngOnInit(): void {
   }
 
