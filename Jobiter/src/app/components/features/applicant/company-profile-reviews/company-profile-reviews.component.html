@@ -2,19 +2,30 @@
     <div class="reviews-graph mt-3 p-3">
         <a class="btn add"><i class="fa-solid fa-plus"></i></a>
         <div class="section-header">
-            <h5>Reviews</h5>
+            <h5>Reviews <span class="count">75 reviews</span></h5>
         </div>
-        <div class="section-body mt-4 mb-3">
+        <div class="section-body mt-4 mb-3 d-flex justify-content-center">
             <p-chart type="doughnut" [data]="data" [options]="chartOptions" width="30vw" height="60vh"></p-chart>
         </div>
     </div>
-    <div class="review mt-3 p-3">
-        <div class="section-header">
-            
+    <div class="review mt-3 p-4">
+        <span class="posted-date">Jul 15, 2022</span>
+        <div class="header">
+            <h5 class="review-title">"Very Good"</h5>
+            <p-rating [ngModel]="rating" [readonly]="true" [stars]="5" [cancel]="false"></p-rating>
+            <p class="job-position">Backend Developer</p>
         </div>
         <div class="section-body mt-4 mb-3">
-            <div class="row data mb-3 d-flex align-items-center">
-                <p class="col-12 title">
+            <div class="row pros mb-3 d-flex align-items-center">
+                <p class="pros-title">Pros</p>
+                <p class="col-12 pros-content">
+                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                </p>
+            </div>
+            <div class="row cons mb-3 d-flex align-items-center">
+                <p class="cons-title">Cons</p>
+                <p class="col-12 cons-content">
+                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
                 </p>
             </div>
         </div>

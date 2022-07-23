@@ -10,23 +10,22 @@ export class CompanyProfileReviewsComponent implements OnInit {
     data: any;
     chartOptions: any;
     subscription: Subscription | undefined;
+    rating = 4
   constructor() { }
 
   ngOnInit(): void {
     this.data = {
-      labels: ['A','B','C'],
+      labels: ['Positive','Negative'],
       datasets: [
           {
-              data: [300, 50, 100],
+              data: [300, 50],
               backgroundColor: [
-                  "#FF6384",
-                  "#36A2EB",
-                  "#FFCE56"
+                  "#28A745",
+                  "#FF0000",
               ],
               hoverBackgroundColor: [
-                  "#FF6384",
-                  "#36A2EB",
-                  "#FFCE56"
+                "#28A745",
+                "#FF0000",
               ]
           }
       ]
