@@ -51,6 +51,6 @@ import { AddInterviewQuestionsComponent } from './add-interview-questions/add-in
     ChartModule,
     InputSwitchModule
   ],
-  exports: [CompanyProfileReviewsComponent, CompanyProfileOverviewComponent, CompanyProfileSalariesComponent]
+    exports: [CompanyProfileReviewsComponent, CompanyProfileOverviewComponent, CompanyProfileSalariesComponent, CompanyProfileJobsComponent]
 })
 export class ApplicantModule { }
