@@ -1,1 +1,32 @@
-<p>company-profile works!</p>
+<div class="company-profile m-auto mt-4 col-md-6 col-xs-10">
+    <div class="profile-header row">
+        <div class="profile-image col-lg-3 col-xs-12 d-flex align-items-center justify-content-center">
+            <img class="image" src="assets/companies_profiles/micro.jpg">
+        </div>
+        <div class="company-info col-lg-5 col-xs-12 d-flex align-items-center justify-content-lg-start justify-content-sm-center">
+            <div>
+                <h5 class="company-name">Frontend Developer</h5>
+                <p-rating [ngModel]="rating" [readonly]="true" [stars]="5" [cancel]="false"></p-rating>
+            </div>
+        </div>
+    </div>
+    <div>
+        <p-tabView>
+            <p-tabPanel header="Overview">
+                <app-company-profile-overview></app-company-profile-overview>
+            </p-tabPanel>
+            <p-tabPanel header="Reviews">
+                <app-company-profile-reviews></app-company-profile-reviews>
+            </p-tabPanel>
+            <p-tabPanel header="Salaraies">
+                <app-company-profile-salaries></app-company-profile-salaries>
+            </p-tabPanel>
+            <p-tabPanel header="Jobs">
+                <app-company-profile-jobs></app-company-profile-jobs>
+            </p-tabPanel>
+            <p-tabPanel header="Interview Questions">
+                <app-company-profile-interview-questions></app-company-profile-interview-questions>
+            </p-tabPanel>
+        </p-tabView>
+    </div>
+</div>

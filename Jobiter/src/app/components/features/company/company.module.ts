@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {TabViewModule} from 'primeng/tabview';
 import { HomeComponent } from './home/home.component';
 import { AllJobsComponent } from './all-jobs/all-jobs.component';
 import { PostNewJobComponent } from './post-new-job/post-new-job.component';
@@ -45,6 +46,7 @@ const routes:Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     CalendarModule,
+    TabViewModule,
     // BrowserModule,
     // BrowserAnimationsModule,
     ConfirmPopupModule,
