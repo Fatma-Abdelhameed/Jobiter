@@ -4,6 +4,7 @@ import {InputSwitchModule} from 'primeng/inputswitch';
 import { AllCompaniesComponent } from './all-companies/all-companies.component';
 import { FormsModule } from '@angular/forms';
 import {RatingModule} from 'primeng/rating';
+import {SidebarModule} from 'primeng/sidebar';
 import { TabViewModule } from 'primeng/tabview';
 import {ChartModule} from 'primeng/chart';
 import { JobDetailsComponent } from './job-details/job-details.component';
@@ -65,6 +66,7 @@ const routes:Routes = [
     CommonModule,
     FormsModule,
     RatingModule,
+    SidebarModule,
     ChartModule,
     TabViewModule,
     InputSwitchModule
