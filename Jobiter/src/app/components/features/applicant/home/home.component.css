@@ -1,0 +1,30 @@
+.all-jobs-header h4{
+  color: #27B4FB;
+}
+.search{
+  padding: 9px;
+}
+.search-icon{
+  background-color: #DCF1FB;
+  color: #075D9D;
+}
+.company-profile-picture{
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 10%), 0 3px 10px 0 rgb(0 0 0 / 10%);
+}
+.apply-btn{
+  border:none;
+  background-color: #76BA99;
+  color: white;
+  padding:10px 20px;
+}
+.details-btn{
+  border:none;
+  background-color: #27B4FB;
+  color: white;
+  padding:10px 20px;
+}
+.job-title{
+  font-size:22px;
+  font-weight:bold;
+  color: #075D9D;
+}

@@ -1,0 +1,61 @@
+<div class="alert alert-danger w-50 m-auto mt-3" role="alert" *ngIf = "noChangesError">
+    No Data is entered to be changed
+</div>
+<div class="alert alert-success w-50 m-auto mt-3" role="alert" *ngIf = "dataUpdated">
+    Data is updated successfuly
+</div>
+<div class="applicant-edit-basic-info mt-4">
+    <h5 class="applicant-edit-basic-info-header text-center mb-4">Edit Basic Info</h5>
+    <div class="edit-basic-info mt-2 mb-3 m-auto col-md-4 col-xs-12">
+        <form class="row mt-2" #editBasicInfo="ngForm">
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputUsername" class="form-label">Username</label>
+                <input #username="ngModel" name="username" [(ngModel)] = "formData.username" type="text" class="form-control" id="exampleInputUsername">
+            </div>
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputJobTitle" class="form-label">Job Title</label>
+                <input #jobTitle="ngModel" name="jobTitle" [(ngModel)] = "formData.jobTitle" type="text" class="form-control" id="exampleInputJobTitle">
+            </div>
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputCity" class="form-label required">City</label>
+                <select #city="ngModel" name="city" [(ngModel)] = "formData.city" class="form-select" aria-label="Default select example" id="exampleInputCity">
+                    <option value="1">One</option>
+                </select>
+            </div>
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputPhone" class="form-label">Phone</label>
+                <input #phone="ngModel" name="phone" [(ngModel)] = "formData.phone" type="tel" class="form-control" id="exampleInputPhone">
+            </div>
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputFaculty" class="form-label">Faculty</label>
+                <input name="faculty" [(ngModel)] = "formData.faculty" type="text" class="form-control" id="exampleInputFaculty" >
+            </div>
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputLevel" class="form-label">Level</label>
+                <select name="level" [(ngModel)] = "formData.level" class="form-select" aria-label="Default select example" id="exampleInputLevel">
+                    <option value="1">Junior</option>
+                    <option value="2">Senior</option>
+                    <option value="3">Mid-Level</option>
+                  </select>
+            </div>
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputGender" class="form-label required">Gender</label>
+                <select #gender="ngModel" name="gender" [(ngModel)] = "formData.gender" class="form-select" aria-label="Default select example" id="exampleInputGender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputDate" class="form-label">Date of Birth</label>
+                <input name="dateOfBirth" [(ngModel)] = "formData.dateOfBirth" type="date" class="form-control" id="exampleInputDate" >
+            </div>
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputCV" class="form-label">CV</label>
+                <input #cv="ngModel" name="cv" [(ngModel)] = "formData.cv" type="file" class="form-control" id="exampleInputCV">
+            </div>
+            <div class="mb-3 col-12 text-center">
+                <input name="submit" type="submit" value="Submit" class="submit btn" (click) = "saveChanges(editBasicInfo)">
+            </div>
+        </form>
+    </div>
+</div>

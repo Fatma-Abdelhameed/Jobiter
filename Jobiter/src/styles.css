@@ -57,18 +57,18 @@
   border-radius:50px;
   transition: all 0.7s ease;
 }
-.job-detail .p-tabview .p-tabview-left-icon{
+ .p-tabview .p-tabview-left-icon{
   font-size:30px;
   margin-left:1.5rem;
 }
-.job-detail .p-tabview .p-tabview-nav li .p-tabview-nav-link{
+ .p-tabview .p-tabview-nav li .p-tabview-nav-link{
   color: #8DD2F2;
 }
-.job-detail .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link{
+ .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link{
   color: white;
   background: #8DD2F2;
 }
-.job-detail .p-tabview-nav{
+ .p-tabview-nav{
   display:flex;
   justify-content: center;
   -webkit-justify-content: center;
@@ -78,6 +78,20 @@
   padding-bottom: 2px;
   margin: 0 auto;
 }
-.companies .company .p-rating .p-rating-icon.pi-star-fill	{
+.p-rating .p-rating-icon.pi-star-fill	{
   color: rgb(255, 255, 0);
+}
+.all-jobs .p-ripple,
+.all-jobs .p-ripple:hover{
+  width:40px;
+  height:40px;
+  background-color: #DCF1FB;
+  border: none;
+  color: #075D9D;
+  font-size: 20px;
+  border-radius: 5px;
+  border-top-left-radius: 5px !important;
+  border-bottom-left-radius: 5px !important;
+  padding: 8px 12px;
+  outline: none;
 }
