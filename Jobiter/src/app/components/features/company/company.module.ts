@@ -30,6 +30,7 @@ const routes:Routes = [
   {path:'edit-basic-info', component:EditCompanyBasicInfoComponent},
   {path:'edit-login-info', component:ChangePasswordComponent},
   {path:'edit-about-info', component:EditCompanyAboutComponent},
+
 ]
 
 @NgModule({

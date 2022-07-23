@@ -1,1 +1,41 @@
-<p>add-review works!</p>
+<div class="mt-4">
+    <h5 class="add-review-header text-center mb-4">Add Review</h5>
+    <div class="add-review mt-2 mb-3 m-auto col-md-3 col-xs-10 p-4">
+        <form class="row" #addReview="ngForm">
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputPosition" class="form-label required">Title</label>
+                <input #title="ngModel" name="title" [(ngModel)] = "formData.title" type="text" class="form-control" id="exampleInputTitle" required>
+                <span class="error" *ngIf="title.errors?.['required'] && title.touched">This Field Is Required</span>
+            </div>
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputPosition" class="form-label required">Position</label>
+                <input #position="ngModel" name="position" [(ngModel)] = "formData.position" type="text" class="form-control" id="exampleInputPosition" required>
+                <span class="error" *ngIf="position.errors?.['required'] && position.touched">This Field Is Required</span>
+            </div>
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputPros" class="form-label required">Pros</label>
+                <textarea #pros="ngModel" name="pros" [(ngModel)] = "formData.pros" class="form-control" rows="5" id="exampleInputAbout" minlength="15" required></textarea>
+                <span class="error" *ngIf="pros.errors?.['required'] && pros.touched">This Field is Required</span>
+            </div>
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputCons" class="form-label required">Pros</label>
+                <textarea #cons="ngModel" name="cons" [(ngModel)] = "formData.cons" class="form-control" rows="5" id="exampleInputCons" minlength="15" required></textarea>
+                <span class="error" *ngIf="cons.errors?.['required'] && cons.touched">This Field is Required</span>
+            </div>
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputState" class="form-label">State</label>
+                <select #state="ngModel" name="state" [(ngModel)] = "formData.state" class="form-select" aria-label="Default select example" id="exampleInputState">
+                    <option value="positive">Positive</option>
+                    <option value="negative">Negative</option>
+                </select>
+                <span class="error" *ngIf="state.errors?.['required'] && state.touched">This Field is Required</span>
+            </div>
+            <div>
+                <p-rating [(ngModel)]="formData.rating" [cancel]="true"></p-rating>
+            </div>
+            <div class="mb-3 col-12 text-center">
+                <input name="submit" type="submit" value="Save" class="submit btn" (click)="add()">
+            </div>
+        </form>
+    </div>
+</div>
