@@ -7,6 +7,9 @@ import {RatingModule} from 'primeng/rating';
 import { JobDetailsComponent } from './job-details/job-details.component';
 import { ApplyForJobComponent } from './apply-for-job/apply-for-job.component';
 import { ApplicantProfileComponent } from './applicant-profile/applicant-profile.component';
+import { HomeComponent } from './home/home.component';
+import {CalendarModule} from "primeng/calendar";
+import {SidebarModule} from "primeng/sidebar";
 
 
 
@@ -15,14 +18,17 @@ import { ApplicantProfileComponent } from './applicant-profile/applicant-profile
     AllCompaniesComponent,
     JobDetailsComponent,
     ApplyForJobComponent,
-    ApplicantProfileComponent
+    ApplicantProfileComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     RatingModule,
-    InputSwitchModule
+    InputSwitchModule,
+    CalendarModule,
+    SidebarModule
   ],
-  exports:[ApplicantProfileComponent]
+  exports: [ApplicantProfileComponent, AllCompaniesComponent, HomeComponent]
 })
 export class ApplicantModule { }
