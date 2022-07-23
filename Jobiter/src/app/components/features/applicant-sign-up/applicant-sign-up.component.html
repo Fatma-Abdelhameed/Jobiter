@@ -80,16 +80,16 @@
             </div>
             <div class="form-controls mb-3 col-md-6 col-xs-12">
                 <label for="exampleInputDate" class="form-label">Date of Birth</label>
-                <input name="dateOfBirth" [(ngModel)] = "formData.date_of_birth" type="date" class="form-control" id="exampleInputDate" >
+                <input name="dob" [(ngModel)] = "formData.dob" type="date" class="form-control" id="exampleInputDate" >
             </div>
             <div class="form-controls mb-3 col-md-6 col-xs-12">
                 <label for="exampleInputImage" class="form-label">Profile Image</label>
-                <input #image="ngModel" name="image" [(ngModel)] = "formData.profile_image" type="file" accept="image/*" class="form-control" id="exampleInputImage">
+                <input #image="ngModel" name="image" [(ngModel)] = "formData.image" type="file" accept="image/*" class="form-control" id="exampleInputImage">
                 <span class="error" *ngIf="image.errors?.['accept'] && image.touched">File must be image like .png, .jpg</span>
             </div>
             <div class="form-controls mb-3 col-md-6 col-xs-12">
                 <label for="exampleInputImage" class="form-label">CV</label>
-                <input #cv="ngModel" name="image" [(ngModel)] = "formData.profile_image" type="file" class="form-control" id="exampleInputImage">
+                <input #cv="ngModel" name="image" [(ngModel)] = "formData.image" type="file" class="form-control" id="exampleInputImage">
             </div>
             <div class="mb-3 col-12 text-center">
                 <input name="submit" type="submit" value="Submit" class="submit btn" (click)="signUp(signup)">

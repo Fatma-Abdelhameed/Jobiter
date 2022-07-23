@@ -26,6 +26,7 @@ import { AddSalaryComponent } from './add-salary/add-salary.component';
 import { AddInterviewQuestionsComponent } from './add-interview-questions/add-interview-questions.component';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { ApplicantSignUpComponent } from '../applicant-sign-up/applicant-sign-up.component';
 
 const routes:Routes = [
   {path:'', component:HomeComponent},

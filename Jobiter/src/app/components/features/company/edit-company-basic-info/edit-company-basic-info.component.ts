@@ -12,9 +12,9 @@ export class EditCompanyBasicInfoComponent implements OnInit {
     address:'',
     city:'',
     phone:'',
-    size: 0,
+    company_size: 0,
     industry:'',
-    startedAt:'',
+    started_at:'',
     website:''
   }
   noChangesError:boolean = false
@@ -24,7 +24,7 @@ export class EditCompanyBasicInfoComponent implements OnInit {
   saveChanges(data:any){
     if(data.touched){
       this.companySer.editBasicInfo(this.token.getUser().id, this.formData.address, this.formData.city,
-      this.formData.industry, this.formData.startedAt, this.formData.size, this.formData.website).subscribe({
+      this.formData.industry, this.formData.started_at, this.formData.company_size, this.formData.website).subscribe({
         next:(info)=>{
           this.dataUpdated = true
         

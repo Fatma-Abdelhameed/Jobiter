@@ -51,39 +51,70 @@ token:any
       return this.http.put(`http://127.0.0.1:8000/api/profiles/${id}/update/`, {
          about },{headers: new HttpHeaders().set('Authorization', 'token '+JSON.parse(this.token).token)})
    }
-   editJob(id:number, data:{}){
-      return this.http.patch(`http://127.0.0.1:8000/api/profiles/${id}/update/`, data)
-   }
+  
    getNotificationState(id:number){
       return this.http.get(`http://127.0.0.1:8000/api/profiles/${id}/show/`)
    }
    changeNotificationState(state:boolean){
       this.token=sessionStorage.getItem('auth-user')
+      console.log("notify>>>")
       return this.http.post(`http://127.0.0.1:8000/api/profiles/allow_notifications/`, state,
       {headers: new HttpHeaders().set('Authorization', 'token '+JSON.parse(this.token).token)}
       )
    }
    getAllJobs(companyId:number){
-      return this.http.get(`http://127.0.0.1:8000/api/jobs/`, {headers: new HttpHeaders().set('Authorization', 'token '+JSON.parse(this.token).token)})
-   }
-   deleteJob(jobId:number){
-      return this.http.get(`http://127.0.0.1:8000/api/jobs/`)
-   }
-   getJobDetails(jobId:number){
-      return this.http.get("")
+      this.token=sessionStorage.getItem('auth-user')
+      return this.http.get(`http://127.0.0.1:8000/api/jobs/company_jobs/`,
+      {headers: new HttpHeaders().set('Authorization', 'token '+JSON.parse(this.token).token)})
    }
    postNewJob(job_title:string, level:string, work_type:string,
-     job_type:String, Description:string,salary:String){
-    this.token=sessionStorage.getItem('auth-user')
-    return this.http.post("http://127.0.0.1:8000/api/jobs/create/", {
-      job_title,
-      level,
-      Description,
-      job_type,
-      work_type,
-      salary
-    },{headers: new HttpHeaders().set('Authorization', 'token '+JSON.parse(this.token).token)})
+      job_type:String, Description:string,salary:String){
+     this.token=sessionStorage.getItem('auth-user')
+     return this.http.post("http://127.0.0.1:8000/api/jobs/create/", {
+       job_title,
+       level,
+       Description,
+       job_type,
+       work_type,
+       salary
+     },{headers: new HttpHeaders().set('Authorization', 'token '+JSON.parse(this.token).token)})
    }
+   getJobDetails(jobId:number){
+      this.token=sessionStorage.getItem('auth-user')
+      return this.http.get(`http://127.0.0.1:8000/api/jobs/${jobId}`,    
+        {headers: new HttpHeaders().set('Authorization', 'token '+JSON.parse(this.token).token)}
+      )
+   }
+   editJob(id:number, data:{}){
+      this.token=sessionStorage.getItem('auth-user')
+      console.log('>>>>>',data)
+      return this.http.put(`http://127.0.0.1:8000/api/jobs/${id}/`, data,
+      {headers: new HttpHeaders().set('Authorization', 'token '+JSON.parse(this.token).token)})
+   }
+   deleteJob(jobId:number){
+      this.token=sessionStorage.getItem('auth-user')
+      return this.http.delete(`http://127.0.0.1:8000/api/jobs/${jobId}/`,
+      {headers: new HttpHeaders().set('Authorization', 'token '+JSON.parse(this.token).token)}
+      )
+   }
+
+
+
+
+   closeJob(jobId:number,data:any){
+      
+      this.token=sessionStorage.getItem('auth-user')
+      console.log('confirm======= ',jobId)
+      
+      return this.http.post(`http://127.0.0.1:8000/api/jobs/${jobId}/close/`,data,
+      {headers: new HttpHeaders().set('Authorization', 'token '+JSON.parse(this.token).token)})
+     
+      
+   }
+
+ 
+
+
    getJobApplicants(id:number){
       return this.http.get("")
    }
@@ -93,4 +124,6 @@ token:any
    acceptApplicant(id:number){
       
    }
+
 }
+
