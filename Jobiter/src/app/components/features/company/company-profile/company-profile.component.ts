@@ -10,15 +10,15 @@ import { TokenStorageService } from 'src/app/_services/token-storage.service';
   styleUrls: ['./company-profile.component.css']
 })
 export class CompanyProfileComponent implements OnInit {
-
-  allowNotifications:boolean = true
-  company:Company = new Company(-1, '', '', '', '', '', '', '', 0, '', '', '')
+  data:any
+  allowNotifications:boolean=true
+  company:Company = new Company(-1, '', '', '', '', '', '', '', 0, '', '', '',true)
   constructor(public companySer:CompanyService, public token:TokenStorageService) { }
 
   changeNotificationState(checked:boolean){
     this.companySer.changeNotificationState(this.allowNotifications).subscribe({
       next:(state)=>{
-        //this.allowNotifications = state
+        //this.allowNotifications = JSON.parse(state).allow_notification
       }
     })
   }
@@ -28,9 +28,17 @@ export class CompanyProfileComponent implements OnInit {
         this.company = data
       }
     })
-    this.companySer.getNotificationState().subscribe({
+    this.companySer.getNotificationState(this.token.getUser().id).subscribe({
       next:(state)=>{
-        //this.allowNotifications = state
+        // if(state.hasOwnProperty('allow_notification')){
+        //   this.allowNotifications=state.allow_notification
+        // }
+        console.log(state)
+        this.data=state
+        this.allowNotifications =(this.data).allow_notification
+        
+        console.log('=============')
+        console.log(this.allowNotifications)
       }
     })
   }

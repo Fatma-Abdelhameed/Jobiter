@@ -9,7 +9,7 @@ import { CompanyService } from 'src/app/_services/company.service';
   styleUrls: ['./company-profile-overview.component.css']
 })
 export class CompanyProfileOverviewComponent implements OnInit {
-  company:Company = new Company(-1, '', '', '', '', '', '', '', 0, '', '', '')
+  company:Company = new Company(-1, '', '', '', '', '', '', '', 0, '', '', '',true)
   constructor(public companySer:CompanyService, public route: ActivatedRoute) { }
 
   ngOnInit(): void {

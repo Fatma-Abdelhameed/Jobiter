@@ -10,8 +10,6 @@ import { TokenStorageService } from 'src/app/_services/token-storage.service';
 export class EditJobComponent implements OnInit {
   formData = {
     title:'',
-    minExp:'',
-    maxExp:'',
     level:'',
     type:'',
     requirements:'',

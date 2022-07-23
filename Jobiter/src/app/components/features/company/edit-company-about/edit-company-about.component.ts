@@ -19,7 +19,7 @@ export class EditCompanyAboutComponent implements OnInit {
       this.companySer.editAbout(this.token.getUser().id, this.formData.about).subscribe({
         next:(info)=>{
           this.dataUpdated = true
-          this.token.saveUser(info)
+          
         },
         error:()=>{
 

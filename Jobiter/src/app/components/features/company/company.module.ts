@@ -26,7 +26,10 @@ const routes:Routes = [
   {path:'all-jobs',component:AllJobsComponent},
   {path:'post-new-job',component:PostNewJobComponent},
   {path:'company-profile', component:CompanyProfileComponent},
-  {path:'edit-name-image', component:EditCompanyNameImageComponent}
+  {path:'edit-name-image', component:EditCompanyNameImageComponent},
+  {path:'edit-basic-info', component:EditCompanyBasicInfoComponent},
+  {path:'edit-login-info', component:ChangePasswordComponent},
+  {path:'edit-about-info', component:EditCompanyAboutComponent},
 ]
 
 @NgModule({

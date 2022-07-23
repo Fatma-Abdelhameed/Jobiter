@@ -9,18 +9,18 @@ import { CompanyService } from 'src/app/_services/company.service';
 export class PostNewJobComponent implements OnInit {
   formData = {
     title:'',
-    minExp:'',
-    maxExp:'',
     level:'',
+    status:'',
     type:'',
     requirements:'',
+    salary:''
   }
   insertedJob:boolean = false
   constructor(public company:CompanyService) { }
   postJob(data:any){
     if(data.valid){
       this.company.postNewJob(this.formData.title, this.formData.level, this.formData.type,
-        Number(this.formData.minExp), Number(this.formData.maxExp), this.formData.requirements).subscribe({
+        this.formData.status, this.formData.requirements,this.formData.salary).subscribe({
           next:()=>{
             this.insertedJob = true
           },

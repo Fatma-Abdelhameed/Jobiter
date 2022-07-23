@@ -15,7 +15,7 @@ export class EditCompanyBasicInfoComponent implements OnInit {
     size: 0,
     industry:'',
     startedAt:'',
-    websiteLink:''
+    website:''
   }
   noChangesError:boolean = false
   dataUpdated:boolean = false
@@ -24,7 +24,7 @@ export class EditCompanyBasicInfoComponent implements OnInit {
   saveChanges(data:any){
     if(data.touched){
       this.companySer.editBasicInfo(this.token.getUser().id, this.formData.address, this.formData.city,
-      this.formData.industry, this.formData.startedAt, this.formData.size, this.formData.websiteLink).subscribe({
+      this.formData.industry, this.formData.startedAt, this.formData.size, this.formData.website).subscribe({
         next:(info)=>{
           this.dataUpdated = true
         

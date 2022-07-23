@@ -11,57 +11,31 @@ import {  HttpHeaders } from '@angular/common/http';
 export class CompanyService {
 token:any
 
-  constructor(public http: HttpClient) {
-   // if(sessionStorage.getItem('auth-user')){
-   //   this.token=sessionStorage.getItem('auth-user')
-   //    if(this.token.token){
-   //       this.token=this.token.token
-   //    }
-     
-   // }
-    
-   }
+  constructor(public http: HttpClient) {}
+
    getCompanyDetails(id:number){
       return this.http.get<Company>(`http://127.0.0.1:8000/api/profiles/${id}/show`)
    }
-   /*saveProfileChanges(id:number, name:string, imageUrl:string, email:string, password:string,
-      startedAt:string, size:number, phone:string, address:string, industry:string, link:string,
-       about:string){
-         return this.http.put("", {})
-
-   }*/
-   changePassword(id:number, password:string, confirmPassword:string){
-      return this.http.patch("", {
+  
+      
+   changePassword(id:number, password:string){
+      this.token=sessionStorage.getItem('auth-user')
+      console.log(JSON.parse(this.token).token)
+      return this.http.put(`http://127.0.0.1:8000/api/profiles/${id}/update/`, {
          password,
-         confirmPassword
-      })
-   }
-   editNameImage(id: number, company_name:string, image:any){
-      // if(sessionStorage.getItem('auth-user')){
-      //    this.token=sessionStorage.getItem('auth-user')
-      //     if(this.token.token){
-      //        this.token=this.token.token
-      //     }
          
-      //  }
-      // console.log(sessionStorage.getItem('auth-user'))
+      },{headers: new HttpHeaders().set('Authorization', 'token '+JSON.parse(this.token).token)})
+      
+   }
+
+   editNameImage(id: number, company_name:string, image:any){
        this.token=sessionStorage.getItem('auth-user')
-      // console.log('>>>>>>>>>>>>>'+JSON.parse(this.token))
-      // if(sessionStorage.getItem('auth')){
-      //    console.log('inside iff')
-      //    this.token=sessionStorage.getItem('auth-user')
-      // }
-      // console.log('token ========>>>>>>>'+this.token)
-      // let header = new HttpHeaders();
-      // header.set('Authorization', 'token 9d19b8cb5464ae4a785f971b641fd686a26edfdf');
-      // header.append('Content-Type', 'application/json');
-     
       return this.http.put(`http://127.0.0.1:8000/api/profiles/${id}/update/`, {
          company_name
-         
       }, {headers: new HttpHeaders().set('Authorization', 'token '+JSON.parse(this.token).token)})
    }
-   editBasicInfo(id: number, address:string, city:string, industry:string, startedAt:string, size:number, websiteLink:string){
+
+   editBasicInfo(id: number, address:string, city:string, industry:string, startedAt:string, size:number, website:string){
       this.token=sessionStorage.getItem('auth-user')
       return this.http.put(`http://127.0.0.1:8000/api/profiles/${id}/update/`, {
          address,
@@ -69,23 +43,25 @@ token:any
          industry,
          startedAt,
          size,
-         websiteLink
-      })
+         website,
+      },{headers: new HttpHeaders().set('Authorization', 'token '+JSON.parse(this.token).token)})
    }
    editAbout(id:number, about:string){
       this.token=sessionStorage.getItem('auth-user')
       return this.http.put(`http://127.0.0.1:8000/api/profiles/${id}/update/`, {
-         about
-      })
+         about },{headers: new HttpHeaders().set('Authorization', 'token '+JSON.parse(this.token).token)})
    }
    editJob(id:number, data:{}){
       return this.http.patch(`http://127.0.0.1:8000/api/profiles/${id}/update/`, data)
    }
-   getNotificationState(){
-      return this.http.get("")
+   getNotificationState(id:number){
+      return this.http.get(`http://127.0.0.1:8000/api/profiles/${id}/show/`)
    }
    changeNotificationState(state:boolean){
-      return this.http.post("", state)
+      this.token=sessionStorage.getItem('auth-user')
+      return this.http.post(`http://127.0.0.1:8000/api/profiles/allow_notifications/`, state,
+      {headers: new HttpHeaders().set('Authorization', 'token '+JSON.parse(this.token).token)}
+      )
    }
    getAllJobs(companyId:number){
       return this.http.get(`http://127.0.0.1:8000/api/jobs/`, {headers: new HttpHeaders().set('Authorization', 'token '+JSON.parse(this.token).token)})
@@ -96,16 +72,17 @@ token:any
    getJobDetails(jobId:number){
       return this.http.get("")
    }
-   postNewJob(title:string, level:string, type:string,
-     minExperience:number, maxExperience:number, requirements:string){
-    return this.http.post("", {
-      title,
+   postNewJob(job_title:string, level:string, work_type:string,
+     job_type:String, Description:string,salary:String){
+    this.token=sessionStorage.getItem('auth-user')
+    return this.http.post("http://127.0.0.1:8000/api/jobs/create/", {
+      job_title,
       level,
-      type,
-      minExperience,
-      maxExperience,
-      requirements
-    })
+      Description,
+      job_type,
+      work_type,
+      salary
+    },{headers: new HttpHeaders().set('Authorization', 'token '+JSON.parse(this.token).token)})
    }
 
 }

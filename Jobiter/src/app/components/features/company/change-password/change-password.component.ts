@@ -14,10 +14,11 @@ export class ChangePasswordComponent implements OnInit {
   }
   constructor(public companySer:CompanyService, public token:TokenStorageService) { }
   changePass(){
+    console.log('==================')
     this.companySer.changePassword(this.token.getUser().id,
-     this.formData.password, this.formData.confirmPassword).subscribe({
-        next:()=>{
-
+     this.formData.password).subscribe({
+        next:(res)=>{
+          console.log('=================='+res)
         },
         error:()=>{
           

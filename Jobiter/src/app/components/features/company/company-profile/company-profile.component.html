@@ -13,7 +13,7 @@
         </div>
     </div>
     <div class="login-info mt-3 p-3">
-        <a class="btn edit"><i class="fa-solid fa-pen"></i></a>
+        <a [routerLink]="['/edit-login-info']" class="btn edit"><i class="fa-solid fa-pen"></i></a>
         <div class="section-header">
             <h5>Login Info</h5>
         </div>
@@ -29,7 +29,7 @@
         </div>
     </div>
     <div class="basic-info mt-3 p-3">
-        <a class="btn edit"><i class="fa-solid fa-pen"></i></a>
+        <a [routerLink]="['/edit-basic-info']" class="btn edit"><i class="fa-solid fa-pen"></i></a>
         <div class="section-header">
             <h5>Basic Info</h5>
         </div>
@@ -56,12 +56,12 @@
             </div>
             <div class="row data mb-3 d-flex align-items-center">
                 <label class="col-md-6 col-xs-12 title">Website Link</label>
-                <span class="col-md-6 col-xs-12 content">{{company.websiteLink}}</span>
+                <span class="col-md-6 col-xs-12 content">{{company.website}}</span>
             </div>
         </div>
     </div>
     <div class="login-info mt-3 p-3">
-        <a class="btn edit"><i class="fa-solid fa-pen"></i></a>
+        <a [routerLink]="['/edit-about-info']"><i class="fa-solid fa-pen"></i></a>
         <div class="section-header">
             <h5>About Company</h5>
         </div>
