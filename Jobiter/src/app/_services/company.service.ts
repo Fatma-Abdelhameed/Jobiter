@@ -91,6 +91,6 @@ token:any
       return this.http.get("")
    }
    acceptApplicant(id:number){
-      return this.http.post("")
+      
    }
 }
