@@ -31,8 +31,7 @@
                 <p class="job-title mb-1">{{job.job_title}}</p>
                 <p class="text-secondary font-size-sm mb-1">{{job.company['company_name']}}</p>
                 <p class="text-secondary font-size-sm mb-2">{{job.created_at}}</p>
-                <button class="apply-btn btn me-1">Apply For Job</button>
-                <button class="details-btn btn">Show Details</button>
+                <button (click)="details(job.id)" class="details-btn btn">Show Details</button>
               </div>
             </div>
           </div>

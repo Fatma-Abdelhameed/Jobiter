@@ -31,5 +31,9 @@ export class HomeComponent implements OnInit {
 
       }
     )  }
+    details(id:number){
+      this.router.navigate([`applicant/job-details/${id}`])
+    }
+  
 
 }

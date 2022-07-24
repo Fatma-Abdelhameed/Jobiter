@@ -22,7 +22,7 @@ import { HomeComponent } from './components/features/applicant/home/home.compone
     NavbarComponent,
     LoginComponent,
     ApplicantSignUpComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

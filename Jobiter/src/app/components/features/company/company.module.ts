@@ -26,7 +26,7 @@ import { EmployeeProfileComponent } from './employee-profile/employee-profile.co
 import { JobDetailsComponent } from './job-details/job-details.component';
 import { AcceptApplicantComponent } from './accept-applicant/accept-applicant.component';
 const routes:Routes = [
-  {path:'',component:AllJobsComponent},
+  {path:'home',component:AllJobsComponent},
   {path:'post-new-job',component:PostNewJobComponent},
   {path:'company-profile', component:CompanyProfileComponent},
   {path:'edit-name-image', component:EditCompanyNameImageComponent},

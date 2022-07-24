@@ -13,13 +13,13 @@
             </div>
             <div class="form-controls mb-3 col-12">
                 <label for="exampleInputDate" class="form-label required">Starting Date</label>
-                <input name="Date" #startingDate="ngModel" [(ngModel)] = "formData.starting_date" type="date" class="form-control" id="exampleInputDate" required>
+                <input name="Date" #startingDate="ngModel" [(ngModel)] = "formData.starting_date" type="number" class="form-control" id="exampleInputDate" required>
                 <span class="error" *ngIf="startingDate.errors?.['required'] && startingDate.touched">This Field Is Required</span>
 
             </div>
             <div class="form-controls mb-3 col-12">
                 <label for="exampleInputCV" class="form-label required">CV</label>
-                <input #cv="ngModel" name="cv" [(ngModel)] = "formData.cv" type="file" class="form-control" id="exampleInputCV" required>
+                <input #cv="ngModel" name="cv" [(ngModel)] = "formData.cv" type="file" class="form-control" id="exampleInputCV" >
                 <span class="error" *ngIf="cv.errors?.['required'] && cv.touched">This Field Is Required</span>
 
             </div>

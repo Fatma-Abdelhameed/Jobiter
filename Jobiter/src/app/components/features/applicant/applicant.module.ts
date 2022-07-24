@@ -31,7 +31,7 @@ import { ApplicantSignUpComponent } from '../applicant-sign-up/applicant-sign-up
 const routes:Routes = [
   {path:'', component:HomeComponent},
   {path:'job-details/:id', component:JobDetailsComponent},
-  {path:'company-profile:id', component:CompanyProfileComponent},
+  {path:'company-profile/:id', component:CompanyProfileComponent},
   {path:'edit-basic-info', component:EditBasicInfoComponent},
   {path:'edit-work-experience', component:EditWorkExperienceComponent},
   {path:'change-password', component:ChangePasswordComponent},
