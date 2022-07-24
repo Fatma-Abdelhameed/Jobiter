@@ -21,7 +21,7 @@ const routes: Routes = [
   {
     path:'applicant',
     loadChildren: ()=>import('./components/features/applicant/applicant.module').then(m=>m.ApplicantModule),
-    canActivate:[AuthorizedGuard]
+    //canActivate:[AuthorizedGuard]
   },
 ];
 

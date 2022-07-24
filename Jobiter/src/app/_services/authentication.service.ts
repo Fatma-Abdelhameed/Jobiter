@@ -33,7 +33,7 @@ export class AuthenticationService {
       })
    }
    applicantSignUp(first_name:string, last_name:string, email:string, password:string,password_confirm:string,
-    job_title:string, phone:string, city:string, level:string, faculty:string, dob:string,
+    job_title:string, phone:string, city:string, level:string, username:string, dob:string,
     gender:string, image:string, cv:string){
       return this.http.post('http://127.0.0.1:8000/api/accounts/employee_signup/', {
         first_name,
@@ -45,11 +45,12 @@ export class AuthenticationService {
         phone,
         city,
         level,
-        faculty,
+        username,
         dob,
         gender,
-        image,
-        cv
+        image:null,
+        cv,
+        
         })
    }
    login(username:string, password:string){

@@ -23,7 +23,7 @@ export class ApplicantSignUpComponent implements OnInit {
     faculty:'',
     dob:'',
     gender:'',
-    image:'',
+    imageUrl:'',
     cv:''
   }
   cities:[] = []
@@ -33,7 +33,7 @@ export class ApplicantSignUpComponent implements OnInit {
       this.auth.applicantSignUp(this.formData.firstname, this.formData.lastname, this.formData.email,
         this.formData.password, this.formData.confirm_password, this.formData.job_title, this.formData.phone,
         this.formData.city, this.formData.level, this.formData.faculty, this.formData.dob,
-        this.formData.gender, this.formData.image, this.formData.cv).subscribe({
+        this.formData.gender, this.formData.imageUrl, this.formData.cv).subscribe({
           next: applicant=>{
             /*this.auth.isLogged = 'true'
             this.auth.currentUserType = 'applicant'
@@ -43,7 +43,7 @@ export class ApplicantSignUpComponent implements OnInit {
             this.token.saveUser(applicant)*/
           }
         })
-      this.router.navigateByUrl('login')
+      this.router.navigateByUrl('')
     }
   }
   ngOnInit(): void {

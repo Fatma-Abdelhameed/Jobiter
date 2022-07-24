@@ -29,7 +29,7 @@ import { HomeComponent } from './home/home.component';
 import { ApplicantSignUpComponent } from '../applicant-sign-up/applicant-sign-up.component';
 
 const routes:Routes = [
-  {path:'', component:HomeComponent},
+  {path:'home', component:HomeComponent},
   {path:'job-details/:id', component:JobDetailsComponent},
   {path:'company-profile:id', component:CompanyProfileComponent},
   {path:'edit-basic-info', component:EditBasicInfoComponent},
