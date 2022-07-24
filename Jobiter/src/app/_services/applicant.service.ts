@@ -12,6 +12,11 @@ export class ApplicantService {
   getCities(){
     return this.http.get("")
   }
+  getCompanyJobs(id:number){
+    this.token=sessionStorage.getItem('auth-user')
+    return this.http.get(`http://127.0.0.1:8000/api/jobs/${id}/company_jobs/`,
+    {headers: new HttpHeaders().set('Authorization', 'token '+JSON.parse(this.token).token)})
+  }
   getAllCompanies(){
     this.token=sessionStorage.getItem('auth-user')
     return this.http.get(`http://127.0.0.1:8000/api/jobs/all_jobs/`,
@@ -61,16 +66,28 @@ export class ApplicantService {
     return this.http.post("", data)
   }
   addReview(id:number, data:{}){
-    return this.http.post("", data)
+    this.token=sessionStorage.getItem('auth-user')
+
+    return this.http.post(`http://127.0.0.1:8000/api/reviews/${id}/create-review/`, data,
+    {headers: new HttpHeaders().set('Authorization', 'token '+JSON.parse(this.token).token)}
+    )
   }
   addSalary(id:number, data:{}){
     return this.http.post("", data)
   }
   getCompanyOverview(id:number){
-    return this.http.get("")
+    this.token=sessionStorage.getItem('auth-user')
+         return this.http.get(`http://127.0.0.1:8000/api/profiles/${id}/show`,
+         {headers: new HttpHeaders().set('Authorization', 'token '+JSON.parse(this.token).token)}
+         )
+
   }
   getCompanyReviews(id:number){
-    return this.http.get("")
+    this.token=sessionStorage.getItem('auth-user')
+
+    return this.http.get(`http://127.0.0.1:8000/api/reviews/${id}/get-all-reviews/`,      
+       {headers: new HttpHeaders().set('Authorization', 'token '+JSON.parse(this.token).token)}
+    )
   }
   getCompanySalaries(id:number){
     return this.http.get("")

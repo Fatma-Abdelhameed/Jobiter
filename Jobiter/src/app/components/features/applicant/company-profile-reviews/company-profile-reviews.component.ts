@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ApplicantService } from 'src/app/_services/applicant.service';
 
@@ -14,7 +14,7 @@ export class CompanyProfileReviewsComponent implements OnInit {
     subscription: Subscription | undefined;
     rating = 4
     resData:any
-  constructor(public applicantSer:ApplicantService, public route:ActivatedRoute) { }
+  constructor(public applicantSer:ApplicantService, public route:ActivatedRoute, private router:Router) { }
 
   ngOnInit(): void {
     this.data = {
@@ -36,10 +36,16 @@ export class CompanyProfileReviewsComponent implements OnInit {
       this.applicantSer.getCompanyReviews(this.route.snapshot.params['id']).subscribe({
         next:(res)=>{
           this.resData = res
+          console.log(res)
         }
       })
   }
+add(){
+  let id = this.route.snapshot.params['id']
+  this.router.navigate([`applicant/add-review/${id}`])
 
+
+}
 
     getLightTheme() {
       return {

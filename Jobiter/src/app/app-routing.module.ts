@@ -32,7 +32,7 @@ const routes: Routes = [
   },
   {path:'applicant', component:HomeComponent},
   {path:'applicant/job-details/:id', component:JobDetailsComponent},
-  {path:'applicant/company-profile:id', component:CompanyProfileComponent},
+  {path:'applicant/company-profile/:id', component:CompanyProfileComponent},
   {path:'applicant/edit-basic-info', component:EditBasicInfoComponent},
   {path:'applicant/edit-work-experience', component:EditWorkExperienceComponent},
   {path:'applicant/change-password', component:ChangePasswordComponent},

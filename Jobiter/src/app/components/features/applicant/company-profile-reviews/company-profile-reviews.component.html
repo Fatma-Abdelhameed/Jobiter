@@ -1,6 +1,6 @@
 <div class="company-reviews m-auto mt-4 col-12">
     <div class="reviews-graph mt-3 p-3">
-        <a class="btn add"><i class="fa-solid fa-plus"></i></a>
+        <a (click)="add()" class="btn add"><i class="fa-solid fa-plus"></i></a>
         <div class="section-header">
             <h5>Reviews <span class="count">75 reviews</span></h5>
         </div>
@@ -8,24 +8,23 @@
             <p-chart type="doughnut" [data]="data" [options]="chartOptions" width="30vw" height="60vh"></p-chart>
         </div>
     </div>
-    <div class="review mt-3 p-4">
-        <span class="posted-date">{{resData.posted_date}}</span>
+    <div class="review mt-3 p-4" *ngFor="let review of resData">
+        <span class="posted-date">{{review.posted_date}}</span>
         <div class="header">
-            <h5 class="review-title">"Very Good"</h5>
-            <p-rating [ngModel]="resData.rating" [readonly]="true" [stars]="5" [cancel]="false"></p-rating>
-            <p class="job-position">{{resData.job_position}}</p>
+            <h5 class="review-title"> {{review.title}} </h5>
+            <p-rating [ngModel]="review.rating" [readonly]="true" [stars]="5" [cancel]="false"></p-rating>
         </div>
         <div class="section-body mt-4 mb-3">
             <div class="row pros mb-3 d-flex align-items-center">
                 <p class="pros-title">Pros</p>
                 <p class="col-12 pros-content">
-                    {{resData.pros}}
+                    {{review.pros}}
                 </p>
             </div>
             <div class="row cons mb-3 d-flex align-items-center">
                 <p class="cons-title">Cons</p>
                 <p class="col-12 cons-content">
-                    {{resData.cons}}
+                    {{review.cons}}
                 </p>
             </div>
         </div>
