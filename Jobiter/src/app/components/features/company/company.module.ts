@@ -68,6 +68,6 @@ const routes:Routes = [
     InputSwitchModule
 
   ],
-  exports: [JobDetailsComponent, AllJobsComponent]
+  exports: []
 })
 export class CompanyModule { }

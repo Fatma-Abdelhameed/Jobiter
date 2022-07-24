@@ -9,7 +9,8 @@ import { TokenStorageService } from 'src/app/_services/token-storage.service';
   selector: 'app-all-jobs',
   templateUrl: './all-jobs.component.html',
   styleUrls: ['./all-jobs.component.css'],
-  providers: [ConfirmationService]
+  providers: [ConfirmationService],
+  
 })
 export class AllJobsComponent implements OnInit {
   allJobs:any[] = []
