@@ -75,6 +75,7 @@ const routes:Routes = [
     TabViewModule,
     InputSwitchModule
   ],
-  exports: []
+  exports: [
+  ]
 })
 export class ApplicantModule { }
