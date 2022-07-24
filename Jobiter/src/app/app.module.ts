@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ApplicantSignUpComponent } from './components/features/applicant-sign-up/applicant-sign-up.component';
 import { ApplicantModule } from './components/features/applicant/applicant.module';
+import { HomeComponent } from './components/features/applicant/home/home.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ApplicantModule } from './components/features/applicant/applicant.modul
     NavbarComponent,
     LoginComponent,
     ApplicantSignUpComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +36,7 @@ import { ApplicantModule } from './components/features/applicant/applicant.modul
     ApplicantModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [HomeComponent,]
 })
 export class AppModule { }

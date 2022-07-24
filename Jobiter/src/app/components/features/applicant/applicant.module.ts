@@ -28,7 +28,7 @@ import { AddInterviewQuestionsComponent } from './add-interview-questions/add-in
 import { HomeComponent } from './home/home.component';
 import { ApplicantSignUpComponent } from '../applicant-sign-up/applicant-sign-up.component';
 
-/*const routes:Routes = [
+const routes:Routes = [
   {path:'', component:HomeComponent},
   {path:'job-details/:id', component:JobDetailsComponent},
   {path:'company-profile:id', component:CompanyProfileComponent},
@@ -42,7 +42,7 @@ import { ApplicantSignUpComponent } from '../applicant-sign-up/applicant-sign-up
   {path:'add-salary/:id',component:AddSalaryComponent},
   {path:'add-work-experience', component:AddWorkExperienceComponent},
   {path:'add-interview-questions/:id', component:AddInterviewQuestionsComponent}
-]*/
+]
 
 @NgModule({
   declarations: [
@@ -75,6 +75,7 @@ import { ApplicantSignUpComponent } from '../applicant-sign-up/applicant-sign-up
     TabViewModule,
     InputSwitchModule
   ],
-  exports: []
+  exports: [
+  ]
 })
 export class ApplicantModule { }

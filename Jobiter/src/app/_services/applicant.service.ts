@@ -6,14 +6,16 @@ import { Job } from '../_models/job';
   providedIn: 'root'
 })
 export class ApplicantService {
+  token:any
 
   constructor(public http:HttpClient) { }
   getCities(){
     return this.http.get("")
   }
   getAllCompanies(){
-    return this.http.get("")
-  }
+    this.token=sessionStorage.getItem('auth-user')
+    return this.http.get(`http://127.0.0.1:8000/api/jobs/all_jobs/`,
+    {headers: new HttpHeaders().set('Authorization', 'token '+JSON.parse(this.token).token)})  }
   getJobDetails(id:number){
     return this.http.get("");
   }

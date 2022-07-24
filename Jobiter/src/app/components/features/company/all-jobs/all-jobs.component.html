@@ -16,8 +16,8 @@
             </div>
         </div>
     </div>
- 
-    <div class="jobs">
+
+    <div class="jobs container my-4">
         <table class="table table-bordered text-center mt-3">
             <thead class="table-header">
             <tr>
@@ -25,8 +25,8 @@
                 <th>Date</th>
                 <th>Status</th>
                 <th>Job type</th>
-                <th>Work type</th>           
-                <th>Actions</th>           
+                <th>Work type</th>
+                <th>Actions</th>
             </tr>
             </thead>
             <tbody>
@@ -38,7 +38,7 @@
               <td>{{job.job_type}}</td>
               <td>{{job.work_type}}</td>
               <td>
-               <a class="btn details me-2" (click)="details(job.id)"><i class="fa-solid fa-circle-info me-2"></i>Details</a> 
+               <a class="btn details me-2" (click)="details(job.id)"><i class="fa-solid fa-circle-info me-2"></i>Details</a>
                 <p-confirmPopup></p-confirmPopup>
                 <button (click)="confirm($event, job.id)" pButton icon="fa-solid fa-trash-can" class="delete" label="Delete"></button>
            </td>
