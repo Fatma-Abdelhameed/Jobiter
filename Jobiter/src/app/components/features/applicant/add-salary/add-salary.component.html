@@ -3,17 +3,48 @@
     <div class="add-salary mt-2 mb-3 m-auto col-md-3 col-xs-10 p-4">
         <form class="row" #addSalary="ngForm">
             <div class="form-controls mb-3 col-12">
-                <label for="exampleInputPosition" class="form-label required">Position</label>
-                <input #position="ngModel" name="position" [(ngModel)] = "formData.position" type="text" class="form-control" id="exampleInputPosition" required>
-                <span class="error" *ngIf="position.errors?.['required'] && position.touched">This Field Is Required</span>
+                <label for="exampleInputPosition" class="form-label required">Job title</label>
+                <input #job_title="ngModel" name="job_title" [(ngModel)] = "formData.job_title" type="text" class="form-control" id="exampleInputPosition" required>
+  
             </div>
+
+
             <div class="form-controls mb-3 col-12">
-                <label for="exampleInputSalary" class="form-label required">Salary</label>
-                <input #salary="ngModel" name="salary" [(ngModel)] = "formData.salary" type="number" class="form-control" id="exampleInputSalary" required>
+                <label for="exampleInputPosition" class="form-label required">company</label>
+                <input #company="ngModel" name="company" [(ngModel)] = "formData.company" type="text" class="form-control" id="exampleInputPosition" required>
+                <span class="error" *ngIf="company.errors?.['required'] && company.touched">This Field Is Required</span>
+            </div>
+
+
+
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputPosition" class="form-label required">salary</label>
+                <input #salary="ngModel" name="salary" [(ngModel)] = "formData.salary" type="number" class="form-control" id="exampleInputPosition" required>
                 <span class="error" *ngIf="salary.errors?.['required'] && salary.touched">This Field Is Required</span>
             </div>
+
+
+
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputPosition" class="form-label required">start_date</label>
+                <input #start_date="ngModel" name="start_date" [(ngModel)] = "formData.start_date" type="date" class="form-control" id="exampleInputPosition" required>
+                <span class="error" *ngIf="start_date.errors?.['required'] && start_date.touched">This Field Is Required</span>
+            </div>
+
+
+
+            <div class="form-controls mb-3 col-12">
+                <label for="exampleInputPosition" class="form-label required">end_date</label>
+                <input #end_date="ngModel" name="end_date" [(ngModel)] = "formData.end_date" type="text" class="form-control" id="exampleInputPosition" required>
+                <span class="error" *ngIf="end_date.errors?.['required'] && end_date.touched">This Field Is Required</span>
+            </div>
+
+
+
+
+
             <div class="mb-3 col-12 text-center">
-                <input name="submit" type="submit" value="Save" class="submit btn" (click)="add()">
+                <input name="submit" type="submit" value="Save" class="submit btn" (click)="add(addSalary)">
             </div>
         </form>
     </div>

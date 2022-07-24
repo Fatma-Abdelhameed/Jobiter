@@ -64,16 +64,17 @@ export class ApplicantService {
   addReview(id:number, data:{}){
     return this.http.post("", data)
   }
-  addSalary(id:number,company:string,reviewer:number,salary:number,job_title:string,start_date:string,end_date:string,is_published:boolean){
+  addSalary(id:number,company:string,salary:number,job_title:string,start_date:string,end_date:string){
+    this.token=sessionStorage.getItem('auth-user')
     return this.http.post("http://127.0.0.1:8000/salary/api/v1/create/", {
       company,
-      reviewer ,
+      reviewer:id ,
       salary,
       job_title,
       start_date,
       end_date ,
-      is_published 
-    }
+      is_published :true
+    },{headers: new HttpHeaders().set('Authorization', 'token '+JSON.parse(this.token).token)}
     )
   }
   getCompanyOverview(id:number){
