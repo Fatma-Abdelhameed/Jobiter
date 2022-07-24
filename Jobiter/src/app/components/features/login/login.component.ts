@@ -1,3 +1,4 @@
+import { JsonPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/_services/authentication.service';
@@ -23,14 +24,15 @@ export class LoginComponent implements OnInit {
             this.response=res
             if(this.response.id){
                 this.auth.isLogged = 'true'
-                this.auth.currentUserType = this.response.userType
                 sessionStorage.setItem('isLogged', String(this.auth.isLogged))
                 sessionStorage.setItem('currentUserType', this.response.userType)
+                this.auth.currentUserType = sessionStorage.getItem('currentUserType')
+                
                 this.token.saveUser(this.response)
-                if(sessionStorage.getItem('currentUserType') == 'COMPANY'){
-                  this.router.navigateByUrl('/company')
-                }else if(sessionStorage.getItem('currentUserType') == ''){
-                  this.router.navigateByUrl('applicant')
+                if(this.auth.currentUserType== 'COMPANY'){
+                  window.location.href='/company'
+                }else if(this.auth.currentUserType == 'EMPLOYEE'){
+                  window.location.href='/company'
                 }
             }
             

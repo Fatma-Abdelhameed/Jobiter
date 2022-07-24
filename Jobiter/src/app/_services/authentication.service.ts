@@ -10,7 +10,7 @@ const httpOptions = {
 })
 export class AuthenticationService {
   isLogged = 'false'
-  currentUserType = ''
+  currentUserType :any
   constructor(public http: HttpClient) {}
    companySignUp(company_name:string, email:string,username:string, password:string, password_confirm:string, 
     phone:string, address:string, city:string, industry:string, started_at:string, 
@@ -32,23 +32,23 @@ export class AuthenticationService {
         about
       })
    }
-   applicantSignUp(firstname:string, lastname:string, email:string, password:string,confirm_password:string,
-    job_title:string, phone:string, city:string, level:string, faculty:string, date_of_birth:string,
-    gender:string, profile_image:string, cv:string){
-      return this.http.post('', {
-        firstname,
-        lastname,
+   applicantSignUp(first_name:string, last_name:string, email:string, password:string,password_confirm:string,
+    job_title:string, phone:string, city:string, level:string, faculty:string, dob:string,
+    gender:string, image:string, cv:string){
+      return this.http.post('http://127.0.0.1:8000/api/accounts/employee_signup/', {
+        first_name,
+        last_name,
         email,
         password,
-        confirm_password,
+        password_confirm,
         job_title,
         phone,
         city,
         level,
         faculty,
-        date_of_birth,
+        dob,
         gender,
-        profile_image,
+        image,
         cv
         })
    }

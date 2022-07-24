@@ -10,7 +10,7 @@ import { ApplicantService } from 'src/app/_services/applicant.service';
   styleUrls: ['./job-details.component.css']
 })
 export class JobDetailsComponent implements OnInit {
-  job:Job = new Job(0, '', '', '', '',0, 0, '') 
+  job:Job = new Job(0,'','','','','','','',0,'') 
   companyDetails:Company = new Company(0, '', '', '', '', '', '', '', 0, '', '', '',true)
   constructor(public applicant:ApplicantService, public route: ActivatedRoute) { }
 

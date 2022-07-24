@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthorizedGuard } from './authorized.guard';
+import { ApplicantSignUpComponent } from './components/features/applicant-sign-up/applicant-sign-up.component';
 import { AddInterviewQuestionsComponent } from './components/features/applicant/add-interview-questions/add-interview-questions.component';
 import { AddReviewComponent } from './components/features/applicant/add-review/add-review.component';
 import { AddSalaryComponent } from './components/features/applicant/add-salary/add-salary.component';
@@ -24,6 +25,7 @@ import { SignUpComponent } from './components/features/sign-up/sign-up.component
 const routes: Routes = [
   {path:'',component:LoginComponent},
   {path:'company-sign-up',component:SignUpComponent},
+  {path:'applicant-signup',component:ApplicantSignUpComponent},
   {
     path:'company',
     loadChildren: ()=>import('./components/features/company/company.module').then(m=>m.CompanyModule)
