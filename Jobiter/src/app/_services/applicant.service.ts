@@ -17,10 +17,18 @@ export class ApplicantService {
     return this.http.get(`http://127.0.0.1:8000/api/jobs/all_jobs/`,
     {headers: new HttpHeaders().set('Authorization', 'token '+JSON.parse(this.token).token)})  }
   getJobDetails(id:number){
-    return this.http.get("");
+    this.token=sessionStorage.getItem('auth-user')
+    return this.http.get(`http://127.0.0.1:8000/api/jobs/${id}`,
+    {headers: new HttpHeaders().set('Authorization', 'token '+JSON.parse(this.token).token)});
   }
-  applyForJob(applicantId:number, yearsOfExp:number, cv:string, cover_letter:string, starting_date:string){
-    return this.http.post("",{})
+  applyForJob(id:number, years_of_exp:number, cv:string, cover_letter:string, notice_period:any){
+    this.token=sessionStorage.getItem('auth-user')
+    return this.http.post(`http://127.0.0.1:8000/api/jobs/${id}/apply/`,{
+      years_of_exp,
+      notice_period,
+      cover_letter
+    },
+    {headers: new HttpHeaders().set('Authorization', 'token '+JSON.parse(this.token).token)})
   }
   getNotificationState(id:number){
     return this.http.get("")
