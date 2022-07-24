@@ -3,6 +3,11 @@
     <div class="sign-up mt-2 mb-3 m-auto">
         <form class="row" #signup="ngForm">
             <div class="form-controls mb-3 col-md-6 col-xs-12">
+                <label for="exampleInputFaculty" class="form-label required">Username</label>
+                <input #faculty="ngModel" name="faculty" [(ngModel)] = "formData.faculty" type="text" class="form-control" id="exampleInputFaculty" placeholder="eg, Science" required>
+                <span class="error" *ngIf="faculty.errors?.['required'] && faculty.touched">This Field Is Required</span>
+            </div>
+            <div class="form-controls mb-3 col-md-6 col-xs-12">
                 <label for="exampleInputFirstName" class="form-label required">First Name</label>
                 <input name="name" #firstname="ngModel" [(ngModel)] = "formData.firstname" type="text" class="form-control"  id="exampleInputFirstName" placeholder="eg, Fatma" minlength="3" required>
                 <span class="error" *ngIf="firstname.errors?.['required'] && firstname.touched">This Field Is Required</span>
@@ -61,20 +66,18 @@
             <div class="form-controls mb-3 col-md-6 col-xs-12">
                 <label for="exampleInputLevel" class="form-label required">Level</label>
                 <select #level="ngModel" name="city" [(ngModel)] = "formData.level" class="form-select" aria-label="Default select example" id="exampleInputLevel" required>
-                    <option value="junior">Junior</option>
+                    <option value="ENTRY_LEVEL">Entry level</option>
+                    <option value="JUNIOR">Junior</option>
+                    <option value="SENIOR">Senior</option>
                 </select>
                 <span class="error" *ngIf="level.errors?.['required'] && level.touched">This Field Is Required</span>
             </div>
-            <div class="form-controls mb-3 col-md-6 col-xs-12">
-                <label for="exampleInputFaculty" class="form-label required">Faculty</label>
-                <input #faculty="ngModel" name="faculty" [(ngModel)] = "formData.faculty" type="text" class="form-control" id="exampleInputFaculty" placeholder="eg, Science" required>
-                <span class="error" *ngIf="faculty.errors?.['required'] && faculty.touched">This Field Is Required</span>
-            </div>
+            
             <div class="form-controls mb-3 col-md-6 col-xs-12">
                 <label for="exampleInputGender" class="form-label required">Gender</label>
                 <select #gender="ngModel" name="gender" [(ngModel)] = "formData.gender" class="form-select" aria-label="Default select example" id="exampleInputGender" required>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
+                    <option value="MALE">Male</option>
+                    <option value="FEMALE">Female</option>
                 </select>
                 <span class="error" *ngIf="gender.errors?.['required'] && gender.touched">This Field Is Required</span>
             </div>
@@ -84,12 +87,12 @@
             </div>
             <div class="form-controls mb-3 col-md-6 col-xs-12">
                 <label for="exampleInputImage" class="form-label">Profile Image</label>
-                <input #image="ngModel" name="image" [(ngModel)] = "formData.image" type="file" accept="image/*" class="form-control" id="exampleInputImage">
-                <span class="error" *ngIf="image.errors?.['accept'] && image.touched">File must be image like .png, .jpg</span>
+                <input #cimage="ngModel" name="image" [(ngModel)] = "formData.imageUrl" type="file" accept="image/*" class="form-control" id="exampleInputImage">
+                <span class="error" *ngIf="cimage.errors?.['accept'] && cimage.touched">File must be image like .png, .jpg</span>
             </div>
             <div class="form-controls mb-3 col-md-6 col-xs-12">
                 <label for="exampleInputImage" class="form-label">CV</label>
-                <input #cv="ngModel" name="image" [(ngModel)] = "formData.image" type="file" class="form-control" id="exampleInputImage">
+                <input #cv="ngModel" name="cv" [(ngModel)] = "formData.cv" type="file" class="form-control" id="exampleInputImage">
             </div>
             <div class="mb-3 col-12 text-center">
                 <input name="submit" type="submit" value="Submit" class="submit btn" (click)="signUp(signup)">

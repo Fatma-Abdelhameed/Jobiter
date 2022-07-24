@@ -6,7 +6,7 @@
         </div>
         <div class="details row">
             <div class="name-job-title col-9">
-                <h4 class="applicant-name">{{applicantDetails.firstName}} {{applicantDetails.lastName}}</h4>
+                <h4 class="applicant-name">{{applicantDetails.first_name}} {{applicantDetails.last_name}}</h4>
                 <div class="notification d-flex align-items-start m-auto mt-3">
                     <label class="me-3">notifications</label>
                     <p-inputSwitch [(ngModel)]="allowNotifications" (onChange)="changeNotificationState(allowNotifications)"></p-inputSwitch>
@@ -46,11 +46,11 @@
             </div>
             <div class="row data mb-3 d-flex align-items-center">
                 <label class="col-md-6 col-xs-12 title">Birth Of Date</label>
-                <span class="col-md-6 col-xs-12 content">{{applicantDetails.dateOfBirth}}</span>
+                <span class="col-md-6 col-xs-12 content">{{applicantDetails.dob}}</span>
             </div>
             <div class="row data mb-3 d-flex align-items-center">
                 <label class="col-md-6 col-xs-12 title">Faculty</label>
-                <span class="col-md-6 col-xs-12 content">{{applicantDetails.faculty}}</span>
+                <span class="col-md-6 col-xs-12 content">{{applicantDetails.username}}</span>
             </div>
             <div class="row data mb-3 d-flex align-items-center">
                 <label class="col-md-6 col-xs-12 title">Gender</label>

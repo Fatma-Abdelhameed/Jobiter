@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Job } from '../_models/job';
+import { Developer } from '../_models/developer';
 
 @Injectable({
   providedIn: 'root'
@@ -36,16 +37,16 @@ export class ApplicantService {
     {headers: new HttpHeaders().set('Authorization', 'token '+JSON.parse(this.token).token)})
   }
   getNotificationState(id:number){
-    return this.http.get("")
-  }
+    return this.http.get(`http://127.0.0.1:8000/api/profiles/${id}/show/`)
+ }
   changeNotificationsState(id:number, state:boolean){
     return this.http.post("", state)
   }
   getProfileDetails(id:number){
-    return this.http.get("")
+    return this.http.get<Developer>(`http://127.0.0.1:8000/api/profiles/${id}/show`)
   }
   getWorkExperience(id:number){
-    return this.http.get("")
+    return this.http.get(`http://127.0.0.1:8000/experience/api/v1/${id}/list`)
   }
   deleteWorkExperience(id:number){
     return this.http.delete("")
@@ -72,8 +73,18 @@ export class ApplicantService {
     {headers: new HttpHeaders().set('Authorization', 'token '+JSON.parse(this.token).token)}
     )
   }
-  addSalary(id:number, data:{}){
-    return this.http.post("", data)
+  addSalary(id:number,company:string,salary:number,job_title:string,start_date:string,end_date:string){
+    this.token=sessionStorage.getItem('auth-user')
+    return this.http.post("http://127.0.0.1:8000/salary/api/v1/create/", {
+      company,
+      reviewer:id ,
+      salary,
+      job_title,
+      start_date,
+      end_date ,
+      is_published :true
+    },{headers: new HttpHeaders().set('Authorization', 'token '+JSON.parse(this.token).token)}
+    )
   }
   getCompanyOverview(id:number){
     this.token=sessionStorage.getItem('auth-user')
@@ -90,6 +101,6 @@ export class ApplicantService {
     )
   }
   getCompanySalaries(id:number){
-    return this.http.get("")
+    return this.http.get("http://127.0.0.1:8000/salary/api/v1/list/")
   }
 }

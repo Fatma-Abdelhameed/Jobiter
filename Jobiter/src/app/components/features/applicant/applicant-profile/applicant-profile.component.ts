@@ -11,7 +11,7 @@ import { TokenStorageService } from 'src/app/_services/token-storage.service';
 })
 export class ApplicantProfileComponent implements OnInit {
   allowNotifications:boolean = false
-  applicantDetails:Developer = new Developer(0, '', '', '', '', '', '', '', '', '', '', '', '')
+  applicantDetails:Developer = new Developer(0, '', '', '', '', '', '', '', '', '', '', '')
   applicantWorkExperience:WorkExperience[] = []
   constructor(public token:TokenStorageService, public applicantSer:ApplicantService) { }
   changeNotificationState(state:boolean){
