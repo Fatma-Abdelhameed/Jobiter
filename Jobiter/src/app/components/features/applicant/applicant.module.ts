@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Routes, RouterModule } from '@angular/router';
 import {InputSwitchModule} from 'primeng/inputswitch';
 import { AllCompaniesComponent } from './all-companies/all-companies.component';
 import { FormsModule } from '@angular/forms';
@@ -24,10 +25,9 @@ import { CompanyProfileInterviewQuestionsComponent } from './company-profile-int
 import { AddReviewComponent } from './add-review/add-review.component';
 import { AddSalaryComponent } from './add-salary/add-salary.component';
 import { AddInterviewQuestionsComponent } from './add-interview-questions/add-interview-questions.component';
-import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 
-const routes:Routes = [
+/*const routes:Routes = [
   {path:'', component:HomeComponent},
   {path:'job-details/:id', component:JobDetailsComponent},
   {path:'company-profile:id', component:CompanyProfileComponent},
@@ -41,7 +41,7 @@ const routes:Routes = [
   {path:'add-salary/:id',component:AddSalaryComponent},
   {path:'add-work-experience', component:AddWorkExperienceComponent},
   {path:'add-interview-questions/:id', component:AddInterviewQuestionsComponent}
-]
+]*/
 
 @NgModule({
   declarations: [
