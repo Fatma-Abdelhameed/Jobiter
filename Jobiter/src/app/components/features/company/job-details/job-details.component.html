@@ -1,35 +1,35 @@
 <div class="job-detail">
   <div class="home-header">
     <p-tabView>
-      <p-tabPanel header="Job Details" leftIcon="pi pi-fw pi-database"> 
+      <p-tabPanel header="Job Details" leftIcon="pi pi-fw pi-database">
         <div class="container recent-job-card">
           <div class="row d-flex justify-content-center">
-                <div class="recent-job-card-title col-6">{{jobDetails.title}}</div>
-                <span class="recent-job-card-status col-1 closed">{{jobDetails.state}}</span>
+                <span class="recent-job-card-title">{{jobDetails.title}}</span>
+                <span class="recent-job-card-status closed">{{jobDetails.state}}</span>
           </div>
           <div class="row d-flex justify-content-center">
-            <span class="recent-job-card-date col-3"><i class="fa fa-calendar"></i>{{jobDetails.postedDate}}</span>
-            <span class="recent-job-card-date col-2"><i class="fa fa-globe"></i> {{jobDetails.workType}}</span>
+            <span class="recent-job-card-date"><i class="fa fa-calendar"></i> {{jobDetails.postedDate}}</span>
+            <span class="recent-job-card-date"><i class="fa fa-globe"></i> {{jobDetails.workType}}</span>
           </div>
           <div class="row mt-4 d-flex justify-content-center">
             <!-- <p-confirmPopup></p-confirmPopup> -->
-            <button (click)="confirm($event)" pButton icon="fa-solid fa-x" class="danger" label="Close">Close</button>
+            <button (click)="confirm($event)" pButton icon="fa-solid fa-x" class="danger" label="Close"></button>
            <!-- <form>
             <input name="submit" type="submit" value="Save" class="submit btn" (click)="confirm()">
            </form>  -->
-            <button class="btn success col-2"><i class="fa fa-edit"></i> edit</button>
+            <button class="btn success col-2" (click)="Onedit(jobDetails.id)" ><i class="fa fa-edit"></i> edit</button>
           </div>
           <div class="row mt-4">
             <div class="recent-job-card-subtitle col-4">Job Status</div>
-            <div class="recent-job-card-text col-2"> {{jobDetails.status}} </div>
+            <div class="recent-job-card-text col-8"> {{jobDetails.status}}  </div>
           </div>
           <div class="row mt-4">
             <div class="recent-job-card-subtitle col-4">Position </div>
-            <div class="recent-job-card-text col-2"> {{jobDetails.level}} </div>
+            <div class="recent-job-card-text col-8"> {{jobDetails.level}} </div>
           </div>
           <div class="row mt-4">
             <div class="recent-job-card-subtitle mb-4">Requirements</div>
-            <div class="recent-job-card-text">
+            <div class="recent-job-card-text col-12">
               {{jobDetails.requirements}}
             </div>
           </div>
@@ -37,33 +37,31 @@
       </p-tabPanel>
       <p-tabPanel header="Applicants" leftIcon="pi pi-fw pi-users">
         <div class="container recent-job-card" *ngFor="let applicant of applicants">
-          <div class="row d-flex justify-content-center">
-            <div class="recent-job-card-title col-6">Senior Frontend Using Angular</div>
-            <span class="recent-job-card-status col-1 closed">closed</span>
-          </div>
-          <div class="row d-flex justify-content-center">
-            <span class="recent-job-card-date col-3"><i class="fa fa-calendar"></i> July 4, 2022</span>
-            <span class="recent-job-card-date col-2"><i class="fa fa-globe"></i> Remotely</span>
-          </div>
           <div class="row mt-4 d-flex justify-content-center">
-            <div class="applicant-details w-75">
+            <div class="applicant-details">
               <div class="profile-image d-flex align-items-center justify-content-center">
                 <img class="image" src="assets/images/person.jpg">
               </div>
               <div class="details row">
-                <div class="name-job-title col-9">
-                  <h4 class="applicant-name">Osama Mohamed</h4>
-                  <h6>Junior Frontend Developer</h6>
+                <div class="name-job-title col-12 d-flex justify-content-between">
+                  <div>
+                  <h4 class="applicant-name">{{applicant['employee']['first_name']}} {{applicant['employee']['last_name']}}</h4>
+                  <h6>{{applicant['employee']['level'] || 'Entry Level'}}</h6>
+                  </div>
+                  <div>
+                  <a class="btn accept m-1" (click)="accept(applicant['employee']['id'])"><i class="fa-solid fa-circle-info me-2"></i>View</a>
+                  <a class="btn accept m-1" (click)="viewProfile(applicant['employee']['id'])"><i class="fa-solid fa-circle-info me-2"></i>profile</a>
+                  </div>
                 </div>
                 <div class="col-3 d-flex align-items-center justify-content-end">
-                  <a class="btn accept" [routerLink]="['/accept-applicant',applicant]">Accept</a>
+                  <!-- <a class="btn accept" [routerLink]="['/accept-applicant',applicant.id]">Accept</a> -->
                 </div>
               </div>
             </div>
           </div>
         </div>
        </p-tabPanel>
-    </p-tabView> 
+    </p-tabView>
   </div>
 </div>
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {ConfirmationService} from 'primeng/api';
 import { Job } from 'src/app/_models/job';
 import { CompanyService } from 'src/app/_services/company.service';
@@ -8,7 +9,8 @@ import { TokenStorageService } from 'src/app/_services/token-storage.service';
   selector: 'app-all-jobs',
   templateUrl: './all-jobs.component.html',
   styleUrls: ['./all-jobs.component.css'],
-  providers: [ConfirmationService]
+  providers: [ConfirmationService],
+  
 })
 export class AllJobsComponent implements OnInit {
   allJobs:any[] = []
@@ -17,7 +19,7 @@ export class AllJobsComponent implements OnInit {
   dateValue:Date = new Date()
   selectedDate:any
   keyWord:string = ''
-  constructor(public confirmationService: ConfirmationService, public companySer: CompanyService, public token:TokenStorageService) { }
+  constructor(public confirmationService: ConfirmationService, private router: Router, public companySer: CompanyService, public token:TokenStorageService) { }
   
   confirm(event: any, id:number) {
     this.confirmationService.confirm({
@@ -39,8 +41,12 @@ export class AllJobsComponent implements OnInit {
         console.log(res)
         this.allJobs.push(res)
         console.log('>>>',this.allJobs[0])
+
       }
     )
+  }
+  details(id:number) {
+    this.router.navigate([`company/job-details/${id}`])
   }
 
 }

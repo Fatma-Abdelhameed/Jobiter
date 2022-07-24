@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Routes, RouterModule } from '@angular/router';
 import {InputSwitchModule} from 'primeng/inputswitch';
 import { AllCompaniesComponent } from './all-companies/all-companies.component';
 import { FormsModule } from '@angular/forms';
@@ -24,14 +25,13 @@ import { CompanyProfileInterviewQuestionsComponent } from './company-profile-int
 import { AddReviewComponent } from './add-review/add-review.component';
 import { AddSalaryComponent } from './add-salary/add-salary.component';
 import { AddInterviewQuestionsComponent } from './add-interview-questions/add-interview-questions.component';
-import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ApplicantSignUpComponent } from '../applicant-sign-up/applicant-sign-up.component';
 
 const routes:Routes = [
   {path:'home', component:HomeComponent},
   {path:'job-details/:id', component:JobDetailsComponent},
-  {path:'company-profile:id', component:CompanyProfileComponent},
+  {path:'company-profile/:id', component:CompanyProfileComponent},
   {path:'edit-basic-info', component:EditBasicInfoComponent},
   {path:'edit-work-experience', component:EditWorkExperienceComponent},
   {path:'change-password', component:ChangePasswordComponent},
@@ -75,6 +75,7 @@ const routes:Routes = [
     TabViewModule,
     InputSwitchModule
   ],
-  exports: []
+  exports: [
+  ]
 })
 export class ApplicantModule { }

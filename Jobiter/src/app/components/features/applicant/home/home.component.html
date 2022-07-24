@@ -18,70 +18,20 @@
     </div>
   </div>
   <div class="jobs container w-50">
+
     <div class="row d-flex flex-">
       <div class="col-md-6 mb-3 fw-bold">
         <div class="card">
           <div class="card-body">
-            <div class="d-flex flex-column align-items-center text-center">
-              <img src="assets/images/microsoft.png" alt="Admin" class="rounded-circle company-profile-picture p-3 border border-1"
+            <div *ngFor="let job  of allJobs[0]" class="d-flex flex-column align-items-center text-center">
+              <img src="assets/images/microsoft.png" alt="Admin"
+                   class="rounded-circle company-profile-picture p-3 border border-1"
                    height="130" width="130">
               <div class="mt-3">
-                <p class="job-title mb-1">Senior Frontend Developer</p>
-                <p class="text-secondary font-size-sm mb-1">Microsoft eg., cairo</p>
-                <p class="text-secondary font-size-sm mb-2">July 27, 2022</p>
-                <button class="apply-btn btn me-1">Apply For Job</button>
-                <button class="details-btn btn">Show Details</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 mb-3 fw-bold">
-        <div class="card">
-          <div class="card-body">
-            <div class="d-flex flex-column align-items-center text-center">
-              <img src="assets/images/microsoft.png" alt="Admin" class="rounded-circle company-profile-picture p-3 border border-1"
-                   height="130" width="130">
-              <div class="mt-3">
-                <p class="job-title mb-1">Senior Frontend Developer</p>
-                <p class="text-secondary font-size-sm mb-1">Microsoft eg., cairo</p>
-                <p class="text-secondary font-size-sm mb-2">July 27, 2022</p>
-                <button class="apply-btn btn me-1">Apply For Job</button>
-                <button class="details-btn btn">Show Details</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 mb-3 fw-bold">
-        <div class="card">
-          <div class="card-body">
-            <div class="d-flex flex-column align-items-center text-center">
-              <img src="assets/images/microsoft.png" alt="Admin" class="rounded-circle company-profile-picture p-3 border border-1"
-                   height="130" width="130">
-              <div class="mt-3">
-                <p class="job-title mb-1">Senior Frontend Developer</p>
-                <p class="text-secondary font-size-sm mb-1">Microsoft eg., cairo</p>
-                <p class="text-secondary font-size-sm mb-2">July 27, 2022</p>
-                <button class="apply-btn btn me-1">Apply For Job</button>
-                <button class="details-btn btn">Show Details</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 mb-3 fw-bold">
-        <div class="card">
-          <div class="card-body">
-            <div class="d-flex flex-column align-items-center text-center">
-              <img src="assets/images/microsoft.png" alt="Admin" class="rounded-circle company-profile-picture p-3 border border-1"
-                   height="130" width="130">
-              <div class="mt-3">
-                <p class="job-title mb-1">Senior Frontend Developer</p>
-                <p class="text-secondary font-size-sm mb-1">Microsoft eg., cairo</p>
-                <p class="text-secondary font-size-sm mb-2">July 27, 2022</p>
-                <button class="apply-btn btn me-1">Apply For Job</button>
-                <button class="details-btn btn">Show Details</button>
+                <p class="job-title mb-1">{{job.job_title}}</p>
+                <p class="text-secondary font-size-sm mb-1">{{job.company['company_name']}}</p>
+                <p class="text-secondary font-size-sm mb-2">{{job.created_at}}</p>
+                <button (click)="details(job.id)" class="details-btn btn">Show Details</button>
               </div>
             </div>
           </div>

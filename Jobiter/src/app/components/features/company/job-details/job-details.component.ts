@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import {ConfirmationService} from "primeng/api";
 
 import { Company } from 'src/app/_models/company';
@@ -21,7 +21,8 @@ export class JobDetailsComponent implements OnInit {
   applicants=[]
 
   resData:any
-  constructor(public confirmationService: ConfirmationService, public companySer:CompanyService, public route:ActivatedRoute) { }
+  app:any
+  constructor(public confirmationService: ConfirmationService, private router:Router ,public companySer:CompanyService, public route:ActivatedRoute) { }
 
   ngOnInit(): void {
 
@@ -36,6 +37,8 @@ export class JobDetailsComponent implements OnInit {
         this.jobDetails.postedDate=this.resData.created_at
         this.jobDetails.workType=this.resData.work_type
         this.jobDetails.salary=this.resData.salary
+        this.jobDetails.id=this.resData.id
+
 
       }
     })
@@ -43,8 +46,9 @@ export class JobDetailsComponent implements OnInit {
 
     this.companySer.getJobApplicants(this.route.snapshot.params['id']).subscribe({
       next:(res)=>{
-        this.resData = res
-        this.applicants = this.resData.applicants
+        this.app = res
+        this.applicants = this.app
+        console.log(">>>",this.applicants)
       }
     })
 
@@ -67,7 +71,25 @@ export class JobDetailsComponent implements OnInit {
     this.companySer.closeJob(this.route.snapshot.params['id'],{}).subscribe(
       (response)=>{
         console.log(response)
+        window.location.href=`company/job-details/${this.route.snapshot.params['id']}`
+      }
+
+    )
+  }
+  accept(id:number){
+    console.log("empid>>>>>>>",id)
+    this.companySer.acceptApplicant(id, this.route.snapshot.params['id']).subscribe(
+      (res)=>{
+        console.log(res)
       }
     )
+  }
+  viewProfile(id:number){
+    this.router.navigate([`applicant/company-profile/${id}`])
+
+  }
+  Onedit(id:number){
+    this.router.navigate([`company/edit-job/${id}`])
+
   }
 }

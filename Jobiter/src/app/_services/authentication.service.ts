@@ -10,7 +10,7 @@ const httpOptions = {
 })
 export class AuthenticationService {
   isLogged = 'false'
-  currentUserType = ''
+  currentUserType :any
   constructor(public http: HttpClient) {}
    companySignUp(company_name:string, email:string,username:string, password:string, password_confirm:string, 
     phone:string, address:string, city:string, industry:string, started_at:string, 
