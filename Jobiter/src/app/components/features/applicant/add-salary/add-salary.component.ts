@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { ApplicantService } from 'src/app/_services/applicant.service';
 import { CompanyService } from 'src/app/_services/company.service';
 import { TokenStorageService } from 'src/app/_services/token-storage.service';
@@ -19,7 +19,7 @@ export class AddSalaryComponent implements OnInit {
     end_date:'',
 
   }
-  constructor(public router :Router,public companySer:ApplicantService, public token:TokenStorageService) { }
+  constructor(public router :Router,public companySer:ApplicantService, public token:TokenStorageService, public route:ActivatedRoute) { }
  
   ngOnInit(): void {
   }
@@ -29,8 +29,9 @@ export class AddSalaryComponent implements OnInit {
       this.formData.job_title, this.formData.start_date, this.formData.end_date).subscribe({
         next:()=>{
           
-          this.router.navigateByUrl('home')
-        },
+          let id = this.route.snapshot.params['id']
+          this.router.navigate([`applicant/company-profile/${id}`])
+                },
         error:()=>{
 
         }

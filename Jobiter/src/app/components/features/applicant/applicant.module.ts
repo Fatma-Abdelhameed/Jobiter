@@ -29,19 +29,19 @@ import { HomeComponent } from './home/home.component';
 import { ApplicantSignUpComponent } from '../applicant-sign-up/applicant-sign-up.component';
 
 const routes:Routes = [
-  {path:'home', component:HomeComponent},
-  {path:'job-details/:id', component:JobDetailsComponent},
-  {path:'company-profile/:id', component:CompanyProfileComponent},
-  {path:'edit-basic-info', component:EditBasicInfoComponent},
-  {path:'edit-work-experience', component:EditWorkExperienceComponent},
-  {path:'change-password', component:ChangePasswordComponent},
-  {path:'apply-for-job/:id', component:ApplyForJobComponent},
-  {path:'applicant-profile', component:ApplicantProfileComponent},
-  {path:'all-companies', component:AllCompaniesComponent},
-  {path:'add-review/:id', component:AddReviewComponent},
-  {path:'add-salary/:id',component:AddSalaryComponent},
-  {path:'add-work-experience', component:AddWorkExperienceComponent},
-  {path:'add-interview-questions/:id', component:AddInterviewQuestionsComponent}
+  // {path:'home', component:HomeComponent},
+  // {path:'job-details/:id', component:JobDetailsComponent},
+  // {path:'company-profile/:id', component:CompanyProfileComponent},
+  // {path:'edit-basic-info', component:EditBasicInfoComponent},
+  // {path:'edit-work-experience', component:EditWorkExperienceComponent},
+  // {path:'change-password', component:ChangePasswordComponent},
+  // {path:'apply-for-job/:id', component:ApplyForJobComponent},
+  // {path:'applicant-profile', component:ApplicantProfileComponent},
+  // {path:'all-companies', component:AllCompaniesComponent},
+  // {path:'add-review/:id', component:AddReviewComponent},
+  // {path:'add-salary/:id',component:AddSalaryComponent},
+  // {path:'add-work-experience', component:AddWorkExperienceComponent},
+  // {path:'add-interview-questions/:id', component:AddInterviewQuestionsComponent}
 ]
 
 @NgModule({

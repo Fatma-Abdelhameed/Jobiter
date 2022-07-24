@@ -75,7 +75,7 @@ export class ApplicantService {
   }
   addSalary(id:number,company:string,salary:number,job_title:string,start_date:string,end_date:string){
     this.token=sessionStorage.getItem('auth-user')
-    return this.http.post("http://127.0.0.1:8000/salary/api/v1/create/", {
+    return this.http.post(`http://127.0.0.1:8000/api/salary/${id}/create/`, {
       company,
       reviewer:id ,
       salary,
@@ -101,6 +101,8 @@ export class ApplicantService {
     )
   }
   getCompanySalaries(id:number){
-    return this.http.get("http://127.0.0.1:8000/salary/api/v1/list/")
+    this.token=sessionStorage.getItem('auth-user')
+    return this.http.get(`http://127.0.0.1:8000/api/salary/${id}/list/`,
+    {headers: new HttpHeaders().set('Authorization', 'token '+JSON.parse(this.token).token)})
   }
 }
