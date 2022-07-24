@@ -18,13 +18,14 @@
     </div>
   </div>
   <div class="jobs container w-50">
-    
+
     <div class="row d-flex flex-">
       <div class="col-md-6 mb-3 fw-bold">
         <div class="card">
           <div class="card-body">
             <div *ngFor="let job  of allJobs[0]" class="d-flex flex-column align-items-center text-center">
-              <img src="assets/images/microsoft.png" alt="Admin" class="rounded-circle company-profile-picture p-3 border border-1"
+              <img src="assets/images/microsoft.png" alt="Admin"
+                   class="rounded-circle company-profile-picture p-3 border border-1"
                    height="130" width="130">
               <div class="mt-3">
                 <p class="job-title mb-1">{{job.job_title}}</p>
@@ -37,4 +38,6 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
 </div>
